@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="KIVESI LOGISTICS — Reliable logistics and distribution solutions across Tanzania, DR Congo, Malawi and Mozambique with a commitment to speed, safety and convenience."/>
+<meta name="keywords" content="logistics Tanzania, freight East Africa, cross-border logistics, distribution Dar es Salaam, road freight Tanzania, logistics Malawi, logistics Mozambique, logistics Congo"/>
+<meta name="author" content="KIVESI LOGISTICS"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://kivesilogistics.co.tz"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://kivesilogistics.co.tz"/>
+<meta property="og:title" content="KIVESI LOGISTICS — Delivering Excellence Across Borders"/>
+<meta property="og:description" content="Reliable logistics and distribution solutions across Tanzania, DR Congo, Malawi and Mozambique."/>
+<meta property="og:site_name" content="KIVESI LOGISTICS"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="KIVESI LOGISTICS — Delivering Excellence Across Borders"/>
+<meta name="twitter:description" content="Reliable logistics and distribution across East and Central Africa."/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "KIVESI LOGISTICS",
+  "url": "https://kivesilogistics.co.tz",
+  "logo": "https://kivesilogistics.co.tz/logo.svg",
+  "description": "Reliable logistics and distribution solutions across East and Central Africa.",
+  "foundingDate": "2024",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tabata Campo",
+    "addressLocality": "Dar es Salaam",
+    "addressCountry": "TZ"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+255689583281",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Swahili"]
+  },
+  "areaServed": ["Tanzania","Democratic Republic of Congo","Malawi","Mozambique"]
+}
+</script>
+
+<title>KIVESI LOGISTICS — Delivering Excellence Across Borders</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+<style>
+/* ═══════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;color:#111827;background:#ffffff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+img,svg{max-width:100%;display:block}
+input,textarea,select{font-family:inherit}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#f1f5f9}
+::-webkit-scrollbar-thumb{background:#003E91;border-radius:3px}
+
+/* ═══════════════════════════════════════════
+   CSS VARIABLES
+═══════════════════════════════════════════ */
+:root{
+  --brand:#003E91;
+  --brand-dark:#002A73;
+  --brand-darker:#001840;
+  --brand-light:#EEF4FF;
+  --brand-mid:#0047A8;
+  --white:#ffffff;
+  --gray-50:#F9FAFB;
+  --gray-100:#F3F4F6;
+  --gray-200:#E5E7EB;
+  --gray-300:#D1D5DB;
+  --gray-400:#9CA3AF;
+  --gray-500:#6B7280;
+  --gray-700:#374151;
+  --gray-800:#1F2937;
+  --gray-900:#111827;
+  --radius-sm:10px;
+  --radius-md:14px;
+  --radius-lg:18px;
+  --radius-xl:24px;
+  --radius-full:100px;
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT UTILITIES
+═══════════════════════════════════════════ */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section-badge{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:.16em;color:var(--brand);text-transform:uppercase;
+  margin-bottom:14px
+}
+.section-title{
+  font-size:clamp(26px,4vw,40px);font-weight:900;
+  color:var(--gray-900);line-height:1.08;letter-spacing:-.025em;margin-bottom:16px
+}
+.section-desc{color:var(--gray-500);line-height:1.72;font-size:15px}
+.section-center{text-align:center;margin-bottom:56px}
+.section-center .section-desc{max-width:540px;margin-left:auto;margin-right:auto}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+
+/* ═══════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════ */
+#site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:#fff;transition:box-shadow .3s
+}
+#site-header.scrolled{box-shadow:0 1px 14px rgba(0,0,0,.08)}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px
+}
+.site-logo{display:flex;align-items:center}
+.site-logo svg{height:42px;width:auto}
+
+/* Desktop Nav */
+.nav-list{display:flex;gap:32px;align-items:center}
+.nav-list a{
+  font-size:14px;font-weight:500;color:var(--gray-700);
+  transition:color .2s;padding:4px 0;position:relative
+}
+.nav-list a::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--brand);transform:scaleX(0);transition:transform .2s;transform-origin:left
+}
+.nav-list a:hover{color:var(--brand)}
+.nav-list a:hover::after{transform:scaleX(1)}
+.nav-quote-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--brand);color:#fff;
+  padding:10px 22px;border-radius:var(--radius-full);
+  font-size:13px;font-weight:700;transition:opacity .2s;min-height:44px
+}
+.nav-quote-btn:hover{opacity:.88}
+
+/* Hamburger */
+.hamburger-btn{
+  display:none;padding:8px;border-radius:10px;
+  color:var(--gray-700);transition:background .15s
+}
+.hamburger-btn:hover{background:var(--gray-100)}
+
+/* Mobile Menu */
+.mobile-nav{
+  display:none;position:fixed;top:68px;left:0;right:0;
+  background:#fff;border-top:1px solid var(--gray-100);
+  z-index:99;box-shadow:0 8px 32px rgba(0,0,0,.08);
+  padding:16px;
+  animation:slideDown .25s ease
+}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.mobile-nav.open{display:block}
+.mobile-nav a{
+  display:block;padding:13px 12px;font-size:15px;font-weight:500;
+  color:var(--gray-700);border-radius:var(--radius-sm);transition:all .15s
+}
+.mobile-nav a:hover{background:var(--gray-50);color:var(--brand)}
+.mobile-nav-footer{margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100)}
+.mobile-quote-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;background:var(--brand);color:#fff;
+  padding:14px;border-radius:var(--radius-full);
+  font-size:14px;font-weight:700
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero-section{
+  padding-top:68px;min-height:100vh;
+  display:flex;align-items:center;background:#fff
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:center;padding:72px 0
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--brand-light);color:var(--brand);
+  padding:8px 16px;border-radius:var(--radius-full);
+  font-size:12px;font-weight:600;letter-spacing:.04em;margin-bottom:24px
+}
+.hero-badge-dot{width:7px;height:7px;background:var(--brand);border-radius:50%}
+.hero-h1{
+  font-size:clamp(40px,5.5vw,70px);font-weight:900;
+  line-height:1.03;letter-spacing:-.04em;color:var(--gray-900);margin-bottom:14px
+}
+.hero-h1 .accent{color:var(--brand)}
+.hero-statement{
+  font-size:12px;font-weight:700;letter-spacing:.2em;
+  color:var(--brand);text-transform:uppercase;margin-bottom:20px
+}
+.hero-sub{
+  font-size:16px;color:var(--gray-500);line-height:1.72;
+  max-width:480px;margin-bottom:32px
+}
+.country-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#F5F8FF;border:1px solid #C8D5E8;color:var(--brand);
+  padding:6px 14px;border-radius:var(--radius-full);
+  font-size:12px;font-weight:600
+}
+.chip svg{width:12px;height:12px;flex-shrink:0}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--brand);color:#fff;padding:14px 28px;
+  border-radius:var(--radius-full);font-size:14px;font-weight:700;
+  min-height:52px;transition:opacity .2s
+}
+.btn-primary:hover{opacity:.88}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  border:2px solid var(--brand);color:var(--brand);
+  padding:14px 28px;border-radius:var(--radius-full);
+  font-size:14px;font-weight:700;min-height:52px;transition:background .2s
+}
+.btn-outline:hover{background:var(--brand-light)}
+.hero-right-wrap{position:relative}
+.hero-bg-accent{
+  position:absolute;top:28px;right:0;width:76%;height:84%;
+  background:#F0F5FF;border-radius:20px;z-index:0
+}
+.hero-truck-svg{position:relative;z-index:1}
+
+/* ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════ */
+.about-section{background:var(--gray-50);padding:96px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-blue-card{
+  background:var(--brand);border-radius:var(--radius-xl);
+  padding:40px;color:#fff;position:relative;overflow:hidden
+}
+.about-blue-card::before{
+  content:'';position:absolute;width:200px;height:200px;
+  border-radius:50%;border:2px solid rgba(255,255,255,.05);
+  top:-60px;right:-60px
+}
+.about-blue-card::after{
+  content:'';position:absolute;width:120px;height:120px;
+  border-radius:50%;border:2px solid rgba(255,255,255,.04);
+  bottom:-40px;left:-30px
+}
+.about-year{
+  font-size:68px;font-weight:900;line-height:1;
+  color:rgba(255,255,255,.07);margin-bottom:24px;
+  user-select:none;letter-spacing:-.04em
+}
+.about-stat-row{
+  display:flex;align-items:center;gap:18px;
+  padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)
+}
+.about-stat-row:last-child{border-bottom:none;padding-bottom:0}
+.about-stat-num{font-size:26px;font-weight:900;color:#fff;min-width:68px}
+.about-stat-label{font-size:13px;color:rgba(255,255,255,.62);font-weight:500}
+.strengths-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-top:28px
+}
+.strength-pill{
+  display:flex;align-items:center;gap:9px;
+  background:var(--brand-light);border-radius:var(--radius-sm);
+  padding:11px 14px;font-size:12px;font-weight:700;color:var(--gray-800)
+}
+.strength-pill svg{color:var(--brand);flex-shrink:0;width:16px;height:16px}
+
+/* ═══════════════════════════════════════════
+   STATISTICS
+═══════════════════════════════════════════ */
+.stats-section{background:var(--brand);padding:72px 0}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:24px;text-align:center
+}
+.stat-item{}
+.stat-number{
+  font-size:clamp(36px,4vw,52px);font-weight:900;
+  color:#fff;line-height:1;margin-bottom:8px
+}
+.stat-label{font-size:13px;color:rgba(255,255,255,.62);font-weight:500}
+
+/* ═══════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════ */
+.services-section{background:#fff;padding:96px 0}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.service-card{
+  border:1px solid var(--gray-200);
+  border-top:3px solid var(--brand);
+  border-radius:var(--radius-lg);padding:36px;
+  transition:box-shadow .2s,transform .2s
+}
+.service-card:hover{
+  box-shadow:0 8px 32px rgba(0,62,145,.09);
+  transform:translateY(-3px)
+}
+.service-icon-box{
+  width:56px;height:56px;background:var(--brand-light);
+  border-radius:var(--radius-md);display:flex;
+  align-items:center;justify-content:center;margin-bottom:24px
+}
+.service-icon-box svg{color:var(--brand);width:28px;height:28px}
+.service-title{font-size:20px;font-weight:800;color:var(--gray-900);margin-bottom:10px}
+.service-desc{font-size:14px;color:var(--gray-500);line-height:1.68;margin-bottom:22px}
+.service-points{display:flex;flex-direction:column;gap:8px}
+.service-points li{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:var(--gray-700)
+}
+.service-points svg{color:var(--brand);flex-shrink:0;width:16px;height:16px}
+
+/* ═══════════════════════════════════════════
+   INDUSTRIES
+═══════════════════════════════════════════ */
+.industries-section{background:var(--gray-50);padding:96px 0}
+.industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.industry-card{
+  background:#fff;border:1px solid var(--gray-200);
+  border-radius:var(--radius-lg);padding:24px;
+  transition:box-shadow .2s,transform .2s
+}
+.industry-card:hover{
+  box-shadow:0 6px 24px rgba(0,62,145,.08);
+  transform:translateY(-3px)
+}
+.industry-icon{
+  width:48px;height:48px;background:var(--brand);
+  border-radius:var(--radius-sm);display:flex;
+  align-items:center;justify-content:center;margin-bottom:16px
+}
+.industry-icon svg{color:#fff;width:24px;height:24px}
+.industry-title{font-size:15px;font-weight:800;color:var(--gray-900);margin-bottom:8px}
+.industry-desc{font-size:13px;color:var(--gray-400);line-height:1.6}
+
+/* ═══════════════════════════════════════════
+   COVERAGE
+═══════════════════════════════════════════ */
+.coverage-section{background:#fff;padding:96px 0}
+.coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.coverage-map-wrap{max-width:420px;margin:0 auto;width:100%}
+.coverage-list{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.coverage-item{display:flex;align-items:flex-start;gap:14px}
+.coverage-dot{
+  width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:1px
+}
+.coverage-dot svg{width:16px;height:16px}
+.coverage-name{font-size:14px;font-weight:800;color:var(--gray-900);margin-bottom:3px}
+.coverage-badge{
+  display:inline-block;font-size:10px;padding:3px 10px;
+  border-radius:var(--radius-full);background:var(--brand-light);
+  color:var(--brand);font-weight:700;margin-left:8px
+}
+.coverage-role{font-size:12px;color:var(--gray-400)}
+
+/* ═══════════════════════════════════════════
+   FLEET
+═══════════════════════════════════════════ */
+.fleet-section{background:var(--gray-50);padding:96px 0}
+.fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fleet-card{
+  background:#fff;border:1px solid var(--gray-200);
+  border-radius:var(--radius-lg);overflow:hidden;
+  transition:box-shadow .2s,transform .2s
+}
+.fleet-card:hover{
+  box-shadow:0 8px 32px rgba(0,62,145,.09);
+  transform:translateY(-4px)
+}
+.fleet-visual{
+  height:180px;background:var(--brand);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden
+}
+.fleet-visual::before{
+  content:'';position:absolute;width:160px;height:160px;
+  border-radius:50%;border:2px solid rgba(255,255,255,.06);
+  right:-40px;top:-40px
+}
+.fleet-visual::after{
+  content:'';position:absolute;width:90px;height:90px;
+  border-radius:50%;border:2px solid rgba(255,255,255,.04);
+  left:-20px;bottom:-20px
+}
+.fleet-icon-bg-large{
+  position:absolute;color:rgba(255,255,255,.07);
+  width:90px;height:90px
+}
+.fleet-icon-box{
+  width:64px;height:64px;background:rgba(255,255,255,.1);
+  border-radius:var(--radius-md);display:flex;
+  align-items:center;justify-content:center;position:relative;z-index:1
+}
+.fleet-icon-box svg{color:#fff;width:32px;height:32px}
+.fleet-body{padding:24px}
+.fleet-title{font-size:16px;font-weight:800;color:var(--gray-900);margin-bottom:8px}
+.fleet-desc{font-size:13px;color:var(--gray-400);line-height:1.65;margin-bottom:16px}
+.fleet-points{display:flex;flex-direction:column;gap:7px}
+.fleet-points li{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--gray-700)
+}
+.fleet-points svg{color:var(--brand);flex-shrink:0;width:14px;height:14px}
+
+/* ═══════════════════════════════════════════
+   TRUST
+═══════════════════════════════════════════ */
+.trust-section{background:#fff;padding:96px 0}
+.trust-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px}
+.trust-card{
+  text-align:center;padding:28px 20px;
+  border:1px solid var(--gray-200);border-radius:var(--radius-lg);
+  transition:box-shadow .2s,border-color .2s
+}
+.trust-card:hover{
+  box-shadow:0 4px 18px rgba(0,62,145,.07);
+  border-color:#D1DCF0
+}
+.trust-icon-box{
+  width:48px;height:48px;background:var(--brand-light);
+  border-radius:var(--radius-sm);display:flex;
+  align-items:center;justify-content:center;margin:0 auto 16px
+}
+.trust-icon-box svg{color:var(--brand);width:24px;height:24px}
+.trust-card-title{font-size:14px;font-weight:800;color:var(--gray-900);margin-bottom:8px}
+.trust-card-desc{font-size:12px;color:var(--gray-400);line-height:1.62}
+.compliance-box{
+  border:1px solid var(--gray-200);border-radius:var(--radius-lg);
+  padding:40px;text-align:center
+}
+.compliance-label{
+  font-size:11px;font-weight:700;letter-spacing:.14em;
+  color:var(--gray-300);text-transform:uppercase;margin-bottom:24px
+}
+.badges-row{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.badge-pill{
+  display:flex;align-items:center;gap:12px;
+  border:2px solid var(--brand);border-radius:var(--radius-md);padding:14px 24px
+}
+.badge-icon-box{
+  width:40px;height:40px;background:var(--brand);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0
+}
+.badge-icon-box svg{color:#fff;width:20px;height:20px}
+.badge-name{font-size:14px;font-weight:900;color:var(--gray-900)}
+.badge-sub{font-size:11px;color:var(--gray-400)}
+
+/* ═══════════════════════════════════════════
+   QUOTE
+═══════════════════════════════════════════ */
+.quote-section{background:var(--gray-50);padding:96px 0}
+.conversion-strip{
+  background:var(--brand);border-radius:var(--radius-xl);
+  padding:52px 48px;text-align:center;
+  margin-bottom:56px;position:relative;overflow:hidden
+}
+.conversion-strip::before{
+  content:'';position:absolute;width:320px;height:320px;
+  border-radius:50%;border:2px solid rgba(255,255,255,.04);
+  top:-100px;right:-80px
+}
+.conversion-strip::after{
+  content:'';position:absolute;width:200px;height:200px;
+  border-radius:50%;border:2px solid rgba(255,255,255,.04);
+  bottom:-80px;left:-50px
+}
+.conv-title{font-size:clamp(22px,3vw,30px);font-weight:900;color:#fff;margin-bottom:12px}
+.conv-desc{
+  color:rgba(255,255,255,.72);font-size:15px;
+  margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto
+}
+.conv-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;position:relative;z-index:1}
+.conv-btn-white{
+  display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--brand);
+  padding:13px 26px;border-radius:var(--radius-full);font-size:14px;font-weight:700;
+  min-height:48px;transition:background .2s
+}
+.conv-btn-white:hover{background:#F0F5FF}
+.conv-btn-outline{
+  display:inline-flex;align-items:center;gap:8px;border:2px solid #fff;color:#fff;
+  padding:13px 26px;border-radius:var(--radius-full);font-size:14px;font-weight:700;
+  min-height:48px;transition:background .2s
+}
+.conv-btn-outline:hover{background:rgba(255,255,255,.1)}
+.quote-form-box{
+  background:#fff;border:1px solid var(--gray-200);
+  border-radius:var(--radius-xl);padding:44px
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.form-group{}
+.form-group label{
+  display:block;font-size:12px;font-weight:700;
+  color:var(--gray-700);margin-bottom:6px
+}
+.input-wrap{position:relative}
+.input-wrap .input-icon{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  color:var(--gray-400);width:16px;height:16px;pointer-events:none
+}
+.input-wrap.textarea-wrap .input-icon{top:16px;transform:none}
+.form-control{
+  width:100%;padding:13px 14px 13px 42px;border:1px solid var(--gray-200);
+  border-radius:var(--radius-sm);font-size:14px;color:var(--gray-900);
+  background:#fff;transition:border-color .2s,box-shadow .2s;outline:none;
+  min-height:48px;font-family:inherit
+}
+.form-control:focus{
+  border-color:var(--brand);
+  box-shadow:0 0 0 3px rgba(0,62,145,.08)
+}
+.form-control::placeholder{color:var(--gray-400)}
+.form-control.has-error{border-color:#EF4444;background:#FFF5F5}
+textarea.form-control{
+  padding-left:42px;resize:vertical;min-height:116px;
+  padding-top:13px
+}
+.field-error{
+  font-size:11px;color:#EF4444;margin-top:5px;
+  display:flex;align-items:center;gap:4px
+}
+.field-error svg{width:12px;height:12px;flex-shrink:0}
+.submit-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--brand);color:#fff;padding:15px 38px;
+  border-radius:var(--radius-full);font-size:15px;font-weight:700;
+  min-height:52px;cursor:pointer;border:none;font-family:inherit;
+  transition:opacity .2s
+}
+.submit-btn:hover{opacity:.88}
+.submit-btn:disabled{opacity:.55;cursor:not-allowed}
+.spin{
+  animation:spin .8s linear infinite;
+  width:16px;height:16px
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.success-state{text-align:center;padding:72px 32px}
+.success-icon-box{
+  width:64px;height:64px;background:var(--brand-light);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px
+}
+.success-icon-box svg{color:var(--brand);width:32px;height:32px}
+.success-title{font-size:22px;font-weight:800;color:var(--gray-900);margin-bottom:10px}
+.success-desc{font-size:14px;color:var(--gray-400);margin-bottom:28px;line-height:1.6}
+.reset-btn{
+  background:var(--brand);color:#fff;padding:12px 28px;
+  border-radius:var(--radius-full);font-size:14px;font-weight:700;
+  cursor:pointer;font-family:inherit;border:none;transition:opacity .2s
+}
+.reset-btn:hover{opacity:.88}
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
+.contact-section{background:#fff;padding:96px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-cards{display:flex;flex-direction:column;gap:12px}
+.contact-card{
+  display:flex;align-items:center;gap:16px;
+  padding:18px 20px;border:1px solid var(--gray-200);
+  border-radius:var(--radius-lg);transition:border-color .2s
+}
+.contact-card:hover{border-color:#D1DCF0}
+.contact-card-icon{
+  width:44px;height:44px;background:var(--brand-light);
+  border-radius:var(--radius-sm);display:flex;
+  align-items:center;justify-content:center;flex-shrink:0
+}
+.contact-card-icon svg{color:var(--brand);width:20px;height:20px}
+.contact-label{font-size:11px;color:var(--gray-400);font-weight:600;margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em}
+.contact-value{font-size:14px;font-weight:600;color:var(--gray-900);word-break:break-word}
+.contact-action-btn{
+  display:inline-block;font-size:12px;font-weight:700;
+  background:var(--brand-light);color:var(--brand);
+  padding:7px 14px;border-radius:8px;margin-left:auto;
+  white-space:nowrap;flex-shrink:0;transition:background .15s
+}
+.contact-action-btn:hover{background:#DCE8FF}
+.map-container{
+  border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--gray-200);height:400px
+}
+.map-container iframe{width:100%;height:100%;border:none;display:block}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+#site-footer{background:var(--brand-darker);padding:60px 0 0}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+  gap:40px;padding-bottom:48px
+}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.42);margin-top:16px;line-height:1.72}
+.footer-col-title{
+  font-size:10px;font-weight:700;letter-spacing:.16em;
+  color:rgba(255,255,255,.32);text-transform:uppercase;margin-bottom:16px
+}
+.footer-links li{margin-bottom:8px}
+.footer-links a,.footer-links button{
+  font-size:13px;color:rgba(255,255,255,.52);
+  transition:color .15s;background:none;border:none;
+  cursor:pointer;text-align:left;font-family:inherit;padding:0
+}
+.footer-links a:hover,.footer-links button:hover{color:rgba(255,255,255,.9)}
+.footer-contact-row{
+  display:flex;align-items:flex-start;gap:8px;
+  font-size:13px;color:rgba(255,255,255,.48);margin-bottom:10px
+}
+.footer-contact-row a{color:inherit;transition:color .15s;word-break:break-all}
+.footer-contact-row a:hover,.footer-contact-row:hover{color:rgba(255,255,255,.82)}
+.footer-contact-row svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.07);
+  padding:20px 0;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:10px
+}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.28)}
+
+/* ═══════════════════════════════════════════
+   FLOATING WHATSAPP
+═══════════════════════════════════════════ */
+#wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:200;
+  width:56px;height:56px;background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(37,211,102,.4);
+  transition:transform .2s,box-shadow .2s;cursor:pointer
+}
+#wa-float:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 28px rgba(37,211,102,.5)
+}
+#wa-float svg{color:#fff;width:28px;height:28px}
+#wa-float .wa-pulse{
+  position:absolute;inset:0;border-radius:50%;
+  background:#25D366;animation:waPulse 2s infinite
+}
+@keyframes waPulse{
+  0%{transform:scale(1);opacity:.5}
+  70%{transform:scale(1.4);opacity:0}
+  100%{transform:scale(1.4);opacity:0}
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media(max-width:1024px){
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:36px}
+  .industries-grid{grid-template-columns:repeat(2,1fr)}
+  .fleet-grid{grid-template-columns:1fr 1fr}
+  .trust-cards-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:span 2}
+}
+@media(max-width:768px){
+  .nav-list,.nav-quote-wrap{display:none}
+  .hamburger-btn{display:block}
+  .hero-grid{grid-template-columns:1fr;gap:0;padding:48px 0 36px}
+  .hero-right-wrap{order:-1;margin-bottom:12px}
+  .hero-bg-accent{display:none}
+  .hero-sub{max-width:100%}
+  .about-grid,.services-grid,.coverage-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .industries-grid,.fleet-grid,.trust-cards-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand{grid-column:auto}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .strengths-grid{grid-template-columns:1fr}
+  .badges-row{flex-direction:column;align-items:center}
+  .conversion-strip{padding:40px 28px}
+  .quote-form-box{padding:28px 20px}
+}
+@media(max-width:480px){
+  .hero-h1{font-size:38px}
+  .cta-row{flex-direction:column}
+  .btn-primary,.btn-outline{width:100%;justify-content:center}
+  .conv-btns{flex-direction:column;align-items:stretch}
+  .conv-btn-white,.conv-btn-outline{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{transition:none;opacity:1;transform:none}
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ INLINE SVG SYMBOLS ═══════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/>
+    <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+  </symbol>
+  <symbol id="i-package" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+  </symbol>
+  <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="2" y1="12" x2="22" y2="12"/>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+  </symbol>
+  <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="7" width="20" height="15"/><path d="M16 21V3a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v18"/>
+  </symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/>
+    <path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/>
+  </symbol>
+  <symbol id="i-shop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <path d="M16 10a4 4 0 0 1-8 0"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+  </symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </symbol>
+  <symbol id="i-headphones" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+    <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+  </symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <line x1="12" y1="8" x2="12" y2="12"/>
+    <line x1="12" y1="16" x2="12.01" y2="16"/>
+  </symbol>
+  <symbol id="i-boxes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42z"/>
+    <path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/>
+    <path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3z"/>
+    <path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/>
+    <path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8z"/>
+    <path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/>
+  </symbol>
+  <symbol id="i-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+  </symbol>
+  <symbol id="i-bar-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>
+  </symbol>
+</svg>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header id="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <!-- LOGO -->
+      <a href="#home" class="site-logo" onclick="smoothGo('home');return false;" aria-label="KIVESI LOGISTICS — Go to homepage">
+        <svg viewBox="0 0 210 52" style="height:42px;width:auto" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="8" width="7" height="36" rx="2" fill="#003E91"/>
+          <line x1="9" y1="8" x2="25" y2="24" stroke="#003E91" stroke-width="6" stroke-linecap="round"/>
+          <line x1="9" y1="44" x2="25" y2="24" stroke="#003E91" stroke-width="6" stroke-linecap="round"/>
+          <line x1="23" y1="18" x2="36" y2="24" stroke="#003E91" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+          <line x1="23" y1="30" x2="36" y2="24" stroke="#003E91" stroke-width="4" stroke-linecap="round" opacity=".5"/>
+          <text x="44" y="24" fill="#003E91" font-family="Inter,Arial,sans-serif" font-weight="900" font-size="18" letter-spacing="2.5">KIVESI</text>
+          <text x="44" y="40" fill="#1A5DC2" font-family="Inter,Arial,sans-serif" font-weight="500" font-size="9" letter-spacing="4.5">LOGISTICS</text>
+        </svg>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="nav-list" role="navigation" aria-label="Main navigation">
+        <a href="#home" onclick="smoothGo('home');return false;">Home</a>
+        <a href="#about" onclick="smoothGo('about');return false;">About</a>
+        <a href="#services" onclick="smoothGo('services');return false;">Services</a>
+        <a href="#industries" onclick="smoothGo('industries');return false;">Industries</a>
+        <a href="#fleet" onclick="smoothGo('fleet');return false;">Fleet</a>
+        <a href="#contact" onclick="smoothGo('contact');return false;">Contact</a>
+      </nav>
+
+      <div class="nav-quote-wrap">
+        <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" class="nav-quote-btn" aria-label="Get a quote on WhatsApp">
+          <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>
+          Get Quote
+        </a>
+      </div>
+
+      <!-- HAMBURGER -->
+      <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <svg id="ham-icon" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="#home" onclick="mobileGo('home')">Home</a>
+    <a href="#about" onclick="mobileGo('about')">About</a>
+    <a href="#services" onclick="mobileGo('services')">Services</a>
+    <a href="#industries" onclick="mobileGo('industries')">Industries</a>
+    <a href="#fleet" onclick="mobileGo('fleet')">Fleet</a>
+    <a href="#contact" onclick="mobileGo('contact')">Contact</a>
+    <div class="mobile-nav-footer">
+      <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" class="mobile-quote-btn">
+        <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>
+        Get a Quote on WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<main id="main-content">
+
+<!-- ─── HERO ─── -->
+<section class="hero-section" id="home" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- LEFT: Content -->
+      <div class="reveal">
+        <div class="hero-badge" aria-label="Trusted Logistics Partner Since 2024">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          Trusted Logistics Partner Since 2024
+        </div>
+
+        <h1 class="hero-h1" id="hero-heading">
+          Moving Your<br>
+          <span class="accent">Business</span><br>
+          Forward
+        </h1>
+
+        <p class="hero-statement">Delivering Excellence Across Borders</p>
+
+        <p class="hero-sub">
+          Reliable logistics and distribution solutions across Tanzania, Congo, Malawi, and Mozambique — with a commitment to speed, safety, and convenience.
+        </p>
+
+        <div class="country-chips" aria-label="Countries we serve">
+          <span class="chip">
+            <svg aria-hidden="true"><use href="#i-map"/></svg>Tanzania
+          </span>
+          <span class="chip">
+            <svg aria-hidden="true"><use href="#i-map"/></svg>DR Congo
+          </span>
+          <span class="chip">
+            <svg aria-hidden="true"><use href="#i-map"/></svg>Malawi
+          </span>
+          <span class="chip">
+            <svg aria-hidden="true"><use href="#i-map"/></svg>Mozambique
+          </span>
+        </div>
+
+        <div class="cta-row">
+          <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Get a quote on WhatsApp">
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>
+            Get a Quote
+          </a>
+          <a href="tel:+255689583281" class="btn-outline" aria-label="Call KIVESI LOGISTICS">
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Truck SVG -->
+      <div class="hero-right-wrap reveal d1">
+        <div class="hero-bg-accent" aria-hidden="true"></div>
+        <div class="hero-truck-svg">
+          <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="KIVESI LOGISTICS branded truck illustration" style="width:100%;height:auto">
+            <!-- Ground shadow -->
+            <ellipse cx="340" cy="346" rx="290" ry="9" fill="#E9EEF4"/>
+            <!-- TRAILER -->
+            <rect x="22" y="112" width="420" height="192" rx="7" fill="#003E91"/>
+            <rect x="22" y="112" width="420" height="8" rx="4" fill="#0048A8"/>
+            <rect x="22" y="264" width="420" height="7" fill="#00327A"/>
+            <rect x="22" y="268" width="420" height="3" fill="rgba(255,255,255,.07)"/>
+            <!-- Trailer text -->
+            <text x="232" y="198" text-anchor="middle" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-weight="900" font-size="36" letter-spacing="8">KIVESI</text>
+            <text x="232" y="230" text-anchor="middle" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-weight="400" font-size="13" letter-spacing="7" opacity=".76">LOGISTICS</text>
+            <!-- Trailer seams -->
+            <line x1="22" y1="120" x2="22" y2="264" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <line x1="442" y1="120" x2="442" y2="264" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <line x1="232" y1="120" x2="232" y2="264" stroke="rgba(255,255,255,.05)" stroke-width=".8"/>
+            <!-- Reefer ridges -->
+            <line x1="140" y1="112" x2="140" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+            <line x1="180" y1="112" x2="180" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+            <line x1="280" y1="112" x2="280" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+            <line x1="320" y1="112" x2="320" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+            <line x1="380" y1="112" x2="380" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+            <!-- Chassis -->
+            <rect x="22" y="300" width="420" height="12" rx="2" fill="#002060"/>
+            <!-- CAB -->
+            <rect x="434" y="86" width="222" height="228" rx="10" fill="#002A73"/>
+            <!-- Windshield -->
+            <rect x="448" y="100" width="190" height="106" rx="6" fill="#BFDBF7" opacity=".87"/>
+            <line x1="548" y1="100" x2="548" y2="206" stroke="#002060" stroke-width="2.5" opacity=".36"/>
+            <!-- Door -->
+            <rect x="448" y="210" width="190" height="96" fill="#002060"/>
+            <line x1="448" y1="210" x2="638" y2="210" stroke="#001840" stroke-width="2"/>
+            <rect x="462" y="218" width="164" height="46" rx="4" fill="#BFDBF7" opacity=".26"/>
+            <rect x="600" y="248" width="26" height="5" rx="2.5" fill="#003E91"/>
+            <!-- Mirror -->
+            <rect x="637" y="112" width="28" height="16" rx="3" fill="#001840"/>
+            <!-- Air deflector -->
+            <path d="M 434 86 Q 530 56 658 86" fill="#002060"/>
+            <!-- Headlights -->
+            <rect x="657" y="110" width="18" height="15" rx="3" fill="#FEF3C7"/>
+            <rect x="657" y="130" width="18" height="9" rx="2" fill="#FDE68A" opacity=".62"/>
+            <!-- Grille -->
+            <rect x="657" y="148" width="18" height="56" rx="2" fill="#001535"/>
+            <line x1="659" y1="155" x2="673" y2="155" stroke="#003E91" stroke-width="1" opacity=".48"/>
+            <line x1="659" y1="163" x2="673" y2="163" stroke="#003E91" stroke-width="1" opacity=".48"/>
+            <line x1="659" y1="171" x2="673" y2="171" stroke="#003E91" stroke-width="1" opacity=".48"/>
+            <line x1="659" y1="179" x2="673" y2="179" stroke="#003E91" stroke-width="1" opacity=".48"/>
+            <line x1="659" y1="187" x2="673" y2="187" stroke="#003E91" stroke-width="1" opacity=".48"/>
+            <line x1="659" y1="195" x2="673" y2="195" stroke="#003E91" stroke-width="1" opacity=".48"/>
+            <!-- Bumper -->
+            <rect x="657" y="285" width="18" height="28" rx="3" fill="#374151"/>
+            <!-- Steps -->
+            <rect x="452" y="307" width="180" height="10" rx="3" fill="#001535"/>
+            <!-- Exhaust -->
+            <rect x="654" y="42" width="10" height="46" rx="5" fill="#374151"/>
+            <ellipse cx="659" cy="42" rx="6" ry="5" fill="#4B5563"/>
+            <circle cx="659" cy="28" r="5" fill="#D1D5DB" opacity=".28"/>
+            <circle cx="663" cy="17" r="3.5" fill="#D1D5DB" opacity=".15"/>
+            <!-- WHEEL 1 -->
+            <circle cx="112" cy="320" r="35" fill="#1F2937"/>
+            <circle cx="112" cy="320" r="23" fill="#374151"/>
+            <circle cx="112" cy="320" r="9" fill="#9CA3AF"/>
+            <line x1="112" y1="320" x2="132" y2="320" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="112" y1="320" x2="102" y2="303" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="112" y1="320" x2="122" y2="303" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="112" y1="320" x2="92" y2="320" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="112" y1="320" x2="102" y2="337" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="112" y1="320" x2="122" y2="337" stroke="#4B5563" stroke-width="2.5"/>
+            <!-- WHEEL 2 -->
+            <circle cx="222" cy="320" r="35" fill="#1F2937"/>
+            <circle cx="222" cy="320" r="23" fill="#374151"/>
+            <circle cx="222" cy="320" r="9" fill="#9CA3AF"/>
+            <line x1="222" y1="320" x2="242" y2="320" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="222" y1="320" x2="212" y2="303" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="222" y1="320" x2="232" y2="303" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="222" y1="320" x2="202" y2="320" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="222" y1="320" x2="212" y2="337" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="222" y1="320" x2="232" y2="337" stroke="#4B5563" stroke-width="2.5"/>
+            <!-- WHEEL 3 (cab) -->
+            <circle cx="562" cy="320" r="35" fill="#1F2937"/>
+            <circle cx="562" cy="320" r="23" fill="#374151"/>
+            <circle cx="562" cy="320" r="9" fill="#9CA3AF"/>
+            <line x1="562" y1="320" x2="582" y2="320" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="562" y1="320" x2="552" y2="303" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="562" y1="320" x2="572" y2="303" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="562" y1="320" x2="542" y2="320" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="562" y1="320" x2="552" y2="337" stroke="#4B5563" stroke-width="2.5"/>
+            <line x1="562" y1="320" x2="572" y2="337" stroke="#4B5563" stroke-width="2.5"/>
+            <!-- Motion lines -->
+            <line x1="0" y1="196" x2="18" y2="196" stroke="#003E91" stroke-width="2.5" opacity=".3"/>
+            <line x1="0" y1="213" x2="12" y2="213" stroke="#003E91" stroke-width="1.5" opacity=".17"/>
+            <line x1="0" y1="228" x2="21" y2="228" stroke="#003E91" stroke-width="2" opacity=".26"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about-section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="about-blue-card" role="region" aria-label="Company statistics">
+          <div class="about-year" aria-hidden="true">2024</div>
+          <div class="about-stat-row">
+            <span class="about-stat-num">4+</span>
+            <span class="about-stat-label">Countries Served</span>
+          </div>
+          <div class="about-stat-row">
+            <span class="about-stat-num">24/7</span>
+            <span class="about-stat-label">Customer Support</span>
+          </div>
+          <div class="about-stat-row">
+            <span class="about-stat-num">100%</span>
+            <span class="about-stat-label">Commitment to Excellence</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <span class="section-badge">About Kivesi Logistics</span>
+        <h2 class="section-title" id="about-heading">East Africa's Trusted<br>Logistics Partner</h2>
+        <p class="section-desc">Founded in 2024, Kivesi Logistics was built on a clear mission: to provide businesses across East and Central Africa with logistics solutions that are fast, reliable, and genuinely convenient. We understand the unique challenges of cross-border trade in this region.</p>
+        <p class="section-desc" style="margin-top:14px">From Dar es Salaam to Kinshasa, Lilongwe to Maputo — our network spans some of the most dynamic commercial corridors in Africa. Whether you're shipping construction materials, retail goods, or manufacturing supplies, Kivesi delivers with precision and professionalism.</p>
+        <div class="strengths-grid" role="list" aria-label="Company strengths">
+          <div class="strength-pill" role="listitem"><svg width="16" height="16" aria-hidden="true"><use href="#i-zap"/></svg>Fast Delivery</div>
+          <div class="strength-pill" role="listitem"><svg width="16" height="16" aria-hidden="true"><use href="#i-shield"/></svg>Reliability</div>
+          <div class="strength-pill" role="listitem"><svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>Convenience</div>
+          <div class="strength-pill" role="listitem"><svg width="16" height="16" aria-hidden="true"><use href="#i-globe"/></svg>Regional Expertise</div>
+          <div class="strength-pill" role="listitem"><svg width="16" height="16" aria-hidden="true"><use href="#i-award"/></svg>Professional Management</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATISTICS ─── -->
+<section class="stats-section" aria-labelledby="stats-heading">
+  <div class="container">
+    <h2 class="sr-only" id="stats-heading">Company Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-count="4" data-suffix="+" aria-label="4+ Countries Served">0+</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div class="stat-item reveal d1">
+        <div class="stat-number" data-count="2024" data-suffix="" data-start="2020" aria-label="Established 2024">2020</div>
+        <div class="stat-label">Year Established</div>
+      </div>
+      <div class="stat-item reveal d2">
+        <div class="stat-number" aria-label="24/7 Customer Support">24/7</div>
+        <div class="stat-label">Customer Support</div>
+      </div>
+      <div class="stat-item reveal d3">
+        <div class="stat-number" data-count="100" data-suffix="%" aria-label="100% Commitment to Service">0%</div>
+        <div class="stat-label">Commitment to Service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section class="services-section" id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-badge">What We Do</span>
+      <h2 class="section-title" id="services-heading">Our Core Services</h2>
+      <p class="section-desc">Comprehensive logistics and distribution solutions tailored for businesses operating across East and Central Africa.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon-box" aria-hidden="true"><svg width="28" height="28"><use href="#i-truck"/></svg></div>
+        <h3 class="service-title">Road Freight</h3>
+        <p class="service-desc">Professional road transportation solutions for businesses across East and Central Africa. We handle long-haul freight with dedicated routes and experienced drivers who know every corridor intimately.</p>
+        <ul class="service-points" aria-label="Road Freight features">
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Long-haul transportation</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Cross-border delivery</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Dedicated freight lanes</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Professional drivers & documentation</li>
+        </ul>
+      </article>
+      <article class="service-card reveal d1">
+        <div class="service-icon-box" aria-hidden="true"><svg width="28" height="28"><use href="#i-boxes"/></svg></div>
+        <h3 class="service-title">Distribution</h3>
+        <p class="service-desc">Efficient distribution services ensuring goods reach their destinations safely and on time. From last-mile delivery to regional hub-and-spoke networks serving retailers and wholesalers across the region.</p>
+        <ul class="service-points" aria-label="Distribution features">
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Last-mile delivery</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Hub-and-spoke network</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Retail & wholesale distribution</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Scheduled delivery windows</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INDUSTRIES ─── -->
+<section class="industries-section" id="industries" aria-labelledby="industries-heading">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-badge">Industries We Serve</span>
+      <h2 class="section-title" id="industries-heading">Built for Every Sector</h2>
+      <p class="section-desc">Our logistics expertise spans multiple industries, giving us the flexibility to serve your specific business needs.</p>
+    </div>
+    <div class="industries-grid">
+      <article class="industry-card reveal">
+        <div class="industry-icon" aria-hidden="true"><svg width="24" height="24"><use href="#i-building"/></svg></div>
+        <h3 class="industry-title">Construction</h3>
+        <p class="industry-desc">Reliable delivery of building materials, heavy equipment, and project supplies to sites across the region on schedule.</p>
+      </article>
+      <article class="industry-card reveal d1">
+        <div class="industry-icon" aria-hidden="true"><svg width="24" height="24"><use href="#i-globe"/></svg></div>
+        <h3 class="industry-title">Import &amp; Export</h3>
+        <p class="industry-desc">Streamlined cross-border logistics for importers and exporters navigating East African trade corridors with confidence.</p>
+      </article>
+      <article class="industry-card reveal d2">
+        <div class="industry-icon" aria-hidden="true"><svg width="24" height="24"><use href="#i-shop"/></svg></div>
+        <h3 class="industry-title">Retail &amp; Wholesale</h3>
+        <p class="industry-desc">Consistent distribution to retail outlets and wholesale depots — keeping shelves stocked and customers satisfied.</p>
+      </article>
+      <article class="industry-card reveal d3">
+        <div class="industry-icon" aria-hidden="true"><svg width="24" height="24"><use href="#i-factory"/></svg></div>
+        <h3 class="industry-title">Manufacturing</h3>
+        <p class="industry-desc">Supply chain logistics for manufacturers — raw materials inbound, finished goods outbound, efficiently managed.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COVERAGE ─── -->
+<section class="coverage-section" id="coverage" aria-labelledby="coverage-heading">
+  <div class="container">
+    <div class="coverage-grid">
+      <!-- SVG MAP -->
+      <div class="reveal coverage-map-wrap">
+        <svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title map-desc" style="width:100%;height:auto">
+          <title id="map-title">KIVESI LOGISTICS Coverage Map</title>
+          <desc id="map-desc">Map showing coverage across Tanzania (primary hub), DR Congo, Malawi, and Mozambique in East and Central Africa</desc>
+          <!-- Simplified continent outline -->
+          <path d="M 138,12 L 200,6 L 252,16 L 308,10 L 356,28 L 396,54 L 415,88 L 412,140 L 430,182 L 420,238 L 396,298 L 366,354 L 318,394 L 264,410 L 210,406 L 158,390 L 110,358 L 74,308 L 55,248 L 62,188 L 74,138 L 90,96 L 114,56 Z" fill="#EEF2F8" stroke="#C8D5E8" stroke-width="1.5"/>
+          <!-- Route lines from Tanzania to other countries -->
+          <line x1="305" y1="214" x2="162" y2="180" stroke="#003E91" stroke-width="1.5" stroke-dasharray="6,4" opacity=".4"/>
+          <line x1="305" y1="214" x2="292" y2="278" stroke="#003E91" stroke-width="1.5" stroke-dasharray="6,4" opacity=".4"/>
+          <line x1="305" y1="214" x2="270" y2="332" stroke="#003E91" stroke-width="1.5" stroke-dasharray="6,4" opacity=".4"/>
+          <!-- Midpoint indicators -->
+          <circle cx="233" cy="197" r="3" fill="#003E91" opacity=".36"/>
+          <circle cx="298" cy="246" r="3" fill="#003E91" opacity=".36"/>
+          <circle cx="287" cy="273" r="3" fill="#003E91" opacity=".36"/>
+          <!-- DR Congo marker -->
+          <circle cx="162" cy="180" r="14" fill="#fff" stroke="#003E91" stroke-width="2"/>
+          <circle cx="162" cy="180" r="6" fill="#003E91"/>
+          <text x="162" y="200" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="12" fill="#111827">DR Congo</text>
+          <!-- Malawi marker -->
+          <circle cx="292" cy="278" r="14" fill="#fff" stroke="#003E91" stroke-width="2"/>
+          <circle cx="292" cy="278" r="6" fill="#003E91"/>
+          <text x="292" y="298" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="12" fill="#111827">Malawi</text>
+          <!-- Mozambique marker -->
+          <circle cx="270" cy="332" r="14" fill="#fff" stroke="#003E91" stroke-width="2"/>
+          <circle cx="270" cy="332" r="6" fill="#003E91"/>
+          <text x="270" y="352" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="12" fill="#111827">Mozambique</text>
+          <!-- Tanzania PRIMARY HUB -->
+          <circle cx="305" cy="214" r="30" fill="#003E91" opacity=".07"/>
+          <circle cx="305" cy="214" r="18" fill="#003E91"/>
+          <circle cx="305" cy="214" r="8" fill="#fff"/>
+          <text x="305" y="238" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" fill="#111827">Tanzania</text>
+          <text x="305" y="254" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="600" font-size="10" fill="#003E91">Primary Hub</text>
+        </svg>
+      </div>
+
+      <!-- TEXT -->
+      <div class="reveal d1">
+        <span class="section-badge">Coverage Network</span>
+        <h2 class="section-title" id="coverage-heading">Delivering Excellence<br>Across Borders</h2>
+        <p class="section-desc" style="max-width:100%">Our regional network spans four countries, with Tanzania as our primary operational hub. We operate on established trade corridors, ensuring predictable transit times and professional cross-border logistics management.</p>
+        <div class="coverage-list" role="list">
+          <div class="coverage-item" role="listitem">
+            <div class="coverage-dot" style="background:#003E91" aria-hidden="true">
+              <svg width="16" height="16" style="color:#fff"><use href="#i-map"/></svg>
+            </div>
+            <div>
+              <div class="coverage-name">Tanzania <span class="coverage-badge">Primary Hub</span></div>
+              <div class="coverage-role">Headquarters and main operational base in Dar es Salaam.</div>
+            </div>
+          </div>
+          <div class="coverage-item" role="listitem">
+            <div class="coverage-dot" style="background:#EEF4FF" aria-hidden="true">
+              <svg width="16" height="16" style="color:#003E91"><use href="#i-map"/></svg>
+            </div>
+            <div>
+              <div class="coverage-name">DR Congo <span class="coverage-badge">Coverage Zone</span></div>
+              <div class="coverage-role">Connecting to Central Africa's largest economy.</div>
+            </div>
+          </div>
+          <div class="coverage-item" role="listitem">
+            <div class="coverage-dot" style="background:#EEF4FF" aria-hidden="true">
+              <svg width="16" height="16" style="color:#003E91"><use href="#i-map"/></svg>
+            </div>
+            <div>
+              <div class="coverage-name">Malawi <span class="coverage-badge">Coverage Zone</span></div>
+              <div class="coverage-role">Serving the Warm Heart of Africa's businesses.</div>
+            </div>
+          </div>
+          <div class="coverage-item" role="listitem">
+            <div class="coverage-dot" style="background:#EEF4FF" aria-hidden="true">
+              <svg width="16" height="16" style="color:#003E91"><use href="#i-map"/></svg>
+            </div>
+            <div>
+              <div class="coverage-name">Mozambique <span class="coverage-badge">Coverage Zone</span></div>
+              <div class="coverage-role">Coastal and inland logistics along the Indian Ocean corridor.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FLEET ─── -->
+<section class="fleet-section" id="fleet" aria-labelledby="fleet-heading">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-badge">Our Fleet</span>
+      <h2 class="section-title" id="fleet-heading">The Tools That Move Your Cargo</h2>
+      <p class="section-desc">Modern, well-maintained equipment operated by experienced professionals — ready for any logistics challenge.</p>
+    </div>
+    <div class="fleet-grid">
+      <article class="fleet-card reveal">
+        <div class="fleet-visual" aria-hidden="true">
+          <svg class="fleet-icon-bg-large" width="90" height="90"><use href="#i-truck"/></svg>
+          <div class="fleet-icon-box"><svg width="32" height="32" style="color:#fff"><use href="#i-truck"/></svg></div>
+        </div>
+        <div class="fleet-body">
+          <h3 class="fleet-title">Truck Fleet</h3>
+          <p class="fleet-desc">Our long-haul truck fleet is maintained to the highest standards, ensuring reliable freight movement across all four countries in our network.</p>
+          <ul class="fleet-points" aria-label="Truck Fleet capabilities">
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Long-haul transportation</li>
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Regional distribution</li>
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Dedicated freight solutions</li>
+          </ul>
+        </div>
+      </article>
+      <article class="fleet-card reveal d1">
+        <div class="fleet-visual" aria-hidden="true">
+          <svg class="fleet-icon-bg-large" width="90" height="90"><use href="#i-package"/></svg>
+          <div class="fleet-icon-box"><svg width="32" height="32" style="color:#fff"><use href="#i-package"/></svg></div>
+        </div>
+        <div class="fleet-body">
+          <h3 class="fleet-title">Container Logistics</h3>
+          <p class="fleet-desc">Secure container handling for cross-border cargo, with expertise in customs clearance and bonded freight management across the region.</p>
+          <ul class="fleet-points" aria-label="Container Logistics capabilities">
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Secure cargo handling</li>
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Cross-border transportation</li>
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Timely delivery guaranteed</li>
+          </ul>
+        </div>
+      </article>
+      <article class="fleet-card reveal d2">
+        <div class="fleet-visual" aria-hidden="true">
+          <svg class="fleet-icon-bg-large" width="90" height="90"><use href="#i-boxes"/></svg>
+          <div class="fleet-icon-box"><svg width="32" height="32" style="color:#fff"><use href="#i-boxes"/></svg></div>
+        </div>
+        <div class="fleet-body">
+          <h3 class="fleet-title">Material Handling</h3>
+          <p class="fleet-desc">Specialized equipment and trained operators for efficient cargo movement, warehouse support, and yard operations at scale.</p>
+          <ul class="fleet-points" aria-label="Material Handling capabilities">
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Forklift operations</li>
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Warehouse support</li>
+            <li><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg>Efficient cargo movement</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST ─── -->
+<section class="trust-section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-badge">Why Choose Us</span>
+      <h2 class="section-title" id="trust-heading">Why Businesses Choose<br>Kivesi Logistics</h2>
+    </div>
+    <div class="trust-cards-grid" role="list">
+      <div class="trust-card reveal" role="listitem">
+        <div class="trust-icon-box" aria-hidden="true"><svg width="24" height="24"><use href="#i-zap"/></svg></div>
+        <h3 class="trust-card-title">Fast Delivery</h3>
+        <p class="trust-card-desc">We move freight with urgency, meeting deadlines that matter to your business operations and your customers.</p>
+      </div>
+      <div class="trust-card reveal d1" role="listitem">
+        <div class="trust-icon-box" aria-hidden="true"><svg width="24" height="24"><use href="#i-shield"/></svg></div>
+        <h3 class="trust-card-title">Professional Handling</h3>
+        <p class="trust-card-desc">Every shipment treated with care — proper loading, securing, and documentation maintained throughout transit.</p>
+      </div>
+      <div class="trust-card reveal d2" role="listitem">
+        <div class="trust-icon-box" aria-hidden="true"><svg width="24" height="24"><use href="#i-globe"/></svg></div>
+        <h3 class="trust-card-title">Cross-Border Expertise</h3>
+        <p class="trust-card-desc">Deep knowledge of East African customs, regulations, and established cross-border trade corridors.</p>
+      </div>
+      <div class="trust-card reveal d3" role="listitem">
+        <div class="trust-icon-box" aria-hidden="true"><svg width="24" height="24"><use href="#i-headphones"/></svg></div>
+        <h3 class="trust-card-title">Customer-Focused Service</h3>
+        <p class="trust-card-desc">Dedicated support from our responsive team at every step of your shipment's journey to destination.</p>
+      </div>
+    </div>
+    <div class="compliance-box reveal">
+      <div class="compliance-label">Registered &amp; Compliant</div>
+      <div class="badges-row" role="list">
+        <div class="badge-pill" role="listitem">
+          <div class="badge-icon-box" aria-hidden="true"><svg width="20" height="20"><use href="#i-award"/></svg></div>
+          <div>
+            <div class="badge-name">TRA Registered</div>
+            <div class="badge-sub">Tanzania Revenue Authority</div>
+          </div>
+        </div>
+        <div class="badge-pill" role="listitem">
+          <div class="badge-icon-box" aria-hidden="true"><svg width="20" height="20"><use href="#i-award"/></svg></div>
+          <div>
+            <div class="badge-name">TPA Registered</div>
+            <div class="badge-sub">Tanzania Ports Authority</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUOTE ─── -->
+<section class="quote-section" id="quote" aria-labelledby="quote-heading">
+  <div class="container">
+    <!-- Conversion strip -->
+    <div class="conversion-strip reveal" role="region" aria-label="Contact us today">
+      <h3 class="conv-title">Need a Logistics Partner You Can Trust?</h3>
+      <p class="conv-desc">Get in touch today and discover reliable transportation and distribution solutions tailored to your business.</p>
+      <div class="conv-btns">
+        <a href="tel:+255689583281" class="conv-btn-white" aria-label="Call KIVESI LOGISTICS now">
+          <svg width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>Call Now
+        </a>
+        <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" class="conv-btn-outline" aria-label="WhatsApp KIVESI LOGISTICS">
+          <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp Us
+        </a>
+      </div>
+    </div>
+
+    <div class="section-center reveal">
+      <span class="section-badge">Request a Quote</span>
+      <h2 class="section-title" id="quote-heading">Get a Custom Logistics Quote</h2>
+      <p class="section-desc">Fill in your shipment details and our team will respond within one business day.</p>
+    </div>
+
+    <!-- FORM BOX -->
+    <div class="reveal" id="quote-wrapper">
+      <div class="quote-form-box" id="quote-form-box" role="region" aria-label="Quote request form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="f-name">Full Name <span aria-hidden="true">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-users"/></svg>
+              <input class="form-control" type="text" id="f-name" name="name" placeholder="John Mwangi" autocomplete="name" required aria-required="true"/>
+            </div>
+            <div class="field-error" id="e-name" role="alert" aria-live="polite" style="display:none">
+              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-company">Company Name</label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-building"/></svg>
+              <input class="form-control" type="text" id="f-company" name="company" placeholder="Your Company Ltd" autocomplete="organization"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email Address <span aria-hidden="true">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-mail"/></svg>
+              <input class="form-control" type="email" id="f-email" name="email" placeholder="john@company.com" autocomplete="email" required aria-required="true"/>
+            </div>
+            <div class="field-error" id="e-email" role="alert" aria-live="polite" style="display:none">
+              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Phone Number <span aria-hidden="true">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-phone"/></svg>
+              <input class="form-control" type="tel" id="f-phone" name="phone" placeholder="+255 700 000 000" autocomplete="tel" required aria-required="true"/>
+            </div>
+            <div class="field-error" id="e-phone" role="alert" aria-live="polite" style="display:none">
+              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-pickup">Pickup Location <span aria-hidden="true">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-map"/></svg>
+              <input class="form-control" type="text" id="f-pickup" name="pickup" placeholder="e.g. Dar es Salaam" required aria-required="true"/>
+            </div>
+            <div class="field-error" id="e-pickup" role="alert" aria-live="polite" style="display:none">
+              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-delivery">Delivery Location <span aria-hidden="true">*</span></label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-arrow"/></svg>
+              <input class="form-control" type="text" id="f-delivery" name="delivery" placeholder="e.g. Lusaka, Zambia" required aria-required="true"/>
+            </div>
+            <div class="field-error" id="e-delivery" role="alert" aria-live="polite" style="display:none">
+              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-cargo">Cargo Type</label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-package"/></svg>
+              <input class="form-control" type="text" id="f-cargo" name="cargo" placeholder="e.g. Electronics, Machinery"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="f-weight">Estimated Weight (kg)</label>
+            <div class="input-wrap">
+              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-bar-chart"/></svg>
+              <input class="form-control" type="text" id="f-weight" name="weight" placeholder="e.g. 5000"/>
+            </div>
+          </div>
+        </div>
+        <!-- Message -->
+        <div class="form-group" style="margin-bottom:24px">
+          <label for="f-message">Additional Information</label>
+          <div class="input-wrap textarea-wrap">
+            <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-mail"/></svg>
+            <textarea class="form-control form-textarea" id="f-message" name="message" placeholder="Any special requirements, cargo details, or questions you'd like to share..." rows="4"></textarea>
+          </div>
+        </div>
+        <button type="button" class="submit-btn" id="submit-btn" onclick="submitQuote()" aria-label="Submit quote request">
+          Send Quote Request
+          <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <!-- NOTE: To connect to Formspree, replace the onclick with a real form action:
+             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+             Or use EmailJS: emailjs.send('service_id','template_id', formData)
+        -->
+      </div>
+
+      <!-- SUCCESS STATE (hidden by default) -->
+      <div id="quote-success" class="quote-form-box success-state" style="display:none" role="alert" aria-live="polite">
+        <div class="success-icon-box" aria-hidden="true">
+          <svg width="32" height="32"><use href="#i-check-circle"/></svg>
+        </div>
+        <h3 class="success-title">Quote Request Received!</h3>
+        <p class="success-desc">Thank you for getting in touch. Our logistics team will review your details and respond within one business day. You can also reach us immediately on WhatsApp.</p>
+        <button type="button" class="reset-btn" onclick="resetQuote()">Submit Another Request</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact-section" id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="section-center reveal">
+      <span class="section-badge">Get in Touch</span>
+      <h2 class="section-title" id="contact-heading">Contact Our Team</h2>
+      <p class="section-desc">Ready to move your cargo? Reach out through any channel below. Our team is available 24/7.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Contact Cards -->
+      <div class="contact-cards reveal">
+        <div class="contact-card">
+          <div class="contact-card-icon" aria-hidden="true"><svg width="20" height="20"><use href="#i-phone"/></svg></div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+255 689 583 281</div>
+          </div>
+          <a href="tel:+255689583281" class="contact-action-btn" aria-label="Call KIVESI LOGISTICS">Call</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon" aria-hidden="true"><svg width="20" height="20"><use href="#i-wa"/></svg></div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">+255 689 583 281</div>
+          </div>
+          <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" class="contact-action-btn" aria-label="Message KIVESI LOGISTICS on WhatsApp">Message</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon" aria-hidden="true"><svg width="20" height="20"><use href="#i-mail"/></svg></div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">josephinenicodemus05@gmail.com</div>
+          </div>
+          <a href="mailto:josephinenicodemus05@gmail.com" class="contact-action-btn" aria-label="Email KIVESI LOGISTICS">Email</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon" aria-hidden="true"><svg width="20" height="20"><use href="#i-map"/></svg></div>
+          <div>
+            <div class="contact-label">Office Address</div>
+            <div class="contact-value">Tabata Campo, Dar es Salaam, Tanzania</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="reveal d1">
+        <div class="map-container">
+          <iframe
+            src="https://maps.google.com/maps?q=Tabata+Campo,Dar+es+Salaam,Tanzania&output=embed&z=13"
+            title="KIVESI LOGISTICS Office Location — Tabata Campo, Dar es Salaam"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Google Maps showing KIVESI LOGISTICS office in Tabata Campo, Dar es Salaam"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main><!-- end #main-content -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer id="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <svg viewBox="0 0 210 52" style="height:38px;width:auto" xmlns="http://www.w3.org/2000/svg" aria-label="KIVESI LOGISTICS">
+          <rect x="2" y="8" width="7" height="36" rx="2" fill="#fff"/>
+          <line x1="9" y1="8" x2="25" y2="24" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          <line x1="9" y1="44" x2="25" y2="24" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+          <line x1="23" y1="18" x2="36" y2="24" stroke="rgba(255,255,255,.5)" stroke-width="4" stroke-linecap="round"/>
+          <line x1="23" y1="30" x2="36" y2="24" stroke="rgba(255,255,255,.5)" stroke-width="4" stroke-linecap="round"/>
+          <text x="44" y="24" fill="#fff" font-family="Inter,Arial,sans-serif" font-weight="900" font-size="18" letter-spacing="2.5">KIVESI</text>
+          <text x="44" y="40" fill="rgba(255,255,255,.55)" font-family="Inter,Arial,sans-serif" font-weight="500" font-size="9" letter-spacing="4.5">LOGISTICS</text>
+        </svg>
+        <p>Delivering Excellence Across Borders — East and Central Africa's trusted logistics partner since 2024.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><button onclick="smoothGo('home')">Home</button></li>
+          <li><button onclick="smoothGo('about')">About</button></li>
+          <li><button onclick="smoothGo('services')">Services</button></li>
+          <li><button onclick="smoothGo('industries')">Industries</button></li>
+          <li><button onclick="smoothGo('fleet')">Fleet</button></li>
+          <li><button onclick="smoothGo('contact')">Contact</button></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><span style="font-size:13px;color:rgba(255,255,255,.48)">Road Freight</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,.48)">Distribution</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,.48)">Cross-Border Logistics</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,.48)">Container Handling</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,.48)">Material Handling</span></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="footer-col-title">Contact Us</div>
+        <div class="footer-contact-row">
+          <svg aria-hidden="true"><use href="#i-phone"/></svg>
+          <a href="tel:+255689583281">+255 689 583 281</a>
+        </div>
+        <div class="footer-contact-row">
+          <svg aria-hidden="true"><use href="#i-wa"/></svg>
+          <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+        </div>
+        <div class="footer-contact-row">
+          <svg aria-hidden="true"><use href="#i-mail"/></svg>
+          <a href="mailto:josephinenicodemus05@gmail.com">josephinenicodemus05@gmail.com</a>
+        </div>
+        <div class="footer-contact-row">
+          <svg aria-hidden="true"><use href="#i-map"/></svg>
+          <span>Tabata Campo, Dar es Salaam, Tanzania</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span class="footer-copy">© <span id="footer-year"></span> KIVESI LOGISTICS. All rights reserved.</span>
+      <span class="footer-copy">TRA &amp; TPA Registered | Dar es Salaam, Tanzania</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ FLOATING WHATSAPP ═══════════ -->
+<a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" id="wa-float" aria-label="Chat with us on WhatsApp">
+  <span class="wa-pulse" aria-hidden="true"></span>
+  <svg width="28" height="28" aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<!-- ═══════════ SR-ONLY UTILITY ═══════════ -->
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+<!-- ═══════════ JAVASCRIPT ═══════════ -->
+<script>
+'use strict';
+
+/* ── FOOTER YEAR ── */
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+/* ── SMOOTH SCROLL ── */
+function smoothGo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function mobileGo(id) {
+  closeMobileMenu();
+  setTimeout(() => smoothGo(id), 60);
+}
+
+/* ── MOBILE MENU ── */
+let menuOpen = false;
+function toggleMobileMenu() {
+  menuOpen = !menuOpen;
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById('hamburger-btn');
+  const icon = document.getElementById('ham-icon');
+  nav.classList.toggle('open', menuOpen);
+  nav.setAttribute('aria-hidden', String(!menuOpen));
+  btn.setAttribute('aria-expanded', String(menuOpen));
+  icon.innerHTML = menuOpen
+    ? '<use href="#i-x"/>'
+    : '<use href="#i-menu"/>';
+}
+function closeMobileMenu() {
+  menuOpen = false;
+  const nav = document.getElementById('mobile-nav');
+  nav.classList.remove('open');
+  nav.setAttribute('aria-hidden', 'true');
+  document.getElementById('hamburger-btn').setAttribute('aria-expanded', 'false');
+  document.getElementById('ham-icon').innerHTML = '<use href="#i-menu"/>';
+}
+
+/* ── STICKY HEADER ── */
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 8);
+}, { passive: true });
+
+/* ── SCROLL REVEAL ── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '-60px 0px', threshold: 0.05 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ── ANIMATED COUNTERS ── */
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const start = parseInt(el.dataset.start || '0', 10);
+    counterObserver.unobserve(el);
+
+    const duration = 2000;
+    const startTime = performance.now();
+    const range = target - start;
+
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(start + eased * range) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(tick);
+  });
+}, { rootMargin: '-40px', threshold: 0.3 });
+
+document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+/* ── QUOTE FORM ── */
+function getVal(id) {
+  return (document.getElementById(id) || {}).value || '';
+}
+
+function setError(field, msg) {
+  const input = document.getElementById('f-' + field);
+  const err   = document.getElementById('e-' + field);
+  if (!input || !err) return;
+  if (msg) {
+    input.classList.add('has-error');
+    err.querySelector('span').textContent = msg;
+    err.style.display = 'flex';
+    input.setAttribute('aria-invalid', 'true');
+    input.setAttribute('aria-describedby', 'e-' + field);
+  } else {
+    input.classList.remove('has-error');
+    err.style.display = 'none';
+    input.removeAttribute('aria-invalid');
+    input.removeAttribute('aria-describedby');
+  }
+}
+
+function clearErrors() {
+  ['name','email','phone','pickup','delivery'].forEach(f => setError(f, ''));
+}
+
+function validateEmail(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
+
+function validatePhone(v) {
+  return /^[\+\d\s\-\(\)]{7,20}$/.test(v.trim());
+}
+
+function validateForm() {
+  clearErrors();
+  let valid = true;
+  const name = getVal('f-name').trim();
+  const email = getVal('f-email').trim();
+  const phone = getVal('f-phone').trim();
+  const pickup = getVal('f-pickup').trim();
+  const delivery = getVal('f-delivery').trim();
+
+  if (!name) { setError('name', 'Full name is required'); valid = false; }
+  if (!email) {
+    setError('email', 'Email address is required'); valid = false;
+  } else if (!validateEmail(email)) {
+    setError('email', 'Please enter a valid email address'); valid = false;
+  }
+  if (!phone) {
+    setError('phone', 'Phone number is required'); valid = false;
+  } else if (!validatePhone(phone)) {
+    setError('phone', 'Please enter a valid phone number'); valid = false;
+  }
+  if (!pickup) { setError('pickup', 'Pickup location is required'); valid = false; }
+  if (!delivery) { setError('delivery', 'Delivery location is required'); valid = false; }
+  return valid;
+}
+
+function submitQuote() {
+  if (!validateForm()) {
+    // Focus first error
+    const firstErr = document.querySelector('.form-control.has-error');
+    if (firstErr) firstErr.focus();
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = `
+    <svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16" aria-hidden="true">
+      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+    </svg>
+    Sending...
+  `;
+
+  /*
+   * ═══════════════════════════════════════════════════════
+   * INTEGRATION OPTIONS:
+   *
+   * OPTION A — Formspree (no backend needed):
+   *   1. Go to formspree.io and create a free account
+   *   2. Create a new form and get your form ID
+   *   3. Replace the setTimeout below with:
+   *
+   *   const formData = new FormData();
+   *   formData.append('name', getVal('f-name'));
+   *   formData.append('email', getVal('f-email'));
+   *   // ... add other fields
+   *   fetch('https://formspree.io/f/YOUR_FORM_ID', {
+   *     method: 'POST', body: formData,
+   *     headers: { 'Accept': 'application/json' }
+   *   }).then(r => r.ok ? showSuccess() : showFormError());
+   *
+   * OPTION B — EmailJS (client-side email):
+   *   1. Sign up at emailjs.com
+   *   2. Add the EmailJS SDK: <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+   *   3. Replace with:
+   *   emailjs.init('YOUR_PUBLIC_KEY');
+   *   emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+   *     from_name: getVal('f-name'), reply_to: getVal('f-email'), ...
+   *   }).then(showSuccess, showFormError);
+   * ═══════════════════════════════════════════════════════
+   */
+
+  // DEMO: Simulated 1.5s submission (remove in production)
+  setTimeout(showSuccess, 1500);
+}
+
+function showSuccess() {
+  document.getElementById('quote-form-box').style.display = 'none';
+  const s = document.getElementById('quote-success');
+  s.style.display = 'block';
+  s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function resetQuote() {
+  const fields = ['f-name','f-company','f-email','f-phone','f-pickup','f-delivery','f-cargo','f-weight','f-message'];
+  fields.forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  clearErrors();
+  const btn = document.getElementById('submit-btn');
+  if (btn) {
+    btn.disabled = false;
+    btn.innerHTML = 'Send Quote Request <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>';
+  }
+  document.getElementById('quote-success').style.display = 'none';
+  document.getElementById('quote-form-box').style.display = 'block';
+}
+
+/* Live validation on blur */
+['name','email','phone','pickup','delivery'].forEach(field => {
+  const el = document.getElementById('f-' + field);
+  if (!el) return;
+  el.addEventListener('blur', () => {
+    const v = el.value.trim();
+    if (field === 'name' && !v) setError('name', 'Full name is required');
+    else if (field === 'email' && !v) setError('email', 'Email address is required');
+    else if (field === 'email' && !validateEmail(v)) setError('email', 'Please enter a valid email address');
+    else if (field === 'phone' && !v) setError('phone', 'Phone number is required');
+    else if (field === 'phone' && !validatePhone(v)) setError('phone', 'Please enter a valid phone number');
+    else if (field === 'pickup' && !v) setError('pickup', 'Pickup location is required');
+    else if (field === 'delivery' && !v) setError('delivery', 'Delivery location is required');
+    else setError(field, '');
+  });
+  el.addEventListener('input', () => {
+    if (el.classList.contains('has-error')) setError(field, '');
+  });
+});
+
+/* Close mobile menu on outside click */
+document.addEventListener('click', (e) => {
+  if (menuOpen && !header.contains(e.target)) closeMobileMenu();
+});
+
+/* Close mobile menu on ESC */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && menuOpen) closeMobileMenu();
+});
+</script>
+</body>
+</html>
