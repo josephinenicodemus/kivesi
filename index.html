@@ -33,7 +33,7 @@
   "foundingDate": "2024",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Tabata dampo",
+    "streetAddress": "Tabata Campo",
     "addressLocality": "Dar es Salaam",
     "addressCountry": "TZ"
   },
@@ -52,6 +52,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
 <style>
 /* ═══════════════════════════════════════════
@@ -1377,111 +1379,216 @@ textarea.form-control{
     <div class="section-center reveal">
       <span class="section-badge">Request a Quote</span>
       <h2 class="section-title" id="quote-heading">Get a Custom Logistics Quote</h2>
-      <p class="section-desc">Fill in your shipment details and our team will respond within one business day.</p>
+      <p class="section-desc">Fill in your shipment details and we'll send it directly to WhatsApp for instant processing.</p>
     </div>
 
-    <!-- FORM BOX -->
-    <div class="reveal" id="quote-wrapper">
-      <div class="quote-form-box" id="quote-form-box" role="region" aria-label="Quote request form">
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="f-name">Full Name <span aria-hidden="true">*</span></label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-users"/></svg>
-              <input class="form-control" type="text" id="f-name" name="name" placeholder="John Mwangi" autocomplete="name" required aria-required="true"/>
-            </div>
-            <div class="field-error" id="e-name" role="alert" aria-live="polite" style="display:none">
-              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-company">Company Name</label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-building"/></svg>
-              <input class="form-control" type="text" id="f-company" name="company" placeholder="Your Company Ltd" autocomplete="organization"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-email">Email Address <span aria-hidden="true">*</span></label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-mail"/></svg>
-              <input class="form-control" type="email" id="f-email" name="email" placeholder="john@company.com" autocomplete="email" required aria-required="true"/>
-            </div>
-            <div class="field-error" id="e-email" role="alert" aria-live="polite" style="display:none">
-              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-phone">Phone Number <span aria-hidden="true">*</span></label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-phone"/></svg>
-              <input class="form-control" type="tel" id="f-phone" name="phone" placeholder="+255 700 000 000" autocomplete="tel" required aria-required="true"/>
-            </div>
-            <div class="field-error" id="e-phone" role="alert" aria-live="polite" style="display:none">
-              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-pickup">Pickup Location <span aria-hidden="true">*</span></label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-map"/></svg>
-              <input class="form-control" type="text" id="f-pickup" name="pickup" placeholder="e.g. Dar es Salaam" required aria-required="true"/>
-            </div>
-            <div class="field-error" id="e-pickup" role="alert" aria-live="polite" style="display:none">
-              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-delivery">Delivery Location <span aria-hidden="true">*</span></label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-arrow"/></svg>
-              <input class="form-control" type="text" id="f-delivery" name="delivery" placeholder="e.g. Lusaka, Zambia" required aria-required="true"/>
-            </div>
-            <div class="field-error" id="e-delivery" role="alert" aria-live="polite" style="display:none">
-              <svg aria-hidden="true"><use href="#i-alert"/></svg><span></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-cargo">Cargo Type</label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-package"/></svg>
-              <input class="form-control" type="text" id="f-cargo" name="cargo" placeholder="e.g. Electronics, Machinery"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-weight">Estimated Weight (kg)</label>
-            <div class="input-wrap">
-              <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-bar-chart"/></svg>
-              <input class="form-control" type="text" id="f-weight" name="weight" placeholder="e.g. 5000"/>
-            </div>
-          </div>
+    <!-- TAILWIND FORM BOX -->
+    <div class="reveal max-w-4xl mx-auto" id="quote-wrapper">
+      <!-- Form Box -->
+      <div id="quote-form-box" class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+        <!-- Form Header -->
+        <div class="bg-gradient-to-r from-blue-50 to-blue-100 px-8 py-6 border-b border-blue-200">
+          <h3 class="text-xl font-bold text-gray-900 flex items-center gap-3">
+            <span class="material-icons text-blue-600" style="font-size:28px">description</span>
+            Shipment Details
+          </h3>
         </div>
-        <!-- Message -->
-        <div class="form-group" style="margin-bottom:24px">
-          <label for="f-message">Additional Information</label>
-          <div class="input-wrap textarea-wrap">
-            <svg class="input-icon" aria-hidden="true" width="16" height="16"><use href="#i-mail"/></svg>
-            <textarea class="form-control form-textarea" id="f-message" name="message" placeholder="Any special requirements, cargo details, or questions you'd like to share..." rows="4"></textarea>
+
+        <!-- Form Content -->
+        <form id="quoteForm" class="p-8 space-y-6" role="region" aria-label="Quote request form">
+          <!-- Row 1: Name & Company -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label for="f-name" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-blue-600" style="font-size:20px">person</span>
+                Full Name <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="f-name" 
+                name="name" 
+                placeholder="John Mwangi" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+                required 
+                autocomplete="name"
+              />
+              <div id="e-name" class="text-red-500 text-sm mt-1 hidden flex items-center gap-1">
+                <span class="material-icons" style="font-size:16px">error</span><span></span>
+              </div>
+            </div>
+
+            <div>
+              <label for="f-company" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-blue-600" style="font-size:20px">business</span>
+                Company Name
+              </label>
+              <input 
+                type="text" 
+                id="f-company" 
+                name="company" 
+                placeholder="Your Company Ltd" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+                autocomplete="organization"
+              />
+            </div>
           </div>
-        </div>
-        <button type="button" class="submit-btn" id="submit-btn" onclick="submitQuote()" aria-label="Submit quote request">
-          Send Quote Request
-          <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </button>
-        <!-- NOTE: To connect to Formspree, replace the onclick with a real form action:
-             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-             Or use EmailJS: emailjs.send('service_id','template_id', formData)
-        -->
+
+          <!-- Row 2: Email & Phone -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label for="f-email" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-blue-600" style="font-size:20px">mail</span>
+                Email Address <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="f-email" 
+                name="email" 
+                placeholder="john@company.com" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+                required 
+                autocomplete="email"
+              />
+              <div id="e-email" class="text-red-500 text-sm mt-1 hidden flex items-center gap-1">
+                <span class="material-icons" style="font-size:16px">error</span><span></span>
+              </div>
+            </div>
+
+            <div>
+              <label for="f-phone" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-blue-600" style="font-size:20px">phone</span>
+                Phone Number <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="tel" 
+                id="f-phone" 
+                name="phone" 
+                placeholder="+255 700 000 000" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+                required 
+                autocomplete="tel"
+              />
+              <div id="e-phone" class="text-red-500 text-sm mt-1 hidden flex items-center gap-1">
+                <span class="material-icons" style="font-size:16px">error</span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: Pickup & Delivery -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label for="f-pickup" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-green-600" style="font-size:20px">location_on</span>
+                Pickup Location <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="f-pickup" 
+                name="pickup" 
+                placeholder="e.g. Dar es Salaam" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+                required
+              />
+              <div id="e-pickup" class="text-red-500 text-sm mt-1 hidden flex items-center gap-1">
+                <span class="material-icons" style="font-size:16px">error</span><span></span>
+              </div>
+            </div>
+
+            <div>
+              <label for="f-delivery" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-orange-600" style="font-size:20px">local_shipping</span>
+                Delivery Location <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="f-delivery" 
+                name="delivery" 
+                placeholder="e.g. Lusaka, Zambia" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+                required
+              />
+              <div id="e-delivery" class="text-red-500 text-sm mt-1 hidden flex items-center gap-1">
+                <span class="material-icons" style="font-size:16px">error</span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4: Cargo & Weight -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label for="f-cargo" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-purple-600" style="font-size:20px">inventory_2</span>
+                Cargo Type
+              </label>
+              <input 
+                type="text" 
+                id="f-cargo" 
+                name="cargo" 
+                placeholder="e.g. Electronics, Machinery" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+              />
+            </div>
+
+            <div>
+              <label for="f-weight" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+                <span class="material-icons text-red-600" style="font-size:20px">scale</span>
+                Weight (kg)
+              </label>
+              <input 
+                type="text" 
+                id="f-weight" 
+                name="weight" 
+                placeholder="e.g. 5000" 
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400"
+              />
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="f-message" class="block text-sm font-600 text-gray-700 mb-2 flex items-center gap-2">
+              <span class="material-icons text-cyan-600" style="font-size:20px">chat_bubble</span>
+              Additional Information
+            </label>
+            <textarea 
+              id="f-message" 
+              name="message" 
+              rows="4" 
+              placeholder="Any special requirements, cargo details, or questions you'd like to share..." 
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none text-gray-900 placeholder-gray-400 resize-vertical"
+            ></textarea>
+          </div>
+
+          <!-- Button -->
+          <button 
+            type="button" 
+            id="submit-btn" 
+            onclick="submitQuoteWhatsApp()" 
+            class="w-full md:w-auto bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            <span class="material-icons" style="font-size:20px">send</span>
+            Send to WhatsApp
+          </button>
+        </form>
       </div>
 
       <!-- SUCCESS STATE (hidden by default) -->
-      <div id="quote-success" class="quote-form-box success-state" style="display:none" role="alert" aria-live="polite">
-        <div class="success-icon-box" aria-hidden="true">
-          <svg width="32" height="32"><use href="#i-check-circle"/></svg>
+      <div id="quote-success" class="hidden bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+        <div class="bg-gradient-to-r from-green-50 to-green-100 px-8 py-12 text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-green-600 text-white rounded-full mb-4">
+            <span class="material-icons" style="font-size:32px">check_circle</span>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Quote Request Sent!</h3>
+          <p class="text-gray-600 mb-6 max-w-md mx-auto">Your shipment details have been sent to WhatsApp. Our logistics team will review and respond with a custom quote within one business day.</p>
+          <button 
+            type="button" 
+            onclick="resetQuoteForm()" 
+            class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-all"
+          >
+            <span class="material-icons" style="font-size:20px">add</span>
+            Submit Another Request
+          </button>
         </div>
-        <h3 class="success-title">Quote Request Received!</h3>
-        <p class="success-desc">Thank you for getting in touch. Our logistics team will review your details and respond within one business day. You can also reach us immediately on WhatsApp.</p>
-        <button type="button" class="reset-btn" onclick="resetQuote()">Submit Another Request</button>
       </div>
     </div>
 
@@ -1721,7 +1828,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
-/* ── QUOTE FORM ── */
+/* ── QUOTE FORM (WHATSAPP INTEGRATION) ── */
 function getVal(id) {
   return (document.getElementById(id) || {}).value || '';
 }
@@ -1731,13 +1838,13 @@ function setError(field, msg) {
   const err   = document.getElementById('e-' + field);
   if (!input || !err) return;
   if (msg) {
-    input.classList.add('has-error');
+    input.classList.add('border-red-500', 'bg-red-50');
     err.querySelector('span').textContent = msg;
     err.style.display = 'flex';
     input.setAttribute('aria-invalid', 'true');
     input.setAttribute('aria-describedby', 'e-' + field);
   } else {
-    input.classList.remove('has-error');
+    input.classList.remove('border-red-500', 'bg-red-50');
     err.style.display = 'none';
     input.removeAttribute('aria-invalid');
     input.removeAttribute('aria-describedby');
@@ -1781,54 +1888,59 @@ function validateForm() {
   return valid;
 }
 
-function submitQuote() {
+function submitQuoteWhatsApp() {
   if (!validateForm()) {
-    // Focus first error
-    const firstErr = document.querySelector('.form-control.has-error');
+    const firstErr = document.querySelector('input[aria-invalid="true"]');
     if (firstErr) firstErr.focus();
     return;
   }
 
+  // Build WhatsApp message
+  const name = getVal('f-name');
+  const company = getVal('f-company');
+  const email = getVal('f-email');
+  const phone = getVal('f-phone');
+  const pickup = getVal('f-pickup');
+  const delivery = getVal('f-delivery');
+  const cargo = getVal('f-cargo');
+  const weight = getVal('f-weight');
+  const message = getVal('f-message');
+
+  const waMessage = `*📋 QUOTE REQUEST FROM WEBSITE*
+
+*👤 Shipper Details:*
+Name: ${name}
+${company ? `Company: ${company}\n` : ''}Email: ${email}
+Phone: ${phone}
+
+*📍 Route:*
+Pickup: ${pickup}
+Delivery: ${delivery}
+
+*📦 Cargo Details:*
+${cargo ? `Type: ${cargo}\n` : ''}${weight ? `Weight: ${weight}kg\n` : ''}
+${message ? `*Additional Info:*\n${message}\n` : ''}
+*Please provide a quote for the above shipment.*
+
+---
+_Sent via KIVESI LOGISTICS Website_`;
+
+  // Encode and open WhatsApp
+  const waLink = `https://wa.me/255689583281?text=${encodeURIComponent(waMessage)}`;
+  
+  // Show loading state
   const btn = document.getElementById('submit-btn');
+  const originalHTML = btn.innerHTML;
   btn.disabled = true;
-  btn.innerHTML = `
-    <svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16" aria-hidden="true">
-      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-    </svg>
-    Sending...
-  `;
+  btn.innerHTML = `<span class="material-icons animate-spin" style="font-size:20px">sync</span> Opening WhatsApp...`;
 
-  /*
-   * ═══════════════════════════════════════════════════════
-   * INTEGRATION OPTIONS:
-   *
-   * OPTION A — Formspree (no backend needed):
-   *   1. Go to formspree.io and create a free account
-   *   2. Create a new form and get your form ID
-   *   3. Replace the setTimeout below with:
-   *
-   *   const formData = new FormData();
-   *   formData.append('name', getVal('f-name'));
-   *   formData.append('email', getVal('f-email'));
-   *   // ... add other fields
-   *   fetch('https://formspree.io/f/YOUR_FORM_ID', {
-   *     method: 'POST', body: formData,
-   *     headers: { 'Accept': 'application/json' }
-   *   }).then(r => r.ok ? showSuccess() : showFormError());
-   *
-   * OPTION B — EmailJS (client-side email):
-   *   1. Sign up at emailjs.com
-   *   2. Add the EmailJS SDK: <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-   *   3. Replace with:
-   *   emailjs.init('YOUR_PUBLIC_KEY');
-   *   emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-   *     from_name: getVal('f-name'), reply_to: getVal('f-email'), ...
-   *   }).then(showSuccess, showFormError);
-   * ═══════════════════════════════════════════════════════
-   */
-
-  // DEMO: Simulated 1.5s submission (remove in production)
-  setTimeout(showSuccess, 1500);
+  // Small delay for UX, then open WhatsApp
+  setTimeout(() => {
+    window.open(waLink, '_blank');
+    showSuccess();
+    btn.disabled = false;
+    btn.innerHTML = originalHTML;
+  }, 500);
 }
 
 function showSuccess() {
@@ -1838,17 +1950,13 @@ function showSuccess() {
   s.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-function resetQuote() {
+function resetQuoteForm() {
   const fields = ['f-name','f-company','f-email','f-phone','f-pickup','f-delivery','f-cargo','f-weight','f-message'];
   fields.forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
   clearErrors();
-  const btn = document.getElementById('submit-btn');
-  if (btn) {
-    btn.disabled = false;
-    btn.innerHTML = 'Send Quote Request <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>';
-  }
   document.getElementById('quote-success').style.display = 'none';
   document.getElementById('quote-form-box').style.display = 'block';
+  document.getElementById('f-name').focus();
 }
 
 /* Live validation on blur */
@@ -1867,9 +1975,13 @@ function resetQuote() {
     else setError(field, '');
   });
   el.addEventListener('input', () => {
-    if (el.classList.contains('has-error')) setError(field, '');
+    if (el.classList.contains('border-red-500')) setError(field, '');
   });
 });
+
+/* Legacy functions for backward compatibility */
+function submitQuote() { submitQuoteWhatsApp(); }
+function resetQuote() { resetQuoteForm(); }
 
 /* Close mobile menu on outside click */
 document.addEventListener('click', (e) => {
