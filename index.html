@@ -21,7 +21,6 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="KIVESI LOGISTICS — Delivering Excellence Across Borders"/>
 <meta name="twitter:description" content="Reliable logistics and distribution across East and Central Africa."/>
-<meta name="twitter:image" content="https://kivesilogistics.co.tz/hero.png"/>
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -191,14 +190,13 @@ input,textarea,select{font-family:inherit}
 }
 
 /* ═══════════════════════════════════════════
-   HERO - CLEAN IMAGE ONLY
+   HERO — IMAGE ONLY, NO OVERLAY, NO TEXT
 ═══════════════════════════════════════════ */
 .hero-section{
   position:relative;
   width:100%;
-  min-height:100vh;
+  height:100vh;
   overflow:hidden;
-  background:linear-gradient(135deg, #001840 0%, #003E91 100%);
   padding-top:68px;
 }
 
@@ -206,55 +204,47 @@ input,textarea,select{font-family:inherit}
   position:relative;
   width:100%;
   height:calc(100vh - 68px);
-  min-height:600px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg, #001840 0%, #003E91 100%);
+  min-height:500px;
+  overflow:hidden;
+  background:#001840;
 }
 
 .hero-image{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center center;
   display:block;
-  position:absolute;
-  top:0;
-  left:0;
   z-index:1;
 }
 
+/* Fallback shown only when image fails to load */
 .hero-fallback{
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   display:none;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(135deg, #001840 0%, #003E91 100%);
+  background:#001840;
   z-index:2;
   text-align:center;
   color:#fff;
   padding:40px;
 }
-
 .hero-fallback.active{
   display:flex;
 }
-
 .hero-fallback-content h1{
   font-size:clamp(32px,5vw,56px);
   font-weight:900;
-  margin-bottom:16px;
   letter-spacing:2px;
+  margin-bottom:12px;
 }
-
 .hero-fallback-content p{
-  font-size:clamp(16px,2vw,20px);
-  opacity:0.9;
+  font-size:clamp(15px,2vw,20px);
+  opacity:0.82;
 }
 
 /* ═══════════════════════════════════════════
@@ -481,7 +471,7 @@ input,textarea,select{font-family:inherit}
 .badge-sub{font-size:11px;color:var(--gray-400)}
 
 /* ═══════════════════════════════════════════
-   QUOTE FORM - REFINED
+   QUOTE FORM
 ═══════════════════════════════════════════ */
 .quote-section{
   background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);
@@ -735,13 +725,13 @@ textarea.form-input{
 @media(max-width:768px){
   .nav-list,.nav-quote-wrap{display:none}
   .hamburger-btn{display:block}
-  
+
   .hero-section{padding-top:68px}
   .hero-image-container{
     height:calc(100vh - 68px);
-    min-height:400px
+    min-height:380px;
   }
-  
+
   .about-grid,.services-grid,.coverage-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .industries-grid,.fleet-grid,.trust-cards-grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
@@ -755,10 +745,10 @@ textarea.form-input{
 }
 @media(max-width:480px){
   .hero-image-container{
-    min-height:350px
+    min-height:320px;
   }
   .hero-image{
-    object-position:center
+    object-position:center center;
   }
   .quote-form{padding:24px 16px}
   .form-section-title{font-size:16px}
@@ -934,18 +924,19 @@ textarea.form-input{
 <!-- ══════════ MAIN ═══════════ -->
 <main id="main-content">
 
-<!-- ── HERO ── -->
-<section class="hero-section" id="home">
+<!-- ── HERO — IMAGE ONLY, NO TEXT, NO OVERLAY ─── -->
+<section class="hero-section" id="home" aria-label="KIVESI LOGISTICS hero">
   <div class="hero-image-container">
-    <img 
-      src="hero.png" 
-      alt="KIVESI Logistics - Premium logistics and distribution solutions" 
+    <img
+      src="hero.png"
+      alt="KIVESI LOGISTICS — Delivering Excellence Across Borders"
       class="hero-image"
       id="heroImage"
+      fetchpriority="high"
       loading="eager"
-      decoding="async"
     />
-    <div class="hero-fallback" id="heroFallback">
+    <!-- Fallback: shown only if hero.png fails to load -->
+    <div class="hero-fallback" id="heroFallback" aria-hidden="true">
       <div class="hero-fallback-content">
         <h1>KIVESI LOGISTICS</h1>
         <p>Delivering Excellence Across Borders</p>
@@ -1018,7 +1009,7 @@ textarea.form-input{
   </div>
 </section>
 
-<!-- ─── SERVICES ── -->
+<!-- ─── SERVICES ─── -->
 <section class="services-section" id="services" aria-labelledby="services-heading">
   <div class="container">
     <div class="section-center reveal">
@@ -1035,7 +1026,7 @@ textarea.form-input{
           <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Long-haul transportation</li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Cross-border delivery</li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Dedicated freight lanes</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Professional drivers & documentation</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Professional drivers &amp; documentation</li>
         </ul>
       </article>
       <article class="service-card reveal d1">
@@ -1045,7 +1036,7 @@ textarea.form-input{
         <ul class="service-points" aria-label="Distribution features">
           <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Last-mile delivery</li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Hub-and-spoke network</li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Retail & wholesale distribution</li>
+          <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Retail &amp; wholesale distribution</li>
           <li><svg width="16" height="16" aria-hidden="true"><use href="#i-check-circle"/></svg>Scheduled delivery windows</li>
         </ul>
       </article>
@@ -1285,32 +1276,28 @@ textarea.form-input{
 
     <div class="quote-form-wrapper reveal d1">
       <form id="quoteForm" class="quote-form" autocomplete="on" novalidate>
-        
+
         <!-- Personal Information -->
         <div class="form-section">
           <h3 class="form-section-title">
             <span class="material-icons">person</span>
             Personal Information
           </h3>
-          
           <div class="form-grid">
             <div class="form-group">
               <label for="fullName" class="form-label">Full Name <span class="required">*</span></label>
               <input type="text" id="fullName" name="fullName" class="form-input" placeholder="John Mwangi" required autocomplete="name"/>
               <div class="field-error" id="err-fullName"><span class="material-icons">error</span><span></span></div>
             </div>
-
             <div class="form-group">
               <label for="company" class="form-label">Company Name</label>
               <input type="text" id="company" name="company" class="form-input" placeholder="Your Company Ltd" autocomplete="organization"/>
             </div>
-
             <div class="form-group">
               <label for="email" class="form-label">Email Address <span class="required">*</span></label>
               <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com" required autocomplete="email"/>
               <div class="field-error" id="err-email"><span class="material-icons">error</span><span></span></div>
             </div>
-
             <div class="form-group">
               <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
               <input type="tel" id="phone" name="phone" class="form-input" placeholder="+255 700 000 000" required autocomplete="tel"/>
@@ -1325,25 +1312,21 @@ textarea.form-input{
             <span class="material-icons">local_shipping</span>
             Shipment Details
           </h3>
-          
           <div class="form-grid">
             <div class="form-group">
               <label for="pickup" class="form-label">Pickup Location <span class="required">*</span></label>
               <input type="text" id="pickup" name="pickup" class="form-input" placeholder="e.g. Dar es Salaam" required/>
               <div class="field-error" id="err-pickup"><span class="material-icons">error</span><span></span></div>
             </div>
-
             <div class="form-group">
               <label for="delivery" class="form-label">Delivery Location <span class="required">*</span></label>
               <input type="text" id="delivery" name="delivery" class="form-input" placeholder="e.g. Lusaka, Zambia" required/>
               <div class="field-error" id="err-delivery"><span class="material-icons">error</span><span></span></div>
             </div>
-
             <div class="form-group">
               <label for="cargoType" class="form-label">Cargo Type</label>
               <input type="text" id="cargoType" name="cargoType" class="form-input" placeholder="e.g. Electronics, Machinery"/>
             </div>
-
             <div class="form-group">
               <label for="weight" class="form-label">Weight (kg)</label>
               <input type="text" id="weight" name="weight" class="form-input" placeholder="e.g. 5000"/>
@@ -1359,10 +1342,10 @@ textarea.form-input{
           </div>
         </div>
 
-        <!-- Submit Button -->
+        <!-- Submit -->
         <div class="form-actions">
           <button type="button" id="submitBtn" onclick="sendToWhatsApp()" class="btn-whatsapp">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Send to WhatsApp
           </button>
         </div>
@@ -1383,7 +1366,7 @@ textarea.form-input{
   </div>
 </div>
 
-<!-- ─── CONTACT ── -->
+<!-- ─── CONTACT ─── -->
 <section class="contact-section" id="contact" aria-labelledby="contact-heading">
   <div class="container">
     <div class="section-center reveal">
@@ -1528,18 +1511,16 @@ textarea.form-input{
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
 /* ── HERO IMAGE FALLBACK ── */
-const heroImage = document.getElementById('heroImage');
-const heroFallback = document.getElementById('heroFallback');
-
-if (heroImage && heroFallback) {
-  heroImage.addEventListener('error', function() {
-    this.style.display = 'none';
-    heroFallback.classList.add('active');
-  });
-  
-  heroImage.addEventListener('load', function() {
-    heroFallback.classList.remove('active');
-  });
+const heroImg = document.getElementById('heroImage');
+heroImg.addEventListener('error', function () {
+  this.style.display = 'none';
+  const fb = document.getElementById('heroFallback');
+  fb.removeAttribute('aria-hidden');
+  fb.classList.add('active');
+});
+/* If image is already cached and errored before listener attached */
+if (heroImg.complete && !heroImg.naturalWidth) {
+  heroImg.dispatchEvent(new Event('error'));
 }
 
 /* ── SMOOTH SCROLL ── */
@@ -1553,7 +1534,7 @@ function mobileGo(id) {
   setTimeout(() => smoothGo(id), 60);
 }
 
-/* ── MOBILE MENU ─ */
+/* ── MOBILE MENU ── */
 let menuOpen = false;
 function toggleMobileMenu() {
   menuOpen = !menuOpen;
@@ -1620,7 +1601,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
-/* ─ QUOTE FORM - REFINED ─ */
+/* ── QUOTE FORM ── */
 const formData = {
   fullName: '', company: '', email: '', phone: '',
   pickup: '', delivery: '', cargoType: '', weight: '', message: ''
@@ -1628,38 +1609,27 @@ const formData = {
 
 const PHONE_NUMBER = '255689583281';
 
-// Initialize form - load saved data and attach listeners
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const fields = ['fullName','company','email','phone','pickup','delivery','cargoType','weight','message'];
-  
+
   fields.forEach(field => {
     const input = document.getElementById(field);
     if (!input) return;
-    
-    // Load from localStorage (auto-fill)
+
     const saved = localStorage.getItem('kivesi_quote_' + field);
-    if (saved) {
-      input.value = saved;
-      formData[field] = saved;
-    }
-    
-    // Instant capture on input
-    input.addEventListener('input', function() {
+    if (saved) { input.value = saved; formData[field] = saved; }
+
+    input.addEventListener('input', function () {
       formData[field] = this.value;
       localStorage.setItem('kivesi_quote_' + field, this.value);
-      
-      // Clear error on input
       if (this.classList.contains('error')) {
         this.classList.remove('error');
         const errEl = document.getElementById('err-' + field);
         if (errEl) errEl.classList.remove('visible');
       }
     });
-    
-    // Validate on blur
-    input.addEventListener('blur', function() {
-      validateField(field);
-    });
+
+    input.addEventListener('blur', function () { validateField(field); });
   });
 });
 
@@ -1667,10 +1637,10 @@ function validateField(field) {
   const input = document.getElementById(field);
   const errEl = document.getElementById('err-' + field);
   if (!input || !errEl) return true;
-  
+
   const value = input.value.trim();
   let errorMsg = '';
-  
+
   if (['fullName','email','phone','pickup','delivery'].includes(field) && !value) {
     errorMsg = 'This field is required';
   } else if (field === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
@@ -1678,7 +1648,7 @@ function validateField(field) {
   } else if (field === 'phone' && value && !/^[\+\d\s\-\(\)]{7,20}$/.test(value)) {
     errorMsg = 'Please enter a valid phone number';
   }
-  
+
   if (errorMsg) {
     input.classList.add('error');
     errEl.querySelector('span:last-child').textContent = errorMsg;
@@ -1694,17 +1664,12 @@ function validateField(field) {
 function validateForm() {
   const requiredFields = ['fullName','email','phone','pickup','delivery'];
   let isValid = true;
-  
-  requiredFields.forEach(field => {
-    if (!validateField(field)) isValid = false;
-  });
-  
+  requiredFields.forEach(field => { if (!validateField(field)) isValid = false; });
   return isValid;
 }
 
 function sendToWhatsApp() {
   if (!validateForm()) {
-    // Scroll to first error
     const firstError = document.querySelector('.form-input.error');
     if (firstError) {
       firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1712,10 +1677,9 @@ function sendToWhatsApp() {
     }
     return;
   }
-  
+
   const { fullName, company, email, phone, pickup, delivery, cargoType, weight, message } = formData;
-  
-  // Build perfectly formatted WhatsApp message
+
   const waMessage = [
     '🚚 *NEW QUOTE REQUEST*',
     '',
@@ -1740,34 +1704,18 @@ function sendToWhatsApp() {
     '_Sent from KIVESI LOGISTICS Website_',
     'Date: ' + new Date().toLocaleString()
   ].join('\n');
-  
-  const encodedMessage = encodeURIComponent(waMessage);
-  const waURL = 'https://wa.me/' + PHONE_NUMBER + '?text=' + encodedMessage;
-  
-  // Open WhatsApp
-  window.open(waURL, '_blank');
-  
-  // Show success modal
-  setTimeout(() => {
-    document.getElementById('successModal').classList.add('active');
-  }, 300);
-  
-  // Clear form after short delay
-  setTimeout(() => {
-    clearForm();
-  }, 1000);
+
+  window.open('https://wa.me/' + PHONE_NUMBER + '?text=' + encodeURIComponent(waMessage), '_blank');
+
+  setTimeout(() => { document.getElementById('successModal').classList.add('active'); }, 300);
+  setTimeout(() => { clearForm(); }, 1000);
 }
 
 function clearForm() {
   const fields = ['fullName','company','email','phone','pickup','delivery','cargoType','weight','message'];
   fields.forEach(field => {
     const input = document.getElementById(field);
-    if (input) {
-      input.value = '';
-      input.classList.remove('error');
-      localStorage.removeItem('kivesi_quote_' + field);
-      formData[field] = '';
-    }
+    if (input) { input.value = ''; input.classList.remove('error'); localStorage.removeItem('kivesi_quote_' + field); formData[field] = ''; }
     const errEl = document.getElementById('err-' + field);
     if (errEl) errEl.classList.remove('visible');
   });
@@ -1777,21 +1725,15 @@ function closeModal() {
   document.getElementById('successModal').classList.remove('active');
 }
 
-// Close modal on overlay click
-document.getElementById('successModal').addEventListener('click', function(e) {
+document.getElementById('successModal').addEventListener('click', function (e) {
   if (e.target === this) closeModal();
 });
 
-// Close modal on ESC
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closeModal();
-    if (menuOpen) closeMobileMenu();
-  }
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') { closeModal(); if (menuOpen) closeMobileMenu(); }
 });
 
-// Close mobile menu on outside click
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
   if (menuOpen && !header.contains(e.target)) closeMobileMenu();
 });
 </script>
