@@ -15,12 +15,13 @@
 <meta property="og:title" content="KIVESI LOGISTICS — Delivering Excellence Across Borders"/>
 <meta property="og:description" content="Reliable logistics and distribution solutions across Tanzania, DR Congo, Malawi and Mozambique."/>
 <meta property="og:site_name" content="KIVESI LOGISTICS"/>
-<meta property="og:image" content="https://kivesilogistics.co.tz/hero.jpg"/>
+<meta property="og:image" content="https://kivesilogistics.co.tz/hero.png"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="KIVESI LOGISTICS — Delivering Excellence Across Borders"/>
 <meta name="twitter:description" content="Reliable logistics and distribution across East and Central Africa."/>
+<meta name="twitter:image" content="https://kivesilogistics.co.tz/hero.png"/>
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -933,7 +934,7 @@ textarea.form-input{
 <!-- ══════════ MAIN ═══════════ -->
 <main id="main-content">
 
-<!-- ── HERO ─── -->
+<!-- ── HERO ── -->
 <section class="hero-section" id="home">
   <div class="hero-image-container">
     <img 
@@ -941,6 +942,8 @@ textarea.form-input{
       alt="KIVESI Logistics - Premium logistics and distribution solutions" 
       class="hero-image"
       id="heroImage"
+      loading="eager"
+      decoding="async"
     />
     <div class="hero-fallback" id="heroFallback">
       <div class="hero-fallback-content">
@@ -1015,7 +1018,7 @@ textarea.form-input{
   </div>
 </section>
 
-<!-- ─── SERVICES ─── -->
+<!-- ─── SERVICES ── -->
 <section class="services-section" id="services" aria-labelledby="services-heading">
   <div class="container">
     <div class="section-center reveal">
@@ -1380,7 +1383,7 @@ textarea.form-input{
   </div>
 </div>
 
-<!-- ─── CONTACT ─── -->
+<!-- ─── CONTACT ── -->
 <section class="contact-section" id="contact" aria-labelledby="contact-heading">
   <div class="container">
     <div class="section-center reveal">
@@ -1525,10 +1528,19 @@ textarea.form-input{
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
 /* ── HERO IMAGE FALLBACK ── */
-document.getElementById('heroImage').addEventListener('error', function() {
-  this.style.display = 'none';
-  document.getElementById('heroFallback').classList.add('active');
-});
+const heroImage = document.getElementById('heroImage');
+const heroFallback = document.getElementById('heroFallback');
+
+if (heroImage && heroFallback) {
+  heroImage.addEventListener('error', function() {
+    this.style.display = 'none';
+    heroFallback.classList.add('active');
+  });
+  
+  heroImage.addEventListener('load', function() {
+    heroFallback.classList.remove('active');
+  });
+}
 
 /* ── SMOOTH SCROLL ── */
 function smoothGo(id) {
