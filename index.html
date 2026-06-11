@@ -15,6 +15,7 @@
 <meta property="og:title" content="KIVESI LOGISTICS — Delivering Excellence Across Borders"/>
 <meta property="og:description" content="Reliable logistics and distribution solutions across Tanzania, DR Congo, Malawi and Mozambique."/>
 <meta property="og:site_name" content="KIVESI LOGISTICS"/>
+<meta property="og:image" content="https://kivesilogistics.co.tz/hero-image.png"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
@@ -193,65 +194,201 @@ input,textarea,select{font-family:inherit}
 }
 
 /* ═══════════════════════════════════════════
-   HERO
+   HERO - NEW DESIGN
 ═══════════════════════════════════════════ */
 .hero-section{
-  padding-top:68px;min-height:100vh;
-  display:flex;align-items:center;background:#fff
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:linear-gradient(135deg, #001840 0%, #003E91 100%);
 }
-.hero-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:48px;align-items:center;padding:72px 0
+
+.hero-bg-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.4;
+  z-index:0;
 }
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, rgba(0,24,64,0.95) 0%, rgba(0,62,145,0.85) 50%, rgba(0,62,145,0.7) 100%);
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:120px 24px 80px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
 .hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--brand-light);color:var(--brand);
-  padding:8px 16px;border-radius:var(--radius-full);
-  font-size:12px;font-weight:600;letter-spacing:.04em;margin-bottom:24px
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  color:#fff;
+  padding:10px 20px;
+  border-radius:var(--radius-full);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.04em;
+  margin-bottom:32px;
+  border:1px solid rgba(255,255,255,0.2);
 }
-.hero-badge-dot{width:7px;height:7px;background:var(--brand);border-radius:50%}
+
+.hero-badge-dot{
+  width:8px;
+  height:8px;
+  background:#10B981;
+  border-radius:50%;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.7;transform:scale(1.1)}
+}
+
 .hero-h1{
-  font-size:clamp(40px,5.5vw,70px);font-weight:900;
-  line-height:1.03;letter-spacing:-.04em;color:var(--gray-900);margin-bottom:14px
+  font-size:clamp(32px,6vw,64px);
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  color:#fff;
+  margin-bottom:20px;
+  max-width:900px;
 }
-.hero-h1 .accent{color:var(--brand)}
-.hero-statement{
-  font-size:12px;font-weight:700;letter-spacing:.2em;
-  color:var(--brand);text-transform:uppercase;margin-bottom:20px
+
+.hero-h1 .accent{
+  color:#60A5FA;
+  display:block;
 }
+
 .hero-sub{
-  font-size:16px;color:var(--gray-500);line-height:1.72;
-  max-width:480px;margin-bottom:32px
+  font-size:clamp(16px,2.5vw,20px);
+  color:rgba(255,255,255,0.85);
+  line-height:1.6;
+  max-width:600px;
+  margin-bottom:40px;
+  font-weight:400;
 }
-.country-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
-.chip{
-  display:inline-flex;align-items:center;gap:6px;
-  background:#F5F8FF;border:1px solid #C8D5E8;color:var(--brand);
-  padding:6px 14px;border-radius:var(--radius-full);
-  font-size:12px;font-weight:600
+
+.hero-cta-group{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:48px;
 }
-.chip svg{width:12px;height:12px;flex-shrink:0}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
 .btn-primary{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--brand);color:#fff;padding:14px 28px;
-  border-radius:var(--radius-full);font-size:14px;font-weight:700;
-  min-height:52px;transition:opacity .2s
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#fff;
+  color:var(--brand);
+  padding:16px 32px;
+  border-radius:var(--radius-full);
+  font-size:15px;
+  font-weight:700;
+  min-height:56px;
+  transition:all .3s ease;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);
 }
-.btn-primary:hover{opacity:.88}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(0,0,0,0.25);
+  background:var(--brand-light);
+}
+
 .btn-outline{
-  display:inline-flex;align-items:center;gap:8px;
-  border:2px solid var(--brand);color:var(--brand);
-  padding:14px 28px;border-radius:var(--radius-full);
-  font-size:14px;font-weight:700;min-height:52px;transition:background .2s
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:2px solid rgba(255,255,255,0.5);
+  color:#fff;
+  padding:16px 32px;
+  border-radius:var(--radius-full);
+  font-size:15px;
+  font-weight:700;
+  min-height:56px;
+  transition:all .3s ease;
+  backdrop-filter:blur(10px);
 }
-.btn-outline:hover{background:var(--brand-light)}
-.hero-right-wrap{position:relative}
-.hero-bg-accent{
-  position:absolute;top:28px;right:0;width:76%;height:84%;
-  background:#F0F5FF;border-radius:20px;z-index:0
+
+.btn-outline:hover{
+  background:rgba(255,255,255,0.1);
+  border-color:#fff;
+  transform:translateY(-2px);
 }
-.hero-truck-svg{position:relative;z-index:1}
+
+.hero-stats{
+  display:flex;
+  gap:48px;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.15);
+}
+
+.stat-item{
+  text-align:center;
+}
+
+.stat-number{
+  font-size:32px;
+  font-weight:900;
+  color:#fff;
+  line-height:1;
+  margin-bottom:6px;
+}
+
+.stat-label{
+  font-size:13px;
+  color:rgba(255,255,255,0.7);
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.hero-scroll-indicator{
+  position:absolute;
+  bottom:32px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  color:rgba(255,255,255,0.6);
+  font-size:12px;
+  font-weight:500;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}
+  40%{transform:translateX(-50%) translateY(-10px)}
+  60%{transform:translateX(-50%) translateY(-5px)}
+}
 
 /* ═══════════════════════════════════════════
    ABOUT
@@ -684,13 +821,31 @@ textarea.form-control{
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-brand{grid-column:span 2}
 }
+
 @media(max-width:768px){
   .nav-list,.nav-quote-wrap{display:none}
   .hamburger-btn{display:block}
-  .hero-grid{grid-template-columns:1fr;gap:0;padding:48px 0 36px}
-  .hero-right-wrap{order:-1;margin-bottom:12px}
-  .hero-bg-accent{display:none}
-  .hero-sub{max-width:100%}
+  
+  .hero-content{
+    padding:100px 20px 60px;
+  }
+  
+  .hero-stats{
+    gap:32px;
+    flex-direction:column;
+  }
+  
+  .hero-cta-group{
+    flex-direction:column;
+    width:100%;
+    max-width:300px;
+  }
+  
+  .btn-primary,.btn-outline{
+    width:100%;
+    justify-content:center;
+  }
+  
   .about-grid,.services-grid,.coverage-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
   .industries-grid,.fleet-grid,.trust-cards-grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
@@ -702,13 +857,25 @@ textarea.form-control{
   .conversion-strip{padding:40px 28px}
   .quote-form-box{padding:28px 20px}
 }
+
 @media(max-width:480px){
-  .hero-h1{font-size:38px}
-  .cta-row{flex-direction:column}
-  .btn-primary,.btn-outline{width:100%;justify-content:center}
-  .conv-btns{flex-direction:column;align-items:stretch}
-  .conv-btn-white,.conv-btn-outline{justify-content:center}
+  .hero-h1{
+    font-size:28px;
+  }
+  
+  .hero-sub{
+    font-size:15px;
+  }
+  
+  .stat-number{
+    font-size:24px;
+  }
+  
+  .hero-stats{
+    gap:24px;
+  }
 }
+
 @media(prefers-reduced-motion:reduce){
   .reveal{transition:none;opacity:1;transform:none}
   *{animation-duration:.01ms !important;transition-duration:.01ms !important}
@@ -878,155 +1045,59 @@ textarea.form-control{
 
 <!-- ─── HERO ─── -->
 <section class="hero-section" id="home" aria-labelledby="hero-heading">
-  <div class="container">
-    <div class="hero-grid">
-
-      <!-- LEFT: Content -->
-      <div class="reveal">
-        <div class="hero-badge" aria-label="Trusted Logistics Partner Since 2024">
-          <span class="hero-badge-dot" aria-hidden="true"></span>
-          Trusted Logistics Partner Since 2024
-        </div>
-
-        <h1 class="hero-h1" id="hero-heading">
-          Moving Your<br>
-          <span class="accent">Business</span><br>
-          Forward
-        </h1>
-
-        <p class="hero-statement">Delivering Excellence Across Borders</p>
-
-        <p class="hero-sub">
-          Reliable logistics and distribution solutions across Tanzania, Congo, Malawi, and Mozambique — with a commitment to speed, safety, and convenience.
-        </p>
-
-        <div class="country-chips" aria-label="Countries we serve">
-          <span class="chip">
-            <svg aria-hidden="true"><use href="#i-map"/></svg>Tanzania
-          </span>
-          <span class="chip">
-            <svg aria-hidden="true"><use href="#i-map"/></svg>DR Congo
-          </span>
-          <span class="chip">
-            <svg aria-hidden="true"><use href="#i-map"/></svg>Malawi
-          </span>
-          <span class="chip">
-            <svg aria-hidden="true"><use href="#i-map"/></svg>Mozambique
-          </span>
-        </div>
-
-        <div class="cta-row">
-          <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Get a quote on WhatsApp">
-            <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>
-            Get a Quote
-          </a>
-          <a href="tel:+255689583281" class="btn-outline" aria-label="Call KIVESI LOGISTICS">
-            <svg width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>
-            Call Now
-          </a>
-        </div>
+  <!-- Background Image - Replace src with your actual image path -->
+  <img src="hero-logistics.jpg" alt="KIVESI Logistics - Truck, Ship and Air Freight Services" class="hero-bg-image"/>
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content">
+    <div class="reveal">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Trusted Since 2024
       </div>
 
-      <!-- RIGHT: Truck SVG -->
-      <div class="hero-right-wrap reveal d1">
-        <div class="hero-bg-accent" aria-hidden="true"></div>
-        <div class="hero-truck-svg">
-          <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="KIVESI LOGISTICS branded truck illustration" style="width:100%;height:auto">
-            <!-- Ground shadow -->
-            <ellipse cx="340" cy="346" rx="290" ry="9" fill="#E9EEF4"/>
-            <!-- TRAILER -->
-            <rect x="22" y="112" width="420" height="192" rx="7" fill="#003E91"/>
-            <rect x="22" y="112" width="420" height="8" rx="4" fill="#0048A8"/>
-            <rect x="22" y="264" width="420" height="7" fill="#00327A"/>
-            <rect x="22" y="268" width="420" height="3" fill="rgba(255,255,255,.07)"/>
-            <!-- Trailer text -->
-            <text x="232" y="198" text-anchor="middle" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-weight="900" font-size="36" letter-spacing="8">KIVESI</text>
-            <text x="232" y="230" text-anchor="middle" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-weight="400" font-size="13" letter-spacing="7" opacity=".76">LOGISTICS</text>
-            <!-- Trailer seams -->
-            <line x1="22" y1="120" x2="22" y2="264" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
-            <line x1="442" y1="120" x2="442" y2="264" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
-            <line x1="232" y1="120" x2="232" y2="264" stroke="rgba(255,255,255,.05)" stroke-width=".8"/>
-            <!-- Reefer ridges -->
-            <line x1="140" y1="112" x2="140" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-            <line x1="180" y1="112" x2="180" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-            <line x1="280" y1="112" x2="280" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-            <line x1="320" y1="112" x2="320" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-            <line x1="380" y1="112" x2="380" y2="120" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-            <!-- Chassis -->
-            <rect x="22" y="300" width="420" height="12" rx="2" fill="#002060"/>
-            <!-- CAB -->
-            <rect x="434" y="86" width="222" height="228" rx="10" fill="#002A73"/>
-            <!-- Windshield -->
-            <rect x="448" y="100" width="190" height="106" rx="6" fill="#BFDBF7" opacity=".87"/>
-            <line x1="548" y1="100" x2="548" y2="206" stroke="#002060" stroke-width="2.5" opacity=".36"/>
-            <!-- Door -->
-            <rect x="448" y="210" width="190" height="96" fill="#002060"/>
-            <line x1="448" y1="210" x2="638" y2="210" stroke="#001840" stroke-width="2"/>
-            <rect x="462" y="218" width="164" height="46" rx="4" fill="#BFDBF7" opacity=".26"/>
-            <rect x="600" y="248" width="26" height="5" rx="2.5" fill="#003E91"/>
-            <!-- Mirror -->
-            <rect x="637" y="112" width="28" height="16" rx="3" fill="#001840"/>
-            <!-- Air deflector -->
-            <path d="M 434 86 Q 530 56 658 86" fill="#002060"/>
-            <!-- Headlights -->
-            <rect x="657" y="110" width="18" height="15" rx="3" fill="#FEF3C7"/>
-            <rect x="657" y="130" width="18" height="9" rx="2" fill="#FDE68A" opacity=".62"/>
-            <!-- Grille -->
-            <rect x="657" y="148" width="18" height="56" rx="2" fill="#001535"/>
-            <line x1="659" y1="155" x2="673" y2="155" stroke="#003E91" stroke-width="1" opacity=".48"/>
-            <line x1="659" y1="163" x2="673" y2="163" stroke="#003E91" stroke-width="1" opacity=".48"/>
-            <line x1="659" y1="171" x2="673" y2="171" stroke="#003E91" stroke-width="1" opacity=".48"/>
-            <line x1="659" y1="179" x2="673" y2="179" stroke="#003E91" stroke-width="1" opacity=".48"/>
-            <line x1="659" y1="187" x2="673" y2="187" stroke="#003E91" stroke-width="1" opacity=".48"/>
-            <line x1="659" y1="195" x2="673" y2="195" stroke="#003E91" stroke-width="1" opacity=".48"/>
-            <!-- Bumper -->
-            <rect x="657" y="285" width="18" height="28" rx="3" fill="#374151"/>
-            <!-- Steps -->
-            <rect x="452" y="307" width="180" height="10" rx="3" fill="#001535"/>
-            <!-- Exhaust -->
-            <rect x="654" y="42" width="10" height="46" rx="5" fill="#374151"/>
-            <ellipse cx="659" cy="42" rx="6" ry="5" fill="#4B5563"/>
-            <circle cx="659" cy="28" r="5" fill="#D1D5DB" opacity=".28"/>
-            <circle cx="663" cy="17" r="3.5" fill="#D1D5DB" opacity=".15"/>
-            <!-- WHEEL 1 -->
-            <circle cx="112" cy="320" r="35" fill="#1F2937"/>
-            <circle cx="112" cy="320" r="23" fill="#374151"/>
-            <circle cx="112" cy="320" r="9" fill="#9CA3AF"/>
-            <line x1="112" y1="320" x2="132" y2="320" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="112" y1="320" x2="102" y2="303" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="112" y1="320" x2="122" y2="303" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="112" y1="320" x2="92" y2="320" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="112" y1="320" x2="102" y2="337" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="112" y1="320" x2="122" y2="337" stroke="#4B5563" stroke-width="2.5"/>
-            <!-- WHEEL 2 -->
-            <circle cx="222" cy="320" r="35" fill="#1F2937"/>
-            <circle cx="222" cy="320" r="23" fill="#374151"/>
-            <circle cx="222" cy="320" r="9" fill="#9CA3AF"/>
-            <line x1="222" y1="320" x2="242" y2="320" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="222" y1="320" x2="212" y2="303" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="222" y1="320" x2="232" y2="303" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="222" y1="320" x2="202" y2="320" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="222" y1="320" x2="212" y2="337" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="222" y1="320" x2="232" y2="337" stroke="#4B5563" stroke-width="2.5"/>
-            <!-- WHEEL 3 (cab) -->
-            <circle cx="562" cy="320" r="35" fill="#1F2937"/>
-            <circle cx="562" cy="320" r="23" fill="#374151"/>
-            <circle cx="562" cy="320" r="9" fill="#9CA3AF"/>
-            <line x1="562" y1="320" x2="582" y2="320" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="562" y1="320" x2="552" y2="303" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="562" y1="320" x2="572" y2="303" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="562" y1="320" x2="542" y2="320" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="562" y1="320" x2="552" y2="337" stroke="#4B5563" stroke-width="2.5"/>
-            <line x1="562" y1="320" x2="572" y2="337" stroke="#4B5563" stroke-width="2.5"/>
-            <!-- Motion lines -->
-            <line x1="0" y1="196" x2="18" y2="196" stroke="#003E91" stroke-width="2.5" opacity=".3"/>
-            <line x1="0" y1="213" x2="12" y2="213" stroke="#003E91" stroke-width="1.5" opacity=".17"/>
-            <line x1="0" y1="228" x2="21" y2="228" stroke="#003E91" stroke-width="2" opacity=".26"/>
-          </svg>
-        </div>
+      <h1 class="hero-h1" id="hero-heading">
+        Delivering Excellence<br>
+        <span class="accent">Across Borders</span>
+      </h1>
+
+      <p class="hero-sub">
+        Reliable logistics and distribution solutions across Tanzania, DR Congo, Malawi, and Mozambique.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="https://wa.me/255689583281" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>
+          Get a Quote
+        </a>
+        <a href="tel:+255689583281" class="btn-outline">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-phone"/></svg>
+          Call Now
+        </a>
       </div>
 
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Support</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Commitment</div>
+        </div>
+      </div>
     </div>
+  </div>
+  
+  <div class="hero-scroll-indicator">
+    <span>Scroll</span>
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
   </div>
 </section>
 
