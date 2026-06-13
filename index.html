@@ -143,13 +143,9 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .mobile-nav a:hover{background:var(--gray-50);color:var(--accent)}
 .mobile-quote-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);color:#fff;padding:14px;border-radius:var(--radius-full);font-size:14px;font-weight:600;margin-top:12px}
 
-.hero-section{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden}
-.hero-image-container{position:relative;width:100%;height:100%;min-height:600px;overflow:hidden}
+.hero-section{position:relative;width:100%;height:100vh;overflow:hidden}
+.hero-image-container{position:relative;width:100%;height:100vh;overflow:hidden}
 .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,62,145,0.85) 0%, rgba(211,47,47,0.75) 100%);z-index:1}
-.hero-content{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;height:100%;text-align:center;padding:20px}
-.hero-content h1{font-size:clamp(32px,6vw,56px);font-weight:900;color:#fff;margin-bottom:16px;letter-spacing:-0.02em;text-shadow:0 2px 8px rgba(0,0,0,0.3)}
-.hero-content p{font-size:clamp(16px,2.5vw,20px);color:rgba(255,255,255,0.95);max-width:700px;margin:0 auto}
 .hero-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(135deg, var(--brand-dark) 0%, var(--accent-dark) 100%);z-index:2;text-align:center;color:#fff;padding:40px 20px}
 .hero-fallback.active{display:flex}
 
@@ -281,7 +277,6 @@ textarea.form-input{resize:vertical;min-height:100px}
   .contact-grid{grid-template-columns:1fr 1fr;gap:40px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
   .map-container{height:380px}
-  .hero-content h1{font-size:clamp(40px,6vw,64px)}
   .quote-form{padding:36px 32px}
   .btn-whatsapp{width:auto}
   .footer-bottom{flex-direction:row;justify-content:space-between;align-items:center;text-align:left}
@@ -297,7 +292,6 @@ textarea.form-input{resize:vertical;min-height:100px}
   .form-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1.5fr 1fr 1fr 1.3fr}
   .map-container{height:420px}
-  .hero-content h1{font-size:clamp(48px,6vw,72px)}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -376,14 +370,7 @@ textarea.form-input{resize:vertical;min-height:100px}
 
 <section class="hero-section" id="home" aria-label="KIVESI INVESTMENT hero">
   <div class="hero-image-container">
-    <img src="hero.jpg" alt="KIVESI INVESTMENT - Kupeleka Ubora Kupaka Mipaka ya Afrika Mashariki" class="hero-image" id="heroImage" fetchpriority="high" loading="eager" width="1920" height="1080"/>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div>
-        <h1 data-en="Excellence Across Multiple Sectors" data-sw="Ubora katika Sekta Nyingi">Excellence Across Multiple Sectors</h1>
-        <p data-en="Logistics, Food Supply, Events, Real Estate & Spare Parts across East Africa" data-sw="Usafirishaji, Ugavi wa Chakula, Matukio, Mali Isiyohamishika na Vipuri katika Afrika Mashariki">Logistics, Food Supply, Events, Real Estate & Spare Parts across East Africa</p>
-      </div>
-    </div>
+    <img src="hero.jpg" alt="KIVESI INVESTMENT - Professional logistics and diversified services across East Africa" class="hero-image" id="heroImage" fetchpriority="high" loading="eager" width="3840" height="2160"/>
     <div class="hero-fallback" id="heroFallback" aria-hidden="true">
       <div class="hero-fallback-content">
         <h1>KIVESI INVESTMENT (T) LTD</h1>
