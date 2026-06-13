@@ -85,6 +85,8 @@ input,textarea,select{font-family:inherit;font-size:16px}
   --brand-darker:#001840;
   --brand-light:#EEF4FF;
   --accent:#D32F2F;
+  --accent-light:#FFE5E5;
+  --accent-dark:#B71C1C;
   --white:#fff;
   --gray-50:#F9FAFB;
   --gray-100:#F3F4F6;
@@ -105,7 +107,7 @@ input,textarea,select{font-family:inherit;font-size:16px}
 }
 
 .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
-.section-badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.08em;color:var(--brand);text-transform:uppercase;margin-bottom:12px;background:var(--brand-light);padding:6px 16px;border-radius:var(--radius-full)}
+.section-badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.08em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;background:var(--accent-light);padding:6px 16px;border-radius:var(--radius-full)}
 .section-title{font-size:clamp(24px,5vw,36px);font-weight:800;color:var(--gray-900);line-height:1.2;margin-bottom:16px;letter-spacing:-0.02em}
 .section-desc{color:var(--gray-500);line-height:1.7;font-size:15px}
 .section-center{text-align:center;margin-bottom:48px}
@@ -119,95 +121,99 @@ input,textarea,select{font-family:inherit;font-size:16px}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-#site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;transition:box-shadow 0.3s}
-#site-header.scrolled{box-shadow:var(--shadow-sm)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+#site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);transition:box-shadow 0.3s}
+#site-header.scrolled{box-shadow:var(--shadow-md)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
 .site-logo{display:flex;align-items:center;flex-shrink:0}
-.site-logo img{height:40px;width:auto}
+.site-logo img{height:48px;width:auto}
 
 .nav-list{display:none;gap:24px;align-items:center}
 .nav-list a{font-size:14px;font-weight:500;color:var(--gray-700);transition:color 0.2s;padding:4px 0}
-.nav-list a:hover{color:var(--brand)}
-.nav-quote-btn{display:none;align-items:center;gap:6px;background:var(--brand);color:#fff;padding:9px 18px;border-radius:var(--radius-full);font-size:13px;font-weight:600;transition:opacity 0.2s;white-space:nowrap}
+.nav-list a:hover{color:var(--accent)}
+.nav-quote-btn{display:none;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:9px 18px;border-radius:var(--radius-full);font-size:13px;font-weight:600;transition:opacity 0.2s;white-space:nowrap}
 .nav-quote-btn:hover{opacity:0.9}
 .nav-quote-wrap{display:none;align-items:center;gap:12px}
 
 .hamburger-btn{display:flex;padding:8px;border-radius:8px;color:var(--gray-700);align-items:center;justify-content:center}
 .hamburger-btn:hover{background:var(--gray-100)}
 
-.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-top:1px solid var(--gray-100);z-index:99;box-shadow:var(--shadow-md);padding:12px 20px;max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:#fff;border-top:1px solid var(--gray-100);z-index:99;box-shadow:var(--shadow-md);padding:12px 20px;max-height:calc(100vh - 72px);overflow-y:auto}
 .mobile-nav.open{display:block}
 .mobile-nav a{display:block;padding:14px 12px;font-size:15px;font-weight:500;color:var(--gray-700);border-radius:var(--radius-sm);transition:background 0.15s,color 0.15s}
-.mobile-nav a:hover{background:var(--gray-50);color:var(--brand)}
-.mobile-quote-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--brand);color:#fff;padding:14px;border-radius:var(--radius-full);font-size:14px;font-weight:600;margin-top:12px}
+.mobile-nav a:hover{background:var(--gray-50);color:var(--accent)}
+.mobile-quote-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);color:#fff;padding:14px;border-radius:var(--radius-full);font-size:14px;font-weight:600;margin-top:12px}
 
-.hero-section{position:relative;width:100%;height:100vh;min-height:500px;overflow:hidden;padding-top:64px}
-.hero-image-container{position:relative;width:100%;height:calc(100vh - 64px);min-height:436px;overflow:hidden;background:#001840}
+.hero-section{position:relative;width:100%;height:100vh;min-height:600px;overflow:hidden}
+.hero-image-container{position:relative;width:100%;height:100%;min-height:600px;overflow:hidden}
 .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:#001840;z-index:2;text-align:center;color:#fff;padding:40px 20px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,62,145,0.85) 0%, rgba(211,47,47,0.75) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;height:100%;text-align:center;padding:20px}
+.hero-content h1{font-size:clamp(32px,6vw,56px);font-weight:900;color:#fff;margin-bottom:16px;letter-spacing:-0.02em;text-shadow:0 2px 8px rgba(0,0,0,0.3)}
+.hero-content p{font-size:clamp(16px,2.5vw,20px);color:rgba(255,255,255,0.95);max-width:700px;margin:0 auto}
+.hero-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(135deg, var(--brand-dark) 0%, var(--accent-dark) 100%);z-index:2;text-align:center;color:#fff;padding:40px 20px}
 .hero-fallback.active{display:flex}
-.hero-fallback-content h1{font-size:clamp(24px,6vw,44px);font-weight:800;letter-spacing:0.5px;margin-bottom:12px}
-.hero-fallback-content p{font-size:clamp(14px,2.5vw,18px);opacity:0.85}
 
-.about-section{background:var(--gray-50);padding:64px 0}
+.about-section{background:var(--gray-50);padding:80px 0}
 .about-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
-.about-blue-card{background:var(--brand);border-radius:var(--radius-lg);padding:28px;color:#fff;position:relative;overflow:hidden}
+.about-blue-card{background:linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);border-radius:var(--radius-lg);padding:32px;color:#fff;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(0,62,145,0.2)}
 .about-year{font-size:52px;font-weight:800;line-height:1;color:rgba(255,255,255,0.08);margin-bottom:20px}
 .about-stat-row{display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
 .about-stat-row:last-child{border-bottom:none}
-.about-stat-num{font-size:22px;font-weight:800;color:#fff;min-width:56px}
-.about-stat-label{font-size:13px;color:rgba(255,255,255,0.7);font-weight:500}
+.about-stat-num{font-size:24px;font-weight:800;color:#fff;min-width:56px}
+.about-stat-label{font-size:13px;color:rgba(255,255,255,0.8);font-weight:500}
 .strengths-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
-.strength-pill{display:flex;align-items:center;gap:8px;background:var(--brand-light);border-radius:var(--radius-sm);padding:10px 12px;font-size:12px;font-weight:600;color:var(--gray-800)}
-.strength-pill svg{color:var(--brand);flex-shrink:0;width:14px;height:14px}
+.strength-pill{display:flex;align-items:center;gap:8px;background:rgba(211,47,47,0.15);border-radius:var(--radius-sm);padding:10px 12px;font-size:12px;font-weight:600;color:var(--gray-800);border:1px solid rgba(211,47,47,0.2)}
+.strength-pill svg{color:var(--accent);flex-shrink:0;width:14px;height:14px}
 
-.stats-section{background:var(--brand);padding:48px 0}
+.stats-section{background:linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);padding:64px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;text-align:center}
-.stat-number{font-size:clamp(28px,6vw,40px);font-weight:800;color:#fff;line-height:1;margin-bottom:6px}
-.stat-label{font-size:12px;color:rgba(255,255,255,0.7);font-weight:500}
+.stat-number{font-size:clamp(32px,6vw,48px);font-weight:900;color:#fff;line-height:1;margin-bottom:6px;text-shadow:0 2px 4px rgba(0,0,0,0.2)}
+.stat-label{font-size:13px;color:rgba(255,255,255,0.9);font-weight:500}
 
-.divisions-section{background:var(--gray-50);padding:64px 0}
+.divisions-section{background:#fff;padding:80px 0}
 .divisions-grid{display:grid;grid-template-columns:1fr;gap:20px}
-.division-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);transition:transform 0.2s,box-shadow 0.2s}
-.division-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.division-header{background:var(--brand);padding:24px;text-align:center;position:relative}
-.division-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);opacity:0.6}
-.division-icon{width:56px;height:56px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-.division-icon svg{color:#fff;width:28px;height:28px}
-.division-title{font-size:17px;font-weight:700;color:#fff}
-.division-body{padding:24px}
+.division-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--gray-200);transition:transform 0.2s,box-shadow 0.2s;border-top:4px solid var(--accent)}
+.division-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(211,47,47,0.15)}
+.division-header{background:linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);padding:28px;text-align:center;position:relative}
+.division-icon{width:64px;height:64px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px solid rgba(255,255,255,0.3)}
+.division-icon svg{color:#fff;width:32px;height:32px}
+.division-title{font-size:18px;font-weight:800;color:#fff}
+.division-body{padding:28px}
 .division-desc{font-size:14px;color:var(--gray-500);line-height:1.7;margin-bottom:16px}
-.division-features{display:flex;flex-direction:column;gap:8px}
-.division-features li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--gray-700)}
-.division-features svg{color:var(--accent);flex-shrink:0;width:16px;height:16px;margin-top:2px}
+.division-features{display:flex;flex-direction:column;gap:10px}
+.division-features li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--gray-700)}
+.division-features svg{color:var(--accent);flex-shrink:0;width:18px;height:18px;margin-top:1px}
 
-.coverage-section{background:#fff;padding:64px 0}
-.coverage-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
-.coverage-list{display:flex;flex-direction:column;gap:12px;margin-top:24px}
-.coverage-item{display:flex;align-items:flex-start;gap:12px}
-.coverage-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.coverage-dot svg{width:16px;height:16px}
-.coverage-name{font-size:14px;font-weight:700;color:var(--gray-900);margin-bottom:2px;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
-.coverage-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:var(--radius-full);background:var(--brand-light);color:var(--brand);font-weight:600}
-.coverage-role{font-size:12px;color:var(--gray-400)}
+.coverage-section{background:linear-gradient(135deg, var(--gray-50) 0%, var(--accent-light) 100%);padding:80px 0}
+.coverage-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
+.coverage-cards{display:grid;grid-template-columns:1fr;gap:16px}
+.coverage-card{background:#fff;border-radius:var(--radius-lg);padding:24px;border-left:4px solid var(--accent);box-shadow:var(--shadow-sm);transition:transform 0.2s,box-shadow 0.2s}
+.coverage-card:hover{transform:translateX(4px);box-shadow:var(--shadow-md)}
+.coverage-card-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.coverage-icon{width:40px;height:40px;background:linear-gradient(135deg, var(--accent) 0%, var(--brand) 100%);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.coverage-icon svg{color:#fff;width:20px;height:20px}
+.coverage-card-title{font-size:16px;font-weight:800;color:var(--gray-900)}
+.coverage-card-badge{display:inline-block;font-size:10px;padding:2px 10px;border-radius:var(--radius-full);background:var(--accent-light);color:var(--accent);font-weight:700;margin-left:8px}
+.coverage-card-desc{font-size:13px;color:var(--gray-500);line-height:1.6;padding-left:52px}
 
-.quote-section{background:#fff;padding:64px 0}
+.quote-section{background:#fff;padding:80px 0}
 .quote-header{max-width:600px;margin:0 auto 40px;text-align:center}
 .quote-form-wrapper{max-width:700px;margin:0 auto}
-.quote-form{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;border:1px solid var(--gray-200);box-shadow:var(--shadow-sm)}
+.quote-form{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;border:2px solid var(--gray-200);box-shadow:var(--shadow-sm)}
 .form-section{padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid var(--gray-200)}
 .form-section:last-of-type{border-bottom:none;padding-bottom:0;margin-bottom:0}
-.form-section-title{font-size:16px;font-weight:700;color:var(--brand);margin-bottom:16px}
+.form-section-title{font-size:16px;font-weight:700;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.form-section-title::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
 .form-grid{display:grid;grid-template-columns:1fr;gap:16px}
 .form-group{margin-bottom:0}
 .form-label{display:block;font-size:13px;font-weight:600;color:var(--gray-700);margin-bottom:6px}
-.form-label .required{color:#EF4444}
+.form-label .required{color:var(--accent)}
 .form-input,.form-select{width:100%;padding:12px 14px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:15px;color:var(--gray-900);background:#fff;transition:border-color 0.2s,box-shadow 0.2s;outline:none;-webkit-appearance:none;appearance:none}
-.form-input:focus,.form-select:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(0,62,145,0.08)}
+.form-input:focus,.form-select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(211,47,47,0.1)}
 .form-input::placeholder{color:var(--gray-400)}
-.form-input.error{border-color:#EF4444;background:#FFF5F5}
+.form-input.error{border-color:var(--accent);background:var(--accent-light)}
 textarea.form-input{resize:vertical;min-height:100px}
-.field-error{font-size:11px;color:#EF4444;margin-top:4px;display:none;align-items:center;gap:4px}
+.field-error{font-size:11px;color:var(--accent);margin-top:4px;display:none;align-items:center;gap:4px}
 .field-error.visible{display:flex}
 .form-actions{margin-top:24px;display:flex;justify-content:center}
 .btn-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;padding:14px 32px;border-radius:var(--radius-full);font-size:15px;font-weight:600;min-height:48px;transition:background 0.2s,transform 0.2s;box-shadow:0 4px 12px rgba(37,211,102,0.3);width:100%;max-width:320px}
@@ -216,46 +222,47 @@ textarea.form-input{resize:vertical;min-height:100px}
 
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;backdrop-filter:blur(4px)}
 .modal-overlay.active{display:flex}
-.modal-content{background:#fff;padding:36px 24px;border-radius:var(--radius-lg);text-align:center;max-width:400px;width:100%;box-shadow:var(--shadow-lg);animation:modalIn 0.3s ease}
+.modal-content{background:#fff;padding:36px 24px;border-radius:var(--radius-lg);text-align:center;max-width:400px;width:100%;box-shadow:var(--shadow-lg);animation:modalIn 0.3s ease;border-top:4px solid var(--accent)}
 @keyframes modalIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
-.modal-icon{width:64px;height:64px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#fff}
+.modal-icon{width:64px;height:64px;background:linear-gradient(135deg, #25D366 0%, #128C7E 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#fff}
 .modal-icon svg{width:32px;height:32px}
 .modal-title{font-size:20px;font-weight:700;color:var(--gray-900);margin-bottom:10px}
 .modal-message{font-size:14px;color:var(--gray-500);line-height:1.6;margin-bottom:24px}
-.modal-btn{display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;padding:12px 28px;border-radius:var(--radius-full);font-size:14px;font-weight:600;cursor:pointer;transition:opacity 0.2s}
+.modal-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:12px 28px;border-radius:var(--radius-full);font-size:14px;font-weight:600;cursor:pointer;transition:opacity 0.2s}
 .modal-btn:hover{opacity:0.9}
 
-.contact-section{background:#fff;padding:64px 0}
+.contact-section{background:#fff;padding:80px 0}
 .contact-grid{display:grid;grid-template-columns:1fr;gap:32px}
-.contact-cards{display:flex;flex-direction:column;gap:10px}
-.contact-card{display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--gray-200);border-radius:var(--radius-md);transition:border-color 0.2s}
-.contact-card:hover{border-color:#D1DCF0}
-.contact-card-icon{width:40px;height:40px;background:var(--brand-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.contact-card-icon svg{color:var(--brand);width:18px;height:18px}
+.contact-cards{display:flex;flex-direction:column;gap:12px}
+.contact-card{display:flex;align-items:center;gap:14px;padding:18px;border:2px solid var(--gray-200);border-radius:var(--radius-md);transition:border-color 0.2s,transform 0.2s}
+.contact-card:hover{border-color:var(--accent);transform:translateX(4px)}
+.contact-card-icon{width:44px;height:44px;background:linear-gradient(135deg, var(--accent) 0%, var(--brand) 100%);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-card-icon svg{color:#fff;width:20px;height:20px}
 .contact-label{font-size:11px;color:var(--gray-400);font-weight:600;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.05em}
 .contact-value{font-size:14px;font-weight:600;color:var(--gray-900);word-break:break-word;line-height:1.4}
-.contact-action-btn{display:inline-block;font-size:11px;font-weight:600;background:var(--brand-light);color:var(--brand);padding:6px 12px;border-radius:6px;margin-left:auto;white-space:nowrap;flex-shrink:0;transition:background 0.15s}
-.contact-action-btn:hover{background:#DCE8FF}
-.map-container{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);height:280px}
+.contact-action-btn{display:inline-block;font-size:11px;font-weight:600;background:var(--accent-light);color:var(--accent);padding:6px 12px;border-radius:6px;margin-left:auto;white-space:nowrap;flex-shrink:0;transition:background 0.15s}
+.contact-action-btn:hover{background:var(--accent);color:#fff}
+.map-container{border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--gray-200);height:320px;box-shadow:var(--shadow-sm)}
 .map-container iframe{width:100%;height:100%;border:none;display:block}
 
-#site-footer{background:var(--brand-darker);padding:48px 0 0}
+#site-footer{background:linear-gradient(135deg, var(--brand-darker) 0%, var(--accent-dark) 100%);padding:64px 0 0}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:32px;padding-bottom:40px}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,0.5);margin-top:12px;line-height:1.7}
-.footer-col-title{font-size:10px;font-weight:700;letter-spacing:0.15em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:14px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.7);margin-top:12px;line-height:1.7}
+.footer-col-title{font-size:10px;font-weight:700;letter-spacing:0.15em;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.footer-col-title::before{content:'';width:20px;height:2px;background:var(--accent)}
 .footer-links li{margin-bottom:6px}
-.footer-links a,.footer-links button{font-size:13px;color:rgba(255,255,255,0.6);transition:color 0.15s;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;padding:0;display:inline}
-.footer-links a:hover,.footer-links button:hover{color:rgba(255,255,255,0.95)}
-.footer-contact-row{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:8px}
+.footer-links a,.footer-links button{font-size:13px;color:rgba(255,255,255,0.7);transition:color 0.15s,transform 0.15s;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;padding:0;display:inline}
+.footer-links a:hover,.footer-links button:hover{color:#fff;transform:translateX(4px)}
+.footer-contact-row{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:10px}
 .footer-contact-row a{color:inherit;transition:color 0.15s;word-break:break-all}
-.footer-contact-row a:hover{color:rgba(255,255,255,0.9)}
-.footer-contact-row svg{width:14px;height:14px;flex-shrink:0;margin-top:2px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding:16px 0;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
-.footer-copy{font-size:12px;color:rgba(255,255,255,0.35)}
+.footer-contact-row a:hover{color:#fff}
+.footer-contact-row svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--accent)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.5)}
 
-#wa-float{position:fixed;bottom:20px;right:20px;z-index:200;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:transform 0.2s,box-shadow 0.2s;cursor:pointer}
-#wa-float:hover{transform:scale(1.1);box-shadow:0 8px 24px rgba(37,211,102,0.5)}
-#wa-float svg{color:#fff;width:26px;height:26px}
+#wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:56px;height:56px;background:linear-gradient(135deg, #25D366 0%, #128C7E 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.2s,box-shadow 0.2s;cursor:pointer;border:3px solid #fff}
+#wa-float:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(37,211,102,0.5)}
+#wa-float svg{color:#fff;width:28px;height:28px}
 #wa-float .wa-pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:waPulse 2s infinite}
 @keyframes waPulse{0%{transform:scale(1);opacity:0.5}70%{transform:scale(1.4);opacity:0}100%{transform:scale(1.4);opacity:0}}
 
@@ -264,20 +271,20 @@ textarea.form-input{resize:vertical;min-height:100px}
 /* Tablet */
 @media(min-width:640px){
   .container{padding:0 24px}
-  .about-section,.divisions-section,.coverage-section,.quote-section,.contact-section{padding:80px 0}
-  .stats-section{padding:60px 0}
+  .about-section,.divisions-section,.coverage-section,.quote-section,.contact-section{padding:100px 0}
+  .stats-section{padding:80px 0}
   .about-grid{grid-template-columns:1fr 1fr;gap:40px}
   .stats-grid{grid-template-columns:repeat(4,1fr);gap:24px}
   .divisions-grid{grid-template-columns:1fr 1fr;gap:24px}
   .coverage-grid{grid-template-columns:1fr 1fr;gap:48px}
+  .coverage-cards{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr 1fr;gap:40px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .map-container{height:340px}
-  .hero-section{min-height:560px}
-  .hero-image-container{min-height:496px}
-  .quote-form{padding:32px 28px}
+  .map-container{height:380px}
+  .hero-content h1{font-size:clamp(40px,6vw,64px)}
+  .quote-form{padding:36px 32px}
   .btn-whatsapp{width:auto}
-  .footer-bottom{flex-direction:row;justify-content:space-between;align-items:center}
+  .footer-bottom{flex-direction:row;justify-content:space-between;align-items:center;text-align:left}
 }
 
 /* Desktop */
@@ -289,9 +296,8 @@ textarea.form-input{resize:vertical;min-height:100px}
   .divisions-grid{grid-template-columns:repeat(3,1fr)}
   .form-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1.5fr 1fr 1fr 1.3fr}
-  .map-container{height:400px}
-  .hero-section{min-height:640px}
-  .hero-image-container{min-height:576px}
+  .map-container{height:420px}
+  .hero-content h1{font-size:clamp(48px,6vw,72px)}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -323,7 +329,7 @@ textarea.form-input{resize:vertical;min-height:100px}
   <div class="container">
     <div class="header-inner">
       <a href="#home" class="site-logo" onclick="smoothGo('home');return false;" aria-label="KIVESI INVESTMENT - Nyumbani">
-        <img src="kivesi.png" alt="KIVESI INVESTMENT (T) LTD Logo" width="140" height="40" loading="eager"/>
+        <img src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD Logo" width="160" height="48" loading="eager"/>
       </a>
 
       <nav class="nav-list" role="navigation" aria-label="Main navigation">
@@ -371,6 +377,13 @@ textarea.form-input{resize:vertical;min-height:100px}
 <section class="hero-section" id="home" aria-label="KIVESI INVESTMENT hero">
   <div class="hero-image-container">
     <img src="hero.jpg" alt="KIVESI INVESTMENT - Kupeleka Ubora Kupaka Mipaka ya Afrika Mashariki" class="hero-image" id="heroImage" fetchpriority="high" loading="eager" width="1920" height="1080"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div>
+        <h1 data-en="Excellence Across Multiple Sectors" data-sw="Ubora katika Sekta Nyingi">Excellence Across Multiple Sectors</h1>
+        <p data-en="Logistics, Food Supply, Events, Real Estate & Spare Parts across East Africa" data-sw="Usafirishaji, Ugavi wa Chakula, Matukio, Mali Isiyohamishika na Vipuri katika Afrika Mashariki">Logistics, Food Supply, Events, Real Estate & Spare Parts across East Africa</p>
+      </div>
+    </div>
     <div class="hero-fallback" id="heroFallback" aria-hidden="true">
       <div class="hero-fallback-content">
         <h1>KIVESI INVESTMENT (T) LTD</h1>
@@ -548,77 +561,59 @@ textarea.form-input{resize:vertical;min-height:100px}
 
 <section class="coverage-section" id="coverage" aria-labelledby="coverage-heading">
   <div class="container">
+    <div class="section-center reveal">
+      <span class="section-badge" data-en="Coverage Network" data-sw="Mtandao wa Ufikaji">Coverage Network</span>
+      <h2 class="section-title" id="coverage-heading" data-en="Delivering Excellence Across Borders" data-sw="Kupeleka Ubora Kupaka Mipaka">Delivering Excellence Across Borders</h2>
+      <p class="section-desc" data-en="Our regional network spans five countries, with Tanzania as our primary operational hub. We operate on established trade corridors, ensuring predictable transit times and professional cross-border logistics management." data-sw="Mtandao wetu wa kikanda unavuka nchi tano, huku Tanzania ikiwa kituo chetu kikuu cha uendeshaji. Tunafanya kazi katika njia zilizojengwa za biashara, tukihakikisha nyakati zinazotarajiwa za usafiri na usimamizi wa kitaalamu wa logistics za mpakani.">Our regional network spans five countries, with Tanzania as our primary operational hub. We operate on established trade corridors, ensuring predictable transit times and professional cross-border logistics management.</p>
+    </div>
     <div class="coverage-grid">
-      <div class="reveal coverage-map-wrap">
-        <svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="map-title map-desc" style="width:100%;height:auto">
-          <title id="map-title">Ramani ya Ufikaji wa KIVESI INVESTMENT</title>
-          <desc id="map-desc">Ramani inayoonyesha ufikaji katika Tanzania, DRC, Zambia, Afrika Kusini na Afrika Mashariki</desc>
-          <path d="M 138,12 L 200,6 L 252,16 L 308,10 L 356,28 L 396,54 L 415,88 L 412,140 L 430,182 L 420,238 L 396,298 L 366,354 L 318,394 L 264,410 L 210,406 L 158,390 L 110,358 L 74,308 L 55,248 L 62,188 L 74,138 L 90,96 L 114,56 Z" fill="#EEF2F8" stroke="#C8D5E8" stroke-width="1.5"/>
-          <line x1="305" y1="214" x2="162" y2="180" stroke="#003E91" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.4"/>
-          <line x1="305" y1="214" x2="292" y2="278" stroke="#003E91" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.4"/>
-          <line x1="305" y1="214" x2="270" y2="332" stroke="#003E91" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.4"/>
-          <line x1="305" y1="214" x2="240" y2="380" stroke="#003E91" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.4"/>
-          <circle cx="233" cy="197" r="3" fill="#003E91" opacity="0.36"/>
-          <circle cx="298" cy="246" r="3" fill="#003E91" opacity="0.36"/>
-          <circle cx="287" cy="273" r="3" fill="#003E91" opacity="0.36"/>
-          <circle cx="162" cy="180" r="14" fill="#fff" stroke="#003E91" stroke-width="2"/>
-          <circle cx="162" cy="180" r="6" fill="#003E91"/>
-          <text x="162" y="200" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="12" fill="#111827">DRC</text>
-          <circle cx="292" cy="278" r="14" fill="#fff" stroke="#003E91" stroke-width="2"/>
-          <circle cx="292" cy="278" r="6" fill="#003E91"/>
-          <text x="292" y="298" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="12" fill="#111827">Zambia</text>
-          <circle cx="270" cy="332" r="14" fill="#fff" stroke="#003E91" stroke-width="2"/>
-          <circle cx="270" cy="332" r="6" fill="#003E91"/>
-          <text x="270" y="352" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="12" fill="#111827">South Africa</text>
-          <circle cx="305" cy="214" r="30" fill="#003E91" opacity="0.07"/>
-          <circle cx="305" cy="214" r="18" fill="#003E91"/>
-          <circle cx="305" cy="214" r="8" fill="#fff"/>
-          <text x="305" y="238" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" fill="#111827">Tanzania</text>
-          <text x="305" y="254" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="600" font-size="10" fill="#003E91">Primary Hub</text>
-        </svg>
+      <div class="coverage-cards reveal">
+        <div class="coverage-card">
+          <div class="coverage-card-header">
+            <div class="coverage-icon"><svg width="20" height="20"><use href="#i-map"/></svg></div>
+            <div class="coverage-card-title">Tanzania <span class="coverage-card-badge" data-en="Primary Hub" data-sw="Kituo Kikuu">Primary Hub</span></div>
+          </div>
+          <div class="coverage-card-desc" data-en="Headquarters and main operational base in Dar es Salaam" data-sw="Makao makuu na kituo kikuu cha uendeshaji huko Dar es Salaam">Headquarters and main operational base in Dar es Salaam</div>
+        </div>
+        <div class="coverage-card">
+          <div class="coverage-card-header">
+            <div class="coverage-icon"><svg width="20" height="20"><use href="#i-map"/></svg></div>
+            <div class="coverage-card-title">DR Congo <span class="coverage-card-badge" data-en="Coverage Zone" data-sw="Eneo la Ufikaji">Coverage Zone</span></div>
+          </div>
+          <div class="coverage-card-desc" data-en="Connecting to Central Africa's largest economy" data-sw="Kuunganisha na uchumi mkubwa zaidi wa Afrika ya Kati">Connecting to Central Africa's largest economy</div>
+        </div>
+        <div class="coverage-card">
+          <div class="coverage-card-header">
+            <div class="coverage-icon"><svg width="20" height="20"><use href="#i-map"/></svg></div>
+            <div class="coverage-card-title">Zambia <span class="coverage-card-badge" data-en="Coverage Zone" data-sw="Eneo la Ufikaji">Coverage Zone</span></div>
+          </div>
+          <div class="coverage-card-desc" data-en="Land corridor for East-Central Africa trade" data-sw="Njia ya ardhi kwa biashara ya Afrika Mashariki-Kati">Land corridor for East-Central Africa trade</div>
+        </div>
+        <div class="coverage-card">
+          <div class="coverage-card-header">
+            <div class="coverage-icon"><svg width="20" height="20"><use href="#i-map"/></svg></div>
+            <div class="coverage-card-title">South Africa <span class="coverage-card-badge" data-en="Coverage Zone" data-sw="Eneo la Ufikaji">Coverage Zone</span></div>
+          </div>
+          <div class="coverage-card-desc" data-en="Southern Africa's economic powerhouse connection" data-sw="Muunganisho wa nguvu ya kiuchumi ya Afrika Kusini">Southern Africa's economic powerhouse connection</div>
+        </div>
+        <div class="coverage-card">
+          <div class="coverage-card-header">
+            <div class="coverage-icon"><svg width="20" height="20"><use href="#i-map"/></svg></div>
+            <div class="coverage-card-title">East Africa <span class="coverage-card-badge" data-en="Regional Network" data-sw="Mtandao wa Kikanda">Regional Network</span></div>
+          </div>
+          <div class="coverage-card-desc" data-en="Comprehensive coverage across East African nations" data-sw="Ufikaji kamili katika nchi za Afrika Mashariki">Comprehensive coverage across East African nations</div>
+        </div>
       </div>
-
       <div class="reveal">
-        <span class="section-badge" data-en="Coverage Network" data-sw="Mtandao wa Ufikaji">Coverage Network</span>
-        <h2 class="section-title" id="coverage-heading" data-en="Delivering Excellence Across Borders" data-sw="Kupeleka Ubora Kupaka Mipaka">Delivering Excellence Across Borders</h2>
-        <p class="section-desc" data-en="Our regional network spans five countries, with Tanzania as our primary operational hub. We operate on established trade corridors, ensuring predictable transit times and professional cross-border logistics management." data-sw="Mtandao wetu wa kikanda unavuka nchi tano, huku Tanzania ikiwa kituo chetu kikuu cha uendeshaji. Tunafanya kazi katika njia zilizojengwa za biashara, tukihakikisha nyakati zinazotarajiwa za usafiri na usimamizi wa kitaalamu wa logistics za mpakani.">Our regional network spans five countries, with Tanzania as our primary operational hub. We operate on established trade corridors, ensuring predictable transit times and professional cross-border logistics management.</p>
-        <div class="coverage-list" role="list">
-          <div class="coverage-item" role="listitem">
-            <div class="coverage-dot" style="background:#003E91" aria-hidden="true">
-              <svg width="16" height="16" style="color:#fff"><use href="#i-map"/></svg>
-            </div>
-            <div>
-              <div class="coverage-name">Tanzania <span class="coverage-badge" data-en="Primary Hub" data-sw="Kituo Kikuu">Primary Hub</span></div>
-              <div class="coverage-role" data-en="Headquarters and main operational base in Dar es Salaam" data-sw="Makao makuu na kituo kikuu cha uendeshaji huko Dar es Salaam">Headquarters and main operational base in Dar es Salaam</div>
-            </div>
-          </div>
-          <div class="coverage-item" role="listitem">
-            <div class="coverage-dot" style="background:#EEF4FF" aria-hidden="true">
-              <svg width="16" height="16" style="color:#003E91"><use href="#i-map"/></svg>
-            </div>
-            <div>
-              <div class="coverage-name">DR Congo <span class="coverage-badge" data-en="Coverage Zone" data-sw="Eneo la Ufikaji">Coverage Zone</span></div>
-              <div class="coverage-role" data-en="Connecting to Central Africa's largest economy" data-sw="Kuunganisha na uchumi mkubwa zaidi wa Afrika ya Kati">Connecting to Central Africa's largest economy</div>
-            </div>
-          </div>
-          <div class="coverage-item" role="listitem">
-            <div class="coverage-dot" style="background:#EEF4FF" aria-hidden="true">
-              <svg width="16" height="16" style="color:#003E91"><use href="#i-map"/></svg>
-            </div>
-            <div>
-              <div class="coverage-name">Zambia <span class="coverage-badge" data-en="Coverage Zone" data-sw="Eneo la Ufikaji">Coverage Zone</span></div>
-              <div class="coverage-role" data-en="Land corridor for East-Central Africa trade" data-sw="Njia ya ardhi kwa biashara ya Afrika Mashariki-Kati">Land corridor for East-Central Africa trade</div>
-            </div>
-          </div>
-          <div class="coverage-item" role="listitem">
-            <div class="coverage-dot" style="background:#EEF4FF" aria-hidden="true">
-              <svg width="16" height="16" style="color:#003E91"><use href="#i-map"/></svg>
-            </div>
-            <div>
-              <div class="coverage-name">South Africa <span class="coverage-badge" data-en="Coverage Zone" data-sw="Eneo la Ufikaji">Coverage Zone</span></div>
-              <div class="coverage-role" data-en="Southern Africa's economic powerhouse connection" data-sw="Muunganisho wa nguvu ya kiuchumi ya Afrika Kusini">Southern Africa's economic powerhouse connection</div>
-            </div>
-          </div>
+        <div class="map-container">
+          <iframe
+            src="https://maps.google.com/maps?q=East+Africa,DRC,Zambia,South+Africa&output=embed&z=5"
+            title="KIVESI INVESTMENT Coverage Map - East Africa"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Google Maps showing KIVESI INVESTMENT coverage across East Africa, DRC, Zambia and South Africa"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -784,7 +779,7 @@ textarea.form-input{resize:vertical;min-height:100px}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="140" height="40" style="height:36px;width:auto" loading="lazy"/>
+        <img src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="140" height="42" style="height:42px;width:auto" loading="lazy"/>
         <p data-en="Diversified services across East Africa - Logistics, Food Supply, Events, Real Estate and Spare Parts. Committed to reliability, efficiency, and customer satisfaction." data-sw="Huduma zilizotofautishwa katika Afrika Mashariki - Usafirishaji, Ugavi wa Chakula, Matukio, Mali Isiyohamishika na Vipuri. Kujitolea kwa kuaminika, ufanisi, na kuridhisha wateja.">Diversified services across East Africa - Logistics, Food Supply, Events, Real Estate and Spare Parts. Committed to reliability, efficiency, and customer satisfaction.</p>
       </div>
 
@@ -801,11 +796,11 @@ textarea.form-input{resize:vertical;min-height:100px}
       <div>
         <div class="footer-col-title" data-en="Our Services" data-sw="Huduma Zetu">Our Services</div>
         <ul class="footer-links">
-          <li><span style="font-size:13px;color:rgba(255,255,255,0.5)" data-en="Logistics and Transportation" data-sw="Usafirishaji na Usafiri">Logistics and Transportation</span></li>
-          <li><span style="font-size:13px;color:rgba(255,255,255,0.5)" data-en="Food Supply" data-sw="Ugavi wa Chakula">Food Supply</span></li>
-          <li><span style="font-size:13px;color:rgba(255,255,255,0.5)" data-en="Events Preparation" data-sw="Maandalizi ya Matukio">Events Preparation</span></li>
-          <li><span style="font-size:13px;color:rgba(255,255,255,0.5)" data-en="Real Estate" data-sw="Mali Isiyohamishika">Real Estate</span></li>
-          <li><span style="font-size:13px;color:rgba(255,255,255,0.5)" data-en="Spare Parts and Lubricants" data-sw="Vipuri na Majimajimaji">Spare Parts and Lubricants</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,0.7)" data-en="Logistics and Transportation" data-sw="Usafirishaji na Usafiri">Logistics and Transportation</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,0.7)" data-en="Food Supply" data-sw="Ugavi wa Chakula">Food Supply</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,0.7)" data-en="Events Preparation" data-sw="Maandalizi ya Matukio">Events Preparation</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,0.7)" data-en="Real Estate" data-sw="Mali Isiyohamishika">Real Estate</span></li>
+          <li><span style="font-size:13px;color:rgba(255,255,255,0.7)" data-en="Spare Parts and Lubricants" data-sw="Vipuri na Majimajimaji">Spare Parts and Lubricants</span></li>
         </ul>
       </div>
 
