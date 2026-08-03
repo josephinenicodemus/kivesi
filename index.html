@@ -353,23 +353,19 @@
       position: fixed;
       inset: 0 0 auto;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(6, 18, 37, 0.46);
+      border-bottom: 1px solid transparent;
+      background: transparent;
       color: var(--white);
       transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
     }
 
-    @supports (backdrop-filter: blur(10px)) {
-      .site-header {
-        backdrop-filter: blur(10px);
-      }
-    }
-
+    /* The header is fully transparent over the hero image. It becomes solid
+       only after scrolling or while the mobile menu is open. */
     .site-header.is-scrolled,
     .site-header.menu-active {
       border-color: rgba(255, 255, 255, 0.1);
-      background: var(--navy-950);
-      box-shadow: 0 10px 30px rgba(6, 18, 37, 0.17);
+      background: rgba(6, 18, 37, 0.97);
+      box-shadow: 0 10px 30px rgba(6, 18, 37, 0.2);
     }
 
     .header-inner {
@@ -390,20 +386,24 @@
 
     .logo-surface {
       display: grid;
-      min-width: 106px;
-      height: 48px;
+      width: clamp(116px, 32vw, 154px);
+      height: 54px;
       place-items: center;
-      padding: 5px 10px;
-      border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 4px 14px rgba(6, 18, 37, 0.14);
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
     }
 
     .site-logo img {
-      width: auto;
-      height: 36px;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      transition: height var(--transition);
+      object-position: left center;
+      filter: drop-shadow(0 2px 5px rgba(6, 18, 37, 0.28));
+      transition: width var(--transition), height var(--transition), filter var(--transition);
     }
 
     .desktop-nav,
@@ -417,9 +417,9 @@
       height: 46px;
       flex: 0 0 auto;
       place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.48);
       border-radius: var(--radius-sm);
-      background: rgba(6, 18, 37, 0.32);
+      background: rgba(6, 18, 37, 0.2);
       color: var(--white);
     }
 
@@ -575,17 +575,10 @@
       object-position: 54% center;
     }
 
-    /* Only the top edge is shaded so the fixed navigation remains readable.
-       The rest of the hero stays clean and fully image-led. */
+    /* No hero shade: the image extends cleanly behind the navigation. */
     .hero-overlay {
       z-index: 1;
-      background: linear-gradient(
-        180deg,
-        rgba(6, 18, 37, 0.62) 0%,
-        rgba(6, 18, 37, 0.28) 18%,
-        rgba(6, 18, 37, 0.08) 34%,
-        rgba(6, 18, 37, 0) 48%
-      );
+      background: transparent;
       pointer-events: none;
     }
 
@@ -1486,12 +1479,18 @@
         --header-height: 74px;
       }
 
-      .site-header.is-scrolled .site-logo img {
-        height: 32px;
+      .site-header.is-scrolled .logo-surface {
+        width: 136px;
+        height: 46px;
       }
 
-      .site-header.is-scrolled .logo-surface {
-        height: 44px;
+      .site-header.is-scrolled .site-logo img {
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.22));
+      }
+
+      .logo-surface {
+        width: 168px;
+        height: 60px;
       }
 
       .desktop-nav,
@@ -1512,7 +1511,8 @@
         color: rgba(255, 255, 255, 0.78);
         font-size: 0.87rem;
         font-weight: 650;
-        transition: color var(--transition);
+        text-shadow: 0 2px 8px rgba(6, 18, 37, 0.85);
+        transition: color var(--transition), text-shadow var(--transition);
       }
 
       .desktop-nav a::after {
@@ -1550,6 +1550,7 @@
         color: rgba(255, 255, 255, 0.9);
         font-size: 0.82rem;
         font-weight: 650;
+        text-shadow: 0 2px 8px rgba(6, 18, 37, 0.85);
       }
 
       .header-phone svg {
@@ -1578,13 +1579,7 @@
       }
 
       .hero-overlay {
-        background: linear-gradient(
-          180deg,
-          rgba(6, 18, 37, 0.58) 0%,
-          rgba(6, 18, 37, 0.22) 16%,
-          rgba(6, 18, 37, 0.05) 30%,
-          rgba(6, 18, 37, 0) 42%
-        );
+        background: transparent;
       }
 
       .services-grid {
