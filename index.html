@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#061225">
+  <meta name="theme-color" content="#020b1f">
   <meta name="color-scheme" content="light">
   <meta name="description" content="KIVESI INVESTMENT (T) LTD provides logistics, food supply, events, real estate, spare parts and procurement services across East Africa and regional trade corridors.">
   <meta name="keywords" content="logistics Tanzania, transportation DRC Zambia South Africa, food supply Tanzania, events Arusha, real estate Tanzania, spare parts lubricants, Kivesi Investment">
@@ -122,23 +122,29 @@
     }
 
     :root {
-      --navy-950: #061225;
-      --navy-900: #091a30;
-      --navy-800: #0d2747;
-      --brand-800: #003e91;
-      --brand-700: #0753b8;
-      --brand-600: #1468d4;
-      --brand-500: #2f6fed;
-      --brand-400: #5b8ff5;
-      --brand-100: #dceaff;
-      --brand-50: #f3f7ff;
+      --navy-950: #020b1f;
+      --navy-900: #061631;
+      --navy-800: #0a2450;
+      --brand-800: #071f5d;
+      --brand-700: #0a2b78;
+      --brand-600: #123a98;
+      --brand-500: #2852b9;
+      --brand-400: #6687da;
+      --brand-100: #dfe7fb;
+      --brand-50: #f4f7ff;
+      --accent-800: #9e0d1b;
+      --accent-700: #c41224;
+      --accent-600: #e31b2d;
+      --accent-500: #f23848;
+      --accent-100: #ffdfe3;
+      --accent-50: #fff4f5;
       --surface: #ffffff;
       --surface-alt: #f6f8fc;
       --border: #dde4ee;
       --border-strong: #c8d2e1;
       --text-primary: #101828;
-      --text-secondary: #526079;
-      --text-muted: #7b879d;
+      --text-secondary: #46546c;
+      --text-muted: #66738a;
       --white: #ffffff;
       --whatsapp: #25d366;
       --whatsapp-dark: #128c7e;
@@ -148,10 +154,10 @@
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 18px;
-      --shadow-sm: 0 2px 10px rgba(6, 18, 37, 0.06);
-      --shadow-md: 0 16px 40px rgba(6, 18, 37, 0.11);
-      --container: 1240px;
-      --header-height: 72px;
+      --shadow-sm: 0 2px 10px rgba(2, 11, 31, 0.07);
+      --shadow-md: 0 18px 46px rgba(2, 11, 31, 0.14);
+      --container: 1280px;
+      --header-height: 74px;
       --section-space: 68px;
       --transition: 220ms ease;
     }
@@ -174,12 +180,12 @@
     }
 
     ::selection {
-      background: var(--brand-100);
+      background: var(--accent-100);
       color: var(--navy-950);
     }
 
     :focus-visible {
-      outline: 3px solid var(--brand-400);
+      outline: 3px solid var(--accent-500);
       outline-offset: 3px;
     }
 
@@ -243,7 +249,7 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 14px;
-      color: var(--brand-700);
+      color: var(--accent-700);
       font-size: 0.75rem;
       font-weight: 800;
       letter-spacing: 0.13em;
@@ -254,7 +260,7 @@
       content: "";
       width: 28px;
       height: 3px;
-      background: var(--brand-600);
+      background: var(--accent-600);
     }
 
     .section-title {
@@ -312,12 +318,14 @@
     }
 
     .button--primary {
-      background: var(--brand-600);
+      background: var(--accent-600);
       color: var(--white);
+      box-shadow: 0 10px 26px rgba(227, 27, 45, 0.26);
     }
 
     .button--primary:hover {
-      background: var(--brand-700);
+      background: var(--accent-700);
+      box-shadow: 0 14px 30px rgba(227, 27, 45, 0.32);
     }
 
     .button--light {
@@ -348,48 +356,81 @@
     }
 
     /* ================================================================
-       2. FIXED HEADER
+       2. TRANSPARENT OVERLAY HEADER
        ================================================================ */
     .site-header {
       position: fixed;
       inset: 0 0 auto;
       z-index: 1000;
       border-bottom: 1px solid transparent;
-      background: linear-gradient(
-        180deg,
-        rgba(6, 18, 37, 0.34) 0%,
-        rgba(6, 18, 37, 0.14) 66%,
-        rgba(6, 18, 37, 0) 100%
-      );
+      background: transparent;
       color: var(--white);
-      transition:
-        background-color var(--transition),
-        border-color var(--transition),
-        box-shadow var(--transition),
-        backdrop-filter var(--transition);
+      isolation: isolate;
+      transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+    }
+
+    .site-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(2, 11, 31, 0.90) 0%, rgba(2, 11, 31, 0.58) 58%, rgba(2, 11, 31, 0) 100%);
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity var(--transition);
     }
 
     .site-header.is-scrolled,
     .site-header.menu-active {
-      border-color: rgba(255, 255, 255, 0.10);
-      background: rgba(6, 18, 37, 0.95);
-      box-shadow: 0 12px 34px rgba(6, 18, 37, 0.24);
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(2, 11, 31, 0.97);
+      box-shadow: 0 14px 36px rgba(2, 11, 31, 0.32);
+    }
+
+    .site-header.is-scrolled::before,
+    .site-header.menu-active::before {
+      opacity: 0;
     }
 
     @supports (backdrop-filter: blur(14px)) {
       .site-header.is-scrolled,
       .site-header.menu-active {
-        backdrop-filter: blur(14px) saturate(1.12);
+        backdrop-filter: blur(14px) saturate(1.08);
       }
     }
 
     .header-inner {
+      position: relative;
       display: flex;
       height: var(--header-height);
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-between;
       gap: 14px;
       transition: height var(--transition);
+    }
+
+    .header-brand {
+      display: inline-flex;
+      min-width: 0;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 10px;
+    }
+
+    .header-logo {
+      width: auto;
+      height: 62px;
+      max-width: 104px;
+      object-fit: contain;
+      object-position: left center;
+      filter: drop-shadow(0 2px 1px rgba(255, 255, 255, 0.12)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.72));
+      transition: transform var(--transition), filter var(--transition);
+    }
+
+    .header-brand:hover .header-logo {
+      transform: translateY(-1px) scale(1.015);
+      filter: drop-shadow(0 2px 1px rgba(255, 255, 255, 0.16)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.78));
     }
 
     .desktop-nav,
@@ -403,17 +444,17 @@
       height: 46px;
       flex: 0 0 auto;
       place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.44);
+      border: 1px solid rgba(255, 255, 255, 0.64);
       border-radius: 10px;
-      background: rgba(6, 18, 37, 0.18);
+      background: rgba(2, 11, 31, 0.50);
       color: var(--white);
-      box-shadow: 0 8px 22px rgba(6, 18, 37, 0.14);
+      box-shadow: 0 8px 22px rgba(2, 11, 31, 0.24);
       transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
     }
 
     .menu-button:hover {
-      border-color: rgba(255, 255, 255, 0.72);
-      background: rgba(6, 18, 37, 0.48);
+      border-color: var(--white);
+      background: var(--navy-900);
       transform: translateY(-1px);
     }
 
@@ -442,9 +483,10 @@
       overscroll-behavior: contain;
       visibility: hidden;
       transform: translateY(-12px);
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
-      background: rgba(6, 18, 37, 0.985);
-      box-shadow: 0 24px 44px rgba(6, 18, 37, 0.30);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 3px solid var(--accent-600);
+      background: var(--navy-950);
+      box-shadow: 0 26px 48px rgba(2, 11, 31, 0.38);
       opacity: 0;
       pointer-events: none;
       transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
@@ -465,14 +507,14 @@
 
     .mobile-nav-list a {
       display: flex;
-      min-height: 52px;
+      min-height: 54px;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-      color: rgba(255, 255, 255, 0.86);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+      color: var(--white);
       font-size: 0.98rem;
-      font-weight: 650;
-      transition: color var(--transition), padding-left var(--transition);
+      font-weight: 700;
+      transition: color var(--transition), padding-left var(--transition), border-color var(--transition);
     }
 
     .mobile-nav-list a::after {
@@ -487,7 +529,8 @@
     .mobile-nav-list a:hover,
     .mobile-nav-list a.is-active {
       padding-left: 6px;
-      color: var(--brand-400);
+      border-color: rgba(227, 27, 45, 0.62);
+      color: #ff6673;
     }
 
     .mobile-controls {
@@ -501,24 +544,24 @@
       min-height: 48px;
       align-items: center;
       gap: 10px;
-      color: rgba(255, 255, 255, 0.90);
+      color: var(--white);
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 650;
     }
 
     .mobile-phone svg {
       width: 19px;
       height: 19px;
-      color: var(--brand-400);
+      color: #ff6673;
     }
 
     .language-switcher {
       display: inline-flex;
       width: max-content;
       padding: 3px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.32);
       border-radius: 9px;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(2, 11, 31, 0.66);
     }
 
     .language-button {
@@ -527,25 +570,26 @@
       padding-inline: 11px;
       border-radius: 6px;
       background: transparent;
-      color: rgba(255, 255, 255, 0.72);
+      color: var(--white);
       font-size: 0.76rem;
       font-weight: 800;
       transition: color var(--transition), background-color var(--transition);
     }
 
     .language-button.is-active {
-      background: var(--brand-600);
+      background: var(--accent-600);
       color: var(--white);
     }
 
     /* ================================================================
-       3. HERO
+       3. HERO — NAVIGATION OVERLAPS THE IMAGE
        ================================================================ */
     .hero {
       position: relative;
-      height: clamp(390px, 108vw, 560px);
-      min-height: 390px;
+      height: clamp(560px, 150vw, 760px);
+      min-height: 560px;
       overflow: hidden;
+      border-bottom: 3px solid var(--accent-600);
       background: var(--navy-950);
       isolation: isolate;
     }
@@ -572,84 +616,20 @@
 
     .hero-media img {
       object-fit: cover;
-      object-position: 60% center;
+      object-position: 66% center;
       user-select: none;
       -webkit-user-drag: none;
-      transform: translateZ(0);
+      transform: translateZ(0) scale(1.002);
+      filter: saturate(1.04) contrast(1.035);
     }
 
-    /* A very light top-only veil keeps white navigation legible without
-       darkening the logistics artwork or creating a visible navbar strip. */
+    /* The image remains vivid. Only the exact navigation zone receives a
+       compact navy scrim so the logo and links stay crisp over bright clouds. */
     .hero-overlay {
       z-index: 1;
-      background: linear-gradient(
-        180deg,
-        rgba(6, 18, 37, 0.18) 0%,
-        rgba(6, 18, 37, 0.055) 52%,
-        rgba(6, 18, 37, 0) 100%
-      );
-      pointer-events: none;
-    }
-
-    /* On narrow layouts the baked-in upper-left logo is outside the centre
-       crop, so the same transparent Kivesi.png is restored as a small overlay. */
-    .hero-mobile-brand {
-      position: absolute;
-      top: calc(var(--header-height) + 12px);
-      left: 16px;
-      z-index: 2;
-      width: clamp(112px, 33vw, 154px);
-      height: auto;
-      filter: drop-shadow(0 5px 14px rgba(6, 18, 37, 0.22));
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .hero-fallback {
-      display: none;
-      z-index: 0;
-      place-items: center;
-      background: var(--navy-900);
-    }
-
-    .hero-fallback.is-visible {
-      display: grid;
-    }
-    .hero {
-      position: relative;
-      height: clamp(420px, 112vw, 560px);
-      min-height: 420px;
-      overflow: hidden;
-      background: var(--navy-950);
-      isolation: isolate;
-    }
-
-    .hero-media,
-    .hero-media img,
-    .hero-overlay,
-    .hero-fallback {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .hero-media {
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .hero-media img {
-      object-fit: cover;
-      object-position: 58% center;
-      user-select: none;
-      -webkit-user-drag: none;
-    }
-
-    /* Keep the hero clean: no text, logo panel or full-image shade. */
-    .hero-overlay {
-      z-index: 1;
-      background: transparent;
+      background:
+        linear-gradient(180deg, rgba(2, 11, 31, 0.78) 0%, rgba(2, 11, 31, 0.34) 12%, rgba(2, 11, 31, 0) 34%),
+        linear-gradient(90deg, rgba(2, 11, 31, 0.12) 0%, rgba(2, 11, 31, 0) 56%);
       pointer-events: none;
     }
 
@@ -1305,6 +1285,7 @@
       padding-top: 58px;
       background: var(--navy-950);
       color: var(--white);
+      border-top: 3px solid var(--accent-600);
     }
 
     .footer-grid {
@@ -1315,36 +1296,29 @@
 
     .footer-logo-surface {
       display: inline-flex;
-      width: min(100%, 218px);
+      width: 126px;
       min-height: 0;
       align-items: center;
       justify-content: flex-start;
       padding: 0;
       border: 0;
-      border-radius: 0;
       background: transparent;
-      box-shadow: none;
       overflow: visible;
     }
 
     .footer-logo-surface img {
       width: 100%;
       height: auto;
-      max-height: 86px;
       object-fit: contain;
       object-position: left center;
-      filter:
-        brightness(1.14)
-        saturate(1.08)
-        contrast(1.04)
-        drop-shadow(0 6px 18px rgba(0, 0, 0, 0.34));
-      opacity: 0.99;
+      filter: drop-shadow(0 7px 18px rgba(0, 0, 0, 0.46));
+      opacity: 1;
     }
 
     .footer-description {
       max-width: 48ch;
       margin-top: 16px;
-      color: rgba(255, 255, 255, 0.66);
+      color: rgba(255, 255, 255, 0.82);
       font-size: 0.83rem;
       line-height: 1.75;
     }
@@ -1365,14 +1339,14 @@
 
     .footer-links a,
     .footer-links span {
-      color: rgba(255, 255, 255, 0.64);
+      color: rgba(255, 255, 255, 0.78);
       font-size: 0.82rem;
       line-height: 1.55;
       overflow-wrap: anywhere;
     }
 
     .footer-links a:hover {
-      color: var(--brand-400);
+      color: #ff6673;
     }
 
     .footer-contact-link {
@@ -1386,7 +1360,7 @@
       width: 16px;
       height: 16px;
       margin-top: 3px;
-      color: var(--brand-400);
+      color: #ff6673;
     }
 
     .footer-bottom {
@@ -1442,22 +1416,22 @@
     }
 
     /* ================================================================
-       12. BREAKPOINTS
+       12. MOBILE-FIRST BREAKPOINTS
        ================================================================ */
     @media (max-width: 479px) and (orientation: portrait) {
       .hero-media img {
-        object-position: 62% center;
+        object-position: 68% center;
       }
     }
 
     @media (max-height: 520px) and (orientation: landscape) {
       .hero {
-        height: max(360px, 100svh);
-        min-height: 360px;
+        height: max(390px, 100svh);
+        min-height: 390px;
       }
 
       .hero-media img {
-        object-position: 57% center;
+        object-position: 61% center;
       }
     }
 
@@ -1466,9 +1440,9 @@
         width: min(calc(100% - 40px), var(--container));
       }
 
-      .hero-mobile-brand {
-        left: 20px;
-        width: clamp(138px, 29vw, 178px);
+      .header-logo {
+        height: 66px;
+        max-width: 112px;
       }
 
       .strength-list {
@@ -1482,7 +1456,7 @@
 
     @media (min-width: 768px) {
       :root {
-        --header-height: 80px;
+        --header-height: 82px;
         --section-space: 88px;
       }
 
@@ -1490,19 +1464,18 @@
         width: min(calc(100% - 56px), var(--container));
       }
 
+      .header-logo {
+        height: 72px;
+        max-width: 122px;
+      }
+
       .hero {
-        height: clamp(540px, 72svh, 720px);
-        min-height: 540px;
+        height: clamp(620px, 78svh, 780px);
+        min-height: 620px;
       }
 
       .hero-media img {
-        object-position: 56% center;
-      }
-
-      .hero-mobile-brand {
-        top: calc(var(--header-height) + 18px);
-        left: 28px;
-        width: clamp(168px, 23vw, 220px);
+        object-position: 59% center;
       }
 
       .about-grid {
@@ -1568,6 +1541,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .footer-logo-surface {
+        width: 142px;
+      }
+
       .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
@@ -1577,7 +1554,7 @@
 
     @media (min-width: 1024px) {
       :root {
-        --header-height: 86px;
+        --header-height: 92px;
         --section-space: 104px;
       }
 
@@ -1586,14 +1563,24 @@
       }
 
       .site-header.is-scrolled {
-        --header-height: 76px;
+        --header-height: 80px;
       }
 
       .header-inner {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        grid-template-columns: 126px minmax(0, 1fr) auto;
         align-items: center;
-        gap: 24px;
+        gap: 18px;
+      }
+
+      .header-brand {
+        grid-column: 1;
+        justify-self: start;
+      }
+
+      .header-logo {
+        height: 78px;
+        max-width: 126px;
       }
 
       .desktop-nav,
@@ -1605,16 +1592,8 @@
       .desktop-nav {
         grid-column: 2;
         justify-self: center;
-        gap: 4px;
-        padding: 4px;
-        border-radius: 999px;
-        background: rgba(6, 18, 37, 0.08);
-      }
-
-      @supports (backdrop-filter: blur(8px)) {
-        .desktop-nav {
-          backdrop-filter: blur(8px) saturate(1.08);
-        }
+        gap: 1px;
+        min-width: 0;
       }
 
       .desktop-nav a {
@@ -1622,38 +1601,34 @@
         display: inline-flex;
         min-height: 44px;
         align-items: center;
-        padding-inline: 13px;
-        border-radius: 999px;
-        color: rgba(255, 255, 255, 0.84);
-        font-size: 0.86rem;
-        font-weight: 680;
-        text-shadow: 0 2px 9px rgba(6, 18, 37, 0.82);
-        transition:
-          color var(--transition),
-          background-color var(--transition),
-          box-shadow var(--transition),
-          transform var(--transition);
+        padding-inline: 11px;
+        border-radius: 8px;
+        color: var(--white);
+        font-size: 0.84rem;
+        font-weight: 750;
+        text-shadow: 0 2px 10px rgba(2, 11, 31, 0.96);
+        transition: color var(--transition), background-color var(--transition), transform var(--transition);
       }
 
       .desktop-nav a::after {
         content: "";
         position: absolute;
-        right: 14px;
-        bottom: 6px;
-        left: 14px;
-        height: 2px;
+        right: 12px;
+        bottom: 4px;
+        left: 12px;
+        height: 3px;
         transform: scaleX(0);
         transform-origin: center;
         border-radius: 999px;
-        background: var(--brand-400);
+        background: var(--accent-500);
+        box-shadow: 0 0 12px rgba(242, 56, 72, 0.62);
         transition: transform var(--transition);
       }
 
       .desktop-nav a:hover,
       .desktop-nav a.is-active {
         color: var(--white);
-        background: rgba(6, 18, 37, 0.24);
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+        background: rgba(2, 11, 31, 0.46);
         transform: translateY(-1px);
       }
 
@@ -1665,30 +1640,38 @@
       .header-actions {
         grid-column: 3;
         justify-self: end;
-        gap: 11px;
+        gap: 9px;
       }
 
       .header-phone {
         display: inline-flex;
+        width: 44px;
         min-height: 44px;
         align-items: center;
+        justify-content: center;
         gap: 8px;
-        color: rgba(255, 255, 255, 0.94);
-        font-size: 0.81rem;
-        font-weight: 650;
-        text-shadow: 0 2px 9px rgba(6, 18, 37, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.30);
+        border-radius: 9px;
+        background: rgba(2, 11, 31, 0.46);
+        color: var(--white);
+        font-size: 0.80rem;
+        font-weight: 700;
+        text-shadow: 0 2px 10px rgba(2, 11, 31, 0.96);
+      }
+
+      .header-phone span {
+        display: none;
       }
 
       .header-phone svg {
         width: 18px;
         height: 18px;
-        color: var(--brand-400);
+        color: #ff6673;
       }
 
       .header-quote {
         min-height: 44px;
-        padding-inline: 17px;
-        box-shadow: 0 8px 22px rgba(20, 104, 212, 0.24);
+        padding-inline: 16px;
       }
 
       .menu-button,
@@ -1706,10 +1689,6 @@
         object-position: center center;
       }
 
-      .hero-mobile-brand {
-        display: none;
-      }
-
       .services-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -1719,11 +1698,45 @@
         gap: 48px;
       }
 
+      .footer-logo-surface {
+        width: 154px;
+      }
+
       .whatsapp-float {
         right: 24px;
         bottom: calc(24px + env(safe-area-inset-bottom));
         width: 56px;
         height: 56px;
+      }
+    }
+
+    @media (min-width: 1180px) {
+      .header-inner {
+        grid-template-columns: 138px minmax(0, 1fr) auto;
+        gap: 22px;
+      }
+
+      .header-logo {
+        height: 82px;
+        max-width: 136px;
+      }
+
+      .desktop-nav {
+        gap: 4px;
+      }
+
+      .desktop-nav a {
+        padding-inline: 14px;
+        font-size: 0.87rem;
+      }
+
+      .header-phone {
+        width: auto;
+        padding-inline: 12px;
+      }
+
+      .header-phone span {
+        display: inline;
       }
     }
 
@@ -1737,7 +1750,7 @@
       }
 
       .header-actions {
-        gap: 14px;
+        gap: 12px;
       }
 
       .section-heading {
@@ -1815,6 +1828,9 @@
 
   <header class="site-header" id="site-header">
     <div class="container header-inner">
+      <a class="header-brand" href="#home" data-scroll aria-label="KIVESI INVESTMENT (T) LTD home">
+        <img class="header-logo" src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="3840" height="2866" loading="eager" decoding="async">
+      </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation" data-en-aria="Primary navigation" data-sw-aria="Urambazaji mkuu">
         <a class="is-active" href="#home" data-scroll data-section-link="home" data-en="Home" data-sw="Nyumbani" aria-current="location">Home</a>
@@ -1899,7 +1915,6 @@
         </picture>
         <div class="hero-fallback" id="hero-fallback" aria-hidden="true"></div>
       </div>
-      <img class="hero-mobile-brand" src="Kivesi.png" alt="" width="720" height="478" loading="eager" decoding="async" aria-hidden="true">
       <div class="hero-overlay" aria-hidden="true"></div>
     </section>
 
@@ -2279,7 +2294,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <span class="footer-logo-surface"><img src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="720" height="478" loading="lazy" decoding="async"></span>
+          <span class="footer-logo-surface"><img src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="3840" height="2866" loading="lazy" decoding="async"></span>
           <p class="footer-description" data-en="Diversified services across logistics, food supply, events, real estate, spare parts and procurement, with a focus on reliability, efficiency and customer satisfaction." data-sw="Huduma mbalimbali katika usafirishaji, ugavi wa chakula, matukio, mali isiyohamishika, vipuri na ununuzi, kwa kuzingatia kuaminika, ufanisi na kuridhika kwa wateja.">Diversified services across logistics, food supply, events, real estate, spare parts and procurement, with a focus on reliability, efficiency and customer satisfaction.</p>
         </div>
 
