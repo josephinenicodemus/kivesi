@@ -28,10 +28,10 @@
   <meta name="twitter:image" content="https://kivesiinvestment.co.tz/hero.jpg">
 
   <title>KIVESI INVESTMENT (T) LTD — Excellence Across Multiple Sectors</title>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.ico">
-  <link rel="preload" as="image" href="hero-1920.webp" type="image/webp" media="(min-width: 1024px)">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link rel="apple-touch-icon" href="./favicon.ico">
+  <link rel="preload" as="image" href="./hero.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -132,12 +132,12 @@
       --brand-400: #6687da;
       --brand-100: #dfe7fb;
       --brand-50: #f4f7ff;
-      --accent-800: #9e0d1b;
-      --accent-700: #c41224;
-      --accent-600: #e31b2d;
-      --accent-500: #f23848;
-      --accent-100: #ffdfe3;
-      --accent-50: #fff4f5;
+      --accent-800: #06266f;
+      --accent-700: #0a3d9c;
+      --accent-600: #0d5bd7;
+      --accent-500: #2f7df4;
+      --accent-100: #dceaff;
+      --accent-50: #f3f7ff;
       --surface: #ffffff;
       --surface-alt: #f6f8fc;
       --border: #dde4ee;
@@ -285,17 +285,26 @@
     }
 
     .section-heading {
-      margin-bottom: 36px;
-    }
-
-    .section-heading--center {
+      width: min(100%, 900px);
+      margin: 0 auto 36px;
       text-align: center;
     }
 
+    .section-heading .section-kicker,
+    .section-heading .section-title,
+    .section-heading .section-copy,
     .section-heading--center .section-kicker,
     .section-heading--center .section-title,
     .section-heading--center .section-copy {
       margin-inline: auto;
+    }
+
+    .section-heading .section-kicker {
+      justify-content: center;
+    }
+
+    .section-heading--center {
+      text-align: center;
     }
 
     .button {
@@ -320,12 +329,12 @@
     .button--primary {
       background: var(--accent-600);
       color: var(--white);
-      box-shadow: 0 10px 26px rgba(227, 27, 45, 0.26);
+      box-shadow: 0 10px 26px rgba(13, 91, 215, 0.25);
     }
 
     .button--primary:hover {
       background: var(--accent-700);
-      box-shadow: 0 14px 30px rgba(227, 27, 45, 0.32);
+      box-shadow: 0 14px 30px rgba(13, 91, 215, 0.32);
     }
 
     .button--light {
@@ -419,18 +428,26 @@
     }
 
     .header-logo {
-      width: auto;
-      height: 62px;
-      max-width: 104px;
+      width: clamp(104px, 31vw, 132px);
+      height: auto;
+      max-height: 64px;
       object-fit: contain;
       object-position: left center;
-      filter: drop-shadow(0 2px 1px rgba(255, 255, 255, 0.12)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.72));
+      filter:
+        drop-shadow(1px 0 0 rgba(255, 255, 255, 0.62))
+        drop-shadow(-1px 0 0 rgba(255, 255, 255, 0.62))
+        drop-shadow(0 1px 0 rgba(255, 255, 255, 0.46))
+        drop-shadow(0 7px 16px rgba(0, 0, 0, 0.72));
       transition: transform var(--transition), filter var(--transition);
     }
 
     .header-brand:hover .header-logo {
       transform: translateY(-1px) scale(1.015);
-      filter: drop-shadow(0 2px 1px rgba(255, 255, 255, 0.16)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.78));
+      filter:
+        drop-shadow(1px 0 0 rgba(255, 255, 255, 0.72))
+        drop-shadow(-1px 0 0 rgba(255, 255, 255, 0.72))
+        drop-shadow(0 1px 0 rgba(255, 255, 255, 0.56))
+        drop-shadow(0 9px 20px rgba(0, 0, 0, 0.78));
     }
 
     .desktop-nav,
@@ -529,8 +546,8 @@
     .mobile-nav-list a:hover,
     .mobile-nav-list a.is-active {
       padding-left: 6px;
-      border-color: rgba(227, 27, 45, 0.62);
-      color: #ff6673;
+      border-color: rgba(47, 125, 244, 0.62);
+      color: #7fb0ff;
     }
 
     .mobile-controls {
@@ -552,7 +569,7 @@
     .mobile-phone svg {
       width: 19px;
       height: 19px;
-      color: #ff6673;
+      color: #7fb0ff;
     }
 
     .language-switcher {
@@ -586,16 +603,19 @@
        ================================================================ */
     .hero {
       position: relative;
-      height: clamp(560px, 150vw, 760px);
-      min-height: 560px;
+      min-height: 540px;
+      height: min(820px, 100svh);
       overflow: hidden;
-      border-bottom: 3px solid var(--accent-600);
-      background: var(--navy-950);
+      border-bottom: 3px solid var(--brand-600);
+      background-color: var(--navy-950);
+      background-image: url("./hero.jpg");
+      background-position: 66% center;
+      background-repeat: no-repeat;
+      background-size: cover;
       isolation: isolate;
     }
 
     .hero-media,
-    .hero-media picture,
     .hero-media img,
     .hero-overlay,
     .hero-fallback {
@@ -610,26 +630,30 @@
       overflow: hidden;
     }
 
-    .hero-media picture {
-      display: block;
-    }
-
     .hero-media img {
+      display: block;
+      visibility: visible;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
       object-fit: cover;
       object-position: 66% center;
       user-select: none;
       -webkit-user-drag: none;
       transform: translateZ(0) scale(1.002);
-      filter: saturate(1.04) contrast(1.035);
+      filter: saturate(1.05) contrast(1.035);
     }
 
-    /* The image remains vivid. Only the exact navigation zone receives a
-       compact navy scrim so the logo and links stay crisp over bright clouds. */
+    /* The photo remains vivid. This scrim affects only the navigation zone. */
     .hero-overlay {
       z-index: 1;
-      background:
-        linear-gradient(180deg, rgba(2, 11, 31, 0.78) 0%, rgba(2, 11, 31, 0.34) 12%, rgba(2, 11, 31, 0) 34%),
-        linear-gradient(90deg, rgba(2, 11, 31, 0.12) 0%, rgba(2, 11, 31, 0) 56%);
+      background: linear-gradient(
+        180deg,
+        rgba(2, 11, 31, 0.80) 0%,
+        rgba(2, 11, 31, 0.46) 10%,
+        rgba(2, 11, 31, 0.13) 24%,
+        rgba(2, 11, 31, 0) 42%
+      );
       pointer-events: none;
     }
 
@@ -637,7 +661,9 @@
       display: none;
       z-index: 0;
       place-items: center;
-      background: var(--navy-900);
+      background:
+        linear-gradient(135deg, rgba(10, 61, 156, 0.72), rgba(2, 11, 31, 0.95)),
+        var(--navy-900);
     }
 
     .hero-fallback.is-visible {
@@ -651,6 +677,24 @@
       display: grid;
       gap: 34px;
       align-items: start;
+    }
+
+    .about-copy {
+      text-align: center;
+    }
+
+    .about-copy .section-kicker,
+    .about-copy .section-title,
+    .about-copy .section-copy {
+      margin-inline: auto;
+    }
+
+    .about-copy .section-kicker {
+      justify-content: center;
+    }
+
+    .about-copy .strength-list {
+      text-align: left;
     }
 
     .about-panel {
@@ -1346,7 +1390,7 @@
     }
 
     .footer-links a:hover {
-      color: #ff6673;
+      color: #7fb0ff;
     }
 
     .footer-contact-link {
@@ -1360,7 +1404,7 @@
       width: 16px;
       height: 16px;
       margin-top: 3px;
-      color: #ff6673;
+      color: #7fb0ff;
     }
 
     .footer-bottom {
@@ -1419,7 +1463,9 @@
        12. MOBILE-FIRST BREAKPOINTS
        ================================================================ */
     @media (max-width: 479px) and (orientation: portrait) {
+      .hero,
       .hero-media img {
+        background-position: 68% center;
         object-position: 68% center;
       }
     }
@@ -1430,7 +1476,9 @@
         min-height: 390px;
       }
 
+      .hero,
       .hero-media img {
+        background-position: 61% center;
         object-position: 61% center;
       }
     }
@@ -1579,8 +1627,8 @@
       }
 
       .header-logo {
-        height: 78px;
-        max-width: 126px;
+        width: 150px;
+        max-height: 76px;
       }
 
       .desktop-nav,
@@ -1621,7 +1669,7 @@
         transform-origin: center;
         border-radius: 999px;
         background: var(--accent-500);
-        box-shadow: 0 0 12px rgba(242, 56, 72, 0.62);
+        box-shadow: 0 0 12px rgba(47, 125, 244, 0.58);
         transition: transform var(--transition);
       }
 
@@ -1666,7 +1714,7 @@
       .header-phone svg {
         width: 18px;
         height: 18px;
-        color: #ff6673;
+        color: #7fb0ff;
       }
 
       .header-quote {
@@ -1685,7 +1733,9 @@
         max-height: 900px;
       }
 
+      .hero,
       .hero-media img {
+        background-position: center center;
         object-position: center center;
       }
 
@@ -1829,7 +1879,7 @@
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="header-brand" href="#home" data-scroll aria-label="KIVESI INVESTMENT (T) LTD home">
-        <img class="header-logo" src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="3840" height="2866" loading="eager" decoding="async">
+        <img class="header-logo" src="./Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="3840" height="2866" loading="eager" decoding="async">
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation" data-en-aria="Primary navigation" data-sw-aria="Urambazaji mkuu">
@@ -1896,23 +1946,17 @@
     <section class="hero" id="home" aria-labelledby="hero-title">
       <h1 class="sr-only" id="hero-title" data-en="KIVESI INVESTMENT (T) LTD" data-sw="KIVESI INVESTMENT (T) LTD">KIVESI INVESTMENT (T) LTD</h1>
       <div class="hero-media">
-        <picture>
-          <source
-            type="image/webp"
-            srcset="hero-768.webp 768w, hero-1280.webp 1280w, hero-1920.webp 1920w, hero-2560.webp 2560w, hero-3840.webp 3840w"
-            sizes="100vw">
-          <img
-            id="hero-image"
-            src="hero.jpg"
-            alt="KIVESI logistics truck, cargo ship, airplane and port operations"
-            data-en-alt="KIVESI logistics truck, cargo ship, airplane and port operations"
-            data-sw-alt="Lori la KIVESI, meli ya mizigo, ndege na shughuli za bandarini"
-            width="3840"
-            height="1800"
-            fetchpriority="high"
-            loading="eager"
-            decoding="async">
-        </picture>
+        <img
+          id="hero-image"
+          src="./hero.jpg"
+          alt="KIVESI logistics truck, cargo ship, airplane and port operations"
+          data-en-alt="KIVESI logistics truck, cargo ship, airplane and port operations"
+          data-sw-alt="Lori la KIVESI, meli ya mizigo, ndege na shughuli za bandarini"
+          width="3840"
+          height="1800"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async">
         <div class="hero-fallback" id="hero-fallback" aria-hidden="true"></div>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
@@ -1945,7 +1989,7 @@
           </div>
         </aside>
 
-        <div class="reveal">
+        <div class="about-copy reveal">
           <p class="section-kicker" data-en="About Us" data-sw="Kuhusu Sisi">About Us</p>
           <h2 class="section-title" id="about-title" data-en="Diversified Excellence Across East Africa" data-sw="Ubora wa Sekta Mbalimbali Afrika Mashariki">Diversified Excellence Across East Africa</h2>
           <p class="section-copy" data-en="Kivesi Investment (T) Limited is a diversified and dynamic company dedicated to providing high-quality services and products across East Africa and beyond. With a strong commitment to reliability, efficiency and customer satisfaction, we operate in multiple sectors that contribute to economic growth and development within the region." data-sw="Kivesi Investment (T) Limited ni kampuni inayofanya kazi katika sekta mbalimbali na iliyojitolea kutoa huduma na bidhaa bora katika Afrika Mashariki na nje yake. Kwa kuzingatia kuaminika, ufanisi na kuridhika kwa wateja, tunafanya kazi katika sekta zinazochangia ukuaji wa uchumi na maendeleo ya kikanda.">Kivesi Investment (T) Limited is a diversified and dynamic company dedicated to providing high-quality services and products across East Africa and beyond. With a strong commitment to reliability, efficiency and customer satisfaction, we operate in multiple sectors that contribute to economic growth and development within the region.</p>
@@ -2294,7 +2338,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <span class="footer-logo-surface"><img src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="3840" height="2866" loading="lazy" decoding="async"></span>
+          <span class="footer-logo-surface"><img src="./Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="3840" height="2866" loading="lazy" decoding="async"></span>
           <p class="footer-description" data-en="Diversified services across logistics, food supply, events, real estate, spare parts and procurement, with a focus on reliability, efficiency and customer satisfaction." data-sw="Huduma mbalimbali katika usafirishaji, ugavi wa chakula, matukio, mali isiyohamishika, vipuri na ununuzi, kwa kuzingatia kuaminika, ufanisi na kuridhika kwa wateja.">Diversified services across logistics, food supply, events, real estate, spare parts and procurement, with a focus on reliability, efficiency and customer satisfaction.</p>
         </div>
 
