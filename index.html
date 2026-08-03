@@ -28,10 +28,10 @@
   <meta name="twitter:image" content="https://kivesiinvestment.co.tz/hero.jpg">
 
   <title>KIVESI INVESTMENT (T) LTD — Excellence Across Multiple Sectors</title>
-
-  <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
-  <link rel="shortcut icon" type="image/png" href="icon.png">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <link rel="preload" as="image" href="hero-1920.webp" type="image/webp" media="(min-width: 1024px)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -355,18 +355,32 @@
       inset: 0 0 auto;
       z-index: 1000;
       border-bottom: 1px solid transparent;
-      background: transparent;
+      background: linear-gradient(
+        180deg,
+        rgba(6, 18, 37, 0.34) 0%,
+        rgba(6, 18, 37, 0.14) 66%,
+        rgba(6, 18, 37, 0) 100%
+      );
       color: var(--white);
-      transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+      transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        backdrop-filter var(--transition);
     }
 
-    /* The header is fully transparent over the hero image. It becomes solid
-       only after scrolling or while the mobile menu is open. */
     .site-header.is-scrolled,
     .site-header.menu-active {
-      border-color: rgba(255, 255, 255, 0.1);
-      background: rgba(6, 18, 37, 0.97);
-      box-shadow: 0 10px 30px rgba(6, 18, 37, 0.2);
+      border-color: rgba(255, 255, 255, 0.10);
+      background: rgba(6, 18, 37, 0.95);
+      box-shadow: 0 12px 34px rgba(6, 18, 37, 0.24);
+    }
+
+    @supports (backdrop-filter: blur(14px)) {
+      .site-header.is-scrolled,
+      .site-header.menu-active {
+        backdrop-filter: blur(14px) saturate(1.12);
+      }
     }
 
     .header-inner {
@@ -389,14 +403,18 @@
       height: 46px;
       flex: 0 0 auto;
       place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.48);
-      border-radius: var(--radius-sm);
-      background: rgba(6, 18, 37, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.44);
+      border-radius: 10px;
+      background: rgba(6, 18, 37, 0.18);
       color: var(--white);
+      box-shadow: 0 8px 22px rgba(6, 18, 37, 0.14);
+      transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
     }
 
     .menu-button:hover {
-      background: rgba(6, 18, 37, 0.58);
+      border-color: rgba(255, 255, 255, 0.72);
+      background: rgba(6, 18, 37, 0.48);
+      transform: translateY(-1px);
     }
 
     .menu-button svg {
@@ -424,8 +442,9 @@
       overscroll-behavior: contain;
       visibility: hidden;
       transform: translateY(-12px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      background: var(--navy-950);
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(6, 18, 37, 0.985);
+      box-shadow: 0 24px 44px rgba(6, 18, 37, 0.30);
       opacity: 0;
       pointer-events: none;
       transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
@@ -446,13 +465,14 @@
 
     .mobile-nav-list a {
       display: flex;
-      min-height: 50px;
+      min-height: 52px;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
       color: rgba(255, 255, 255, 0.86);
       font-size: 0.98rem;
-      font-weight: 600;
+      font-weight: 650;
+      transition: color var(--transition), padding-left var(--transition);
     }
 
     .mobile-nav-list a::after {
@@ -466,6 +486,7 @@
 
     .mobile-nav-list a:hover,
     .mobile-nav-list a.is-active {
+      padding-left: 6px;
       color: var(--brand-400);
     }
 
@@ -480,7 +501,7 @@
       min-height: 48px;
       align-items: center;
       gap: 10px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.90);
       font-size: 0.92rem;
       font-weight: 600;
     }
@@ -496,7 +517,7 @@
       width: max-content;
       padding: 3px;
       border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: var(--radius-sm);
+      border-radius: 9px;
       background: rgba(255, 255, 255, 0.06);
     }
 
@@ -509,6 +530,7 @@
       color: rgba(255, 255, 255, 0.72);
       font-size: 0.76rem;
       font-weight: 800;
+      transition: color var(--transition), background-color var(--transition);
     }
 
     .language-button.is-active {
@@ -519,6 +541,80 @@
     /* ================================================================
        3. HERO
        ================================================================ */
+    .hero {
+      position: relative;
+      height: clamp(390px, 108vw, 560px);
+      min-height: 390px;
+      overflow: hidden;
+      background: var(--navy-950);
+      isolation: isolate;
+    }
+
+    .hero-media,
+    .hero-media picture,
+    .hero-media img,
+    .hero-overlay,
+    .hero-fallback {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-media {
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-media picture {
+      display: block;
+    }
+
+    .hero-media img {
+      object-fit: cover;
+      object-position: 60% center;
+      user-select: none;
+      -webkit-user-drag: none;
+      transform: translateZ(0);
+    }
+
+    /* A very light top-only veil keeps white navigation legible without
+       darkening the logistics artwork or creating a visible navbar strip. */
+    .hero-overlay {
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(6, 18, 37, 0.18) 0%,
+        rgba(6, 18, 37, 0.055) 52%,
+        rgba(6, 18, 37, 0) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* On narrow layouts the baked-in upper-left logo is outside the centre
+       crop, so the same transparent Kivesi.png is restored as a small overlay. */
+    .hero-mobile-brand {
+      position: absolute;
+      top: calc(var(--header-height) + 12px);
+      left: 16px;
+      z-index: 2;
+      width: clamp(112px, 33vw, 154px);
+      height: auto;
+      filter: drop-shadow(0 5px 14px rgba(6, 18, 37, 0.22));
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-fallback {
+      display: none;
+      z-index: 0;
+      place-items: center;
+      background: var(--navy-900);
+    }
+
+    .hero-fallback.is-visible {
+      display: grid;
+    }
     .hero {
       position: relative;
       height: clamp(420px, 112vw, 560px);
@@ -1218,19 +1314,31 @@
     }
 
     .footer-logo-surface {
-      display: grid;
-      width: 136px;
-      min-height: 54px;
-      place-items: center;
-      padding: 7px 10px;
-      border-radius: var(--radius-sm);
-      background: var(--white);
+      display: inline-flex;
+      width: min(100%, 218px);
+      min-height: 0;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
     }
 
     .footer-logo-surface img {
-      width: auto;
-      height: 39px;
+      width: 100%;
+      height: auto;
+      max-height: 86px;
       object-fit: contain;
+      object-position: left center;
+      filter:
+        brightness(1.14)
+        saturate(1.08)
+        contrast(1.04)
+        drop-shadow(0 6px 18px rgba(0, 0, 0, 0.34));
+      opacity: 0.99;
     }
 
     .footer-description {
@@ -1338,7 +1446,7 @@
        ================================================================ */
     @media (max-width: 479px) and (orientation: portrait) {
       .hero-media img {
-        object-position: 60% center;
+        object-position: 62% center;
       }
     }
 
@@ -1349,7 +1457,7 @@
       }
 
       .hero-media img {
-        object-position: 55% center;
+        object-position: 57% center;
       }
     }
 
@@ -1358,6 +1466,10 @@
         width: min(calc(100% - 40px), var(--container));
       }
 
+      .hero-mobile-brand {
+        left: 20px;
+        width: clamp(138px, 29vw, 178px);
+      }
 
       .strength-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1384,9 +1496,14 @@
       }
 
       .hero-media img {
-        object-position: 54% center;
+        object-position: 56% center;
       }
 
+      .hero-mobile-brand {
+        top: calc(var(--header-height) + 18px);
+        left: 28px;
+        width: clamp(168px, 23vw, 220px);
+      }
 
       .about-grid {
         grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
@@ -1469,11 +1586,14 @@
       }
 
       .site-header.is-scrolled {
-        --header-height: 74px;
+        --header-height: 76px;
       }
 
       .header-inner {
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        align-items: center;
+        gap: 24px;
       }
 
       .desktop-nav,
@@ -1483,7 +1603,18 @@
       }
 
       .desktop-nav {
-        gap: 25px;
+        grid-column: 2;
+        justify-self: center;
+        gap: 4px;
+        padding: 4px;
+        border-radius: 999px;
+        background: rgba(6, 18, 37, 0.08);
+      }
+
+      @supports (backdrop-filter: blur(8px)) {
+        .desktop-nav {
+          backdrop-filter: blur(8px) saturate(1.08);
+        }
       }
 
       .desktop-nav a {
@@ -1491,22 +1622,29 @@
         display: inline-flex;
         min-height: 44px;
         align-items: center;
-        color: rgba(255, 255, 255, 0.78);
-        font-size: 0.87rem;
-        font-weight: 650;
-        text-shadow: 0 2px 8px rgba(6, 18, 37, 0.85);
-        transition: color var(--transition), text-shadow var(--transition);
+        padding-inline: 13px;
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.86rem;
+        font-weight: 680;
+        text-shadow: 0 2px 9px rgba(6, 18, 37, 0.82);
+        transition:
+          color var(--transition),
+          background-color var(--transition),
+          box-shadow var(--transition),
+          transform var(--transition);
       }
 
       .desktop-nav a::after {
         content: "";
         position: absolute;
-        right: 0;
-        bottom: 4px;
-        left: 0;
+        right: 14px;
+        bottom: 6px;
+        left: 14px;
         height: 2px;
         transform: scaleX(0);
-        transform-origin: left;
+        transform-origin: center;
+        border-radius: 999px;
         background: var(--brand-400);
         transition: transform var(--transition);
       }
@@ -1514,6 +1652,9 @@
       .desktop-nav a:hover,
       .desktop-nav a.is-active {
         color: var(--white);
+        background: rgba(6, 18, 37, 0.24);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+        transform: translateY(-1px);
       }
 
       .desktop-nav a:hover::after,
@@ -1522,7 +1663,9 @@
       }
 
       .header-actions {
-        gap: 12px;
+        grid-column: 3;
+        justify-self: end;
+        gap: 11px;
       }
 
       .header-phone {
@@ -1530,10 +1673,10 @@
         min-height: 44px;
         align-items: center;
         gap: 8px;
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.94);
+        font-size: 0.81rem;
         font-weight: 650;
-        text-shadow: 0 2px 8px rgba(6, 18, 37, 0.85);
+        text-shadow: 0 2px 9px rgba(6, 18, 37, 0.82);
       }
 
       .header-phone svg {
@@ -1545,6 +1688,7 @@
       .header-quote {
         min-height: 44px;
         padding-inline: 17px;
+        box-shadow: 0 8px 22px rgba(20, 104, 212, 0.24);
       }
 
       .menu-button,
@@ -1562,8 +1706,8 @@
         object-position: center center;
       }
 
-      .hero-overlay {
-        background: transparent;
+      .hero-mobile-brand {
+        display: none;
       }
 
       .services-grid {
@@ -1585,11 +1729,15 @@
 
     @media (min-width: 1280px) {
       .desktop-nav {
-        gap: 32px;
+        gap: 7px;
+      }
+
+      .desktop-nav a {
+        padding-inline: 15px;
       }
 
       .header-actions {
-        gap: 15px;
+        gap: 14px;
       }
 
       .section-heading {
@@ -1732,9 +1880,26 @@
     <section class="hero" id="home" aria-labelledby="hero-title">
       <h1 class="sr-only" id="hero-title" data-en="KIVESI INVESTMENT (T) LTD" data-sw="KIVESI INVESTMENT (T) LTD">KIVESI INVESTMENT (T) LTD</h1>
       <div class="hero-media">
-        <img id="hero-image" src="hero.jpg" alt="KIVESI logistics truck, cargo ship, airplane and port operations" data-en-alt="KIVESI logistics truck, cargo ship, airplane and port operations" data-sw-alt="Lori la KIVESI, meli ya mizigo, ndege na shughuli za bandarini" width="3840" height="1800" fetchpriority="high" loading="eager" decoding="async">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="hero-768.webp 768w, hero-1280.webp 1280w, hero-1920.webp 1920w, hero-2560.webp 2560w, hero-3840.webp 3840w"
+            sizes="100vw">
+          <img
+            id="hero-image"
+            src="hero.jpg"
+            alt="KIVESI logistics truck, cargo ship, airplane and port operations"
+            data-en-alt="KIVESI logistics truck, cargo ship, airplane and port operations"
+            data-sw-alt="Lori la KIVESI, meli ya mizigo, ndege na shughuli za bandarini"
+            width="3840"
+            height="1800"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async">
+        </picture>
         <div class="hero-fallback" id="hero-fallback" aria-hidden="true"></div>
       </div>
+      <img class="hero-mobile-brand" src="Kivesi.png" alt="" width="720" height="478" loading="eager" decoding="async" aria-hidden="true">
       <div class="hero-overlay" aria-hidden="true"></div>
     </section>
 
@@ -2114,7 +2279,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <span class="footer-logo-surface"><img src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="160" height="48" loading="lazy" decoding="async"></span>
+          <span class="footer-logo-surface"><img src="Kivesi.png" alt="KIVESI INVESTMENT (T) LTD" width="720" height="478" loading="lazy" decoding="async"></span>
           <p class="footer-description" data-en="Diversified services across logistics, food supply, events, real estate, spare parts and procurement, with a focus on reliability, efficiency and customer satisfaction." data-sw="Huduma mbalimbali katika usafirishaji, ugavi wa chakula, matukio, mali isiyohamishika, vipuri na ununuzi, kwa kuzingatia kuaminika, ufanisi na kuridhika kwa wateja.">Diversified services across logistics, food supply, events, real estate, spare parts and procurement, with a focus on reliability, efficiency and customer satisfaction.</p>
         </div>
 
@@ -2502,7 +2667,12 @@
           if (!target) return;
           event.preventDefault();
           if (menuOpen) closeMenu(false);
-          target.scrollIntoView({ behavior: reducedMotionQuery.matches ? "auto" : "smooth", block: "start" });
+          var headerOffset = header ? header.getBoundingClientRect().height + 12 : 0;
+          var targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: Math.max(0, targetTop),
+            behavior: reducedMotionQuery.matches ? "auto" : "smooth"
+          });
           try {
             history.replaceState(null, "", targetSelector);
           } catch (error) {
