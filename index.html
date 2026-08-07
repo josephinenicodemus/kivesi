@@ -2716,6 +2716,270 @@
       .service-network-lines path { animation: none !important; }
     }
 
+  
+
+    /* ================================================================
+       SERVICES NETWORK + COMPANY PROFILE — TARGETED LAYOUT FIX
+       These rules intentionally override only the two revised sections.
+       ================================================================ */
+    .service-network-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface-alt);
+    }
+    .service-network-toolbar p {
+      max-width: 68ch;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      line-height: 1.55;
+    }
+    .service-network-controls {
+      display: flex;
+      flex: 0 0 auto;
+      gap: 8px;
+    }
+    .service-network-control {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--brand-100);
+      border-radius: 11px;
+      background: #ffffff;
+      color: var(--brand-700);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), border-color var(--transition), background-color var(--transition);
+    }
+    .service-network-control:hover {
+      transform: translateY(-2px);
+      border-color: var(--brand-500);
+      background: var(--brand-50);
+    }
+    .service-network-control svg { width: 19px; height: 19px; }
+    .service-network-control--previous svg { transform: rotate(180deg); }
+
+    .service-network-viewport {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-inline: contain;
+      scroll-behavior: smooth;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+      scrollbar-color: var(--brand-500) var(--surface-alt);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+    .service-network-viewport::-webkit-scrollbar { height: 10px; }
+    .service-network-viewport::-webkit-scrollbar-track { background: var(--surface-alt); }
+    .service-network-viewport::-webkit-scrollbar-thumb {
+      border: 2px solid var(--surface-alt);
+      border-radius: 999px;
+      background: var(--brand-500);
+    }
+
+    .service-network {
+      position: relative !important;
+      display: grid !important;
+      width: 980px;
+      min-width: 980px;
+      min-height: 720px !important;
+      grid-template-columns: 280px 320px 280px;
+      grid-template-rows: repeat(3, minmax(214px, auto));
+      column-gap: 50px;
+      row-gap: 22px;
+      align-items: stretch;
+      padding: 18px 25px;
+      isolation: isolate;
+    }
+    .service-network-lines {
+      display: block !important;
+      position: absolute;
+      inset: 18px 25px;
+      z-index: 0;
+      width: calc(100% - 50px);
+      height: calc(100% - 36px);
+      pointer-events: none;
+    }
+    .service-network-lines path {
+      fill: none;
+      stroke: #c5d4ec;
+      stroke-width: 2;
+      stroke-dasharray: 6 11;
+      animation: routeDash 2.3s linear infinite;
+    }
+
+    .service-hub,
+    .service-node {
+      position: relative !important;
+      inset: auto !important;
+      width: auto !important;
+      height: auto;
+      transform: none !important;
+      z-index: 2;
+      scroll-snap-align: center;
+    }
+    .service-hub:hover { transform: translateY(-3px) !important; }
+    .service-hub {
+      order: initial;
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      align-self: center;
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px 28px;
+      border-radius: 24px;
+      box-shadow: 0 26px 54px rgba(6, 19, 39, 0.18);
+    }
+    .service-hub img { width: 132px; height: 82px; }
+    .service-hub h3 { font-size: 2.2rem; }
+
+    .service-node {
+      min-height: 214px;
+      align-content: start;
+      padding: 20px 18px;
+      border-radius: 18px;
+      background: #ffffff;
+    }
+    .service-node--logistics { grid-column: 1; grid-row: 1; }
+    .service-node--events { grid-column: 1; grid-row: 2; }
+    .service-node--parts { grid-column: 1; grid-row: 3; }
+    .service-node--food { grid-column: 3; grid-row: 1; }
+    .service-node--realestate { grid-column: 3; grid-row: 2; }
+    .service-node--procurement { grid-column: 3; grid-row: 3; }
+
+    .profile-banner {
+      position: relative;
+      min-height: 0 !important;
+      display: block !important;
+      overflow: hidden;
+      background: var(--navy-950);
+      color: #ffffff;
+    }
+    .profile-banner::before { display: none !important; }
+    .profile-banner-inner { padding-block: 46px !important; }
+    .profile-banner-grid {
+      overflow: hidden;
+      display: grid;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 24px;
+      background: var(--navy-950);
+      box-shadow: 0 28px 64px rgba(0,0,0,0.24);
+    }
+    .profile-banner-media {
+      position: relative !important;
+      inset: auto !important;
+      z-index: auto !important;
+      min-height: 280px;
+      overflow: hidden;
+      background: #d8e0ea !important;
+    }
+    .profile-banner-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      object-position: center 48%;
+      transition: transform 700ms ease;
+    }
+    .profile-banner-grid:hover .profile-banner-media img { transform: scale(1.025); }
+    .profile-banner-media figcaption {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: rgba(6, 19, 39, 0.82);
+      color: rgba(255,255,255,0.78);
+      font-size: 0.62rem;
+      line-height: 1.35;
+    }
+    .profile-banner-copy {
+      width: auto !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px 22px !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: var(--navy-950) !important;
+      box-shadow: none !important;
+    }
+    .profile-banner-copy h2 {
+      max-width: 16ch;
+      font-size: clamp(2rem, 8vw, 3.45rem);
+    }
+    .profile-banner-copy > p:not(.profile-banner-kicker) { max-width: 58ch; }
+    .profile-photo-credit { display: none !important; }
+
+    @media (max-width: 559px) {
+      .service-network-toolbar { align-items: flex-start; }
+      .service-network-toolbar p { font-size: 0.72rem; }
+      .service-network-controls { margin-top: 1px; }
+      .service-network-control { width: 39px; height: 39px; }
+      .profile-banner-actions { display: grid; }
+      .profile-download-button,
+      .profile-contact-link { width: 100%; }
+    }
+
+    @media (min-width: 760px) {
+      .profile-banner-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+        min-height: 500px;
+      }
+      .profile-banner-media,
+      .profile-banner-media img { min-height: 500px; }
+      .profile-banner-copy { padding: 40px 38px !important; }
+    }
+
+    @media (min-width: 1080px) {
+      .service-network-toolbar { display: none; }
+      .service-network-viewport {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+      .service-network {
+        width: 100%;
+        min-width: 0;
+        min-height: 760px !important;
+        grid-template-columns: minmax(280px, 1fr) minmax(330px, 360px) minmax(280px, 1fr);
+        grid-template-rows: repeat(3, minmax(220px, auto));
+        column-gap: clamp(56px, 6vw, 96px);
+        row-gap: 28px;
+        padding: 0;
+      }
+      .service-network-lines {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .service-hub { min-height: 430px; }
+      .service-node { min-height: 220px; }
+    }
+
+    @media (min-width: 1280px) {
+      .service-network {
+        grid-template-columns: minmax(300px, 1fr) 370px minmax(300px, 1fr);
+        column-gap: 92px;
+      }
+      .service-hub { padding: 38px 32px; }
+      .service-node { padding: 22px 20px; }
+      .profile-banner-grid { grid-template-columns: minmax(0, 1.15fr) minmax(440px, 0.85fr); }
+    }
+
   </style>
 
   <script>
@@ -2925,105 +3189,125 @@
           <p class="section-copy" data-en="Each division operates as part of one connected service system, allowing clients to access transport, supply, procurement and investment support through a single accountable partner." data-sw="Kila kitengo kinafanya kazi kama sehemu ya mfumo mmoja wa huduma uliounganishwa, unaowawezesha wateja kupata usafirishaji, ugavi, ununuzi na msaada wa uwekezaji kupitia mshirika mmoja anayewajibika.">Each division operates as part of one connected service system, allowing clients to access transport, supply, procurement and investment support through a single accountable partner.</p>
         </div>
 
-        <div class="service-network reveal" aria-label="Kivesi service network diagram" data-en-aria="Kivesi service network diagram" data-sw-aria="Mchoro wa mtandao wa huduma za Kivesi">
-          <svg class="service-network-lines" viewBox="0 0 1200 760" aria-hidden="true" preserveAspectRatio="none">
-            <path d="M600 380 C485 310 400 210 270 150"/>
-            <path d="M600 380 C715 310 800 210 930 150"/>
-            <path d="M600 380 C440 380 325 380 180 380"/>
-            <path d="M600 380 C760 380 875 380 1020 380"/>
-            <path d="M600 380 C485 455 400 555 270 625"/>
-            <path d="M600 380 C715 455 800 555 930 625"/>
-          </svg>
+        <div class="service-network-toolbar reveal">
+          <p data-en="On phones and tablets, swipe horizontally or use the arrow controls to explore the complete service diagram without changing its desktop structure." data-sw="Kwenye simu na kompyuta kibao, telezesha kwa mlalo au tumia vitufe vya mishale kuona mchoro kamili wa huduma bila kubadilisha muundo wake wa kompyuta.">On phones and tablets, swipe horizontally or use the arrow controls to explore the complete service diagram without changing its desktop structure.</p>
+          <div class="service-network-controls" aria-label="Service diagram controls" data-en-aria="Service diagram controls" data-sw-aria="Vidhibiti vya mchoro wa huduma">
+            <button class="service-network-control service-network-control--previous" type="button" data-network-scroll="-1" aria-label="Scroll service diagram left" data-en-aria="Scroll service diagram left" data-sw-aria="Telezesha mchoro wa huduma kushoto">
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+            <button class="service-network-control" type="button" data-network-scroll="1" aria-label="Scroll service diagram right" data-en-aria="Scroll service diagram right" data-sw-aria="Telezesha mchoro wa huduma kulia">
+              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+        </div>
 
-          <article class="service-hub">
-            <span class="service-hub-label" data-en="Central Service Hub" data-sw="Kituo Kikuu cha Huduma">Central Service Hub</span>
-            <img src="./Kivesi.png" alt="Kivesi Investment" width="3840" height="2675" loading="lazy" decoding="async">
-            <h3 data-en="Coordinated Regional Support" data-sw="Msaada wa Kikanda Ulioratibiwa">Coordinated Regional Support</h3>
-            <p data-en="One point of contact connecting all six business divisions, client communication and service execution." data-sw="Sehemu moja ya mawasiliano inayounganisha vitengo vyote sita vya biashara, mawasiliano ya wateja na utekelezaji wa huduma.">One point of contact connecting all six business divisions, client communication and service execution.</p>
-            <a class="service-hub-link" href="#quote" data-scroll><span data-en="Discuss your requirement" data-sw="Jadili mahitaji yako">Discuss your requirement</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </article>
+        <div class="service-network-viewport reveal" id="service-network-viewport" tabindex="0" aria-label="Scrollable Kivesi service network diagram" data-en-aria="Scrollable Kivesi service network diagram" data-sw-aria="Mchoro wa mtandao wa huduma za Kivesi unaotelezeka">
+          <div class="service-network">
+            <svg class="service-network-lines" viewBox="0 0 980 720" aria-hidden="true" preserveAspectRatio="none">
+              <path d="M490 360 C405 290 350 185 265 112"/>
+              <path d="M490 360 C575 290 630 185 715 112"/>
+              <path d="M490 360 C405 360 350 360 265 360"/>
+              <path d="M490 360 C575 360 630 360 715 360"/>
+              <path d="M490 360 C405 430 350 535 265 608"/>
+              <path d="M490 360 C575 430 630 535 715 608"/>
+            </svg>
 
-          <article class="service-node service-node--logistics">
-            <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-truck"/></svg></span>
-            <div>
-              <span class="service-node-number">01</span>
-              <h3 data-en="Logistics & Transportation" data-sw="Logistics na Usafirishaji">Logistics & Transportation</h3>
-              <p data-en="Cargo movement, regional delivery and cross-border transport coordination." data-sw="Usafirishaji wa mizigo, uwasilishaji wa kikanda na uratibu wa usafirishaji wa kuvuka mipaka.">Cargo movement, regional delivery and cross-border transport coordination.</p>
-              <ul><li data-en="Cross-border transport" data-sw="Usafirishaji wa mipakani">Cross-border transport</li><li data-en="Cargo delivery" data-sw="Uwasilishaji wa mizigo">Cargo delivery</li></ul>
-            </div>
-          </article>
+            <article class="service-hub">
+              <span class="service-hub-label" data-en="Central Service Hub" data-sw="Kituo Kikuu cha Huduma">Central Service Hub</span>
+              <img src="./Kivesi.png" alt="Kivesi Investment" width="3840" height="2675" loading="lazy" decoding="async">
+              <h3 data-en="Coordinated Regional Support" data-sw="Msaada wa Kikanda Ulioratibiwa">Coordinated Regional Support</h3>
+              <p data-en="One point of contact connecting all six business divisions, client communication and service execution." data-sw="Sehemu moja ya mawasiliano inayounganisha vitengo vyote sita vya biashara, mawasiliano ya wateja na utekelezaji wa huduma.">One point of contact connecting all six business divisions, client communication and service execution.</p>
+              <a class="service-hub-link" href="#quote" data-scroll><span data-en="Discuss your requirement" data-sw="Jadili mahitaji yako">Discuss your requirement</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </article>
 
-          <article class="service-node service-node--food">
-            <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-food"/></svg></span>
-            <div>
-              <span class="service-node-number">02</span>
-              <h3 data-en="Food Supply" data-sw="Ugavi wa Chakula">Food Supply</h3>
-              <p data-en="Reliable sourcing and supply support for institutions, projects and events." data-sw="Ununuzi na ugavi unaoaminika kwa taasisi, miradi na matukio.">Reliable sourcing and supply support for institutions, projects and events.</p>
-              <ul><li data-en="Bulk supply" data-sw="Ugavi wa jumla">Bulk supply</li><li data-en="Delivery coordination" data-sw="Uratibu wa uwasilishaji">Delivery coordination</li></ul>
-            </div>
-          </article>
+            <article class="service-node service-node--logistics">
+              <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-truck"/></svg></span>
+              <div>
+                <span class="service-node-number">01</span>
+                <h3 data-en="Logistics & Transportation" data-sw="Logistics na Usafirishaji">Logistics & Transportation</h3>
+                <p data-en="Cargo movement, regional delivery and cross-border transport coordination." data-sw="Usafirishaji wa mizigo, uwasilishaji wa kikanda na uratibu wa usafirishaji wa kuvuka mipaka.">Cargo movement, regional delivery and cross-border transport coordination.</p>
+                <ul><li data-en="Cross-border transport" data-sw="Usafirishaji wa mipakani">Cross-border transport</li><li data-en="Cargo delivery" data-sw="Uwasilishaji wa mizigo">Cargo delivery</li></ul>
+              </div>
+            </article>
 
-          <article class="service-node service-node--events">
-            <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-event"/></svg></span>
-            <div>
-              <span class="service-node-number">03</span>
-              <h3 data-en="Events Preparation" data-sw="Maandalizi ya Matukio">Events Preparation</h3>
-              <p data-en="Operational planning, logistics support and coordinated supply for events." data-sw="Mipango ya uendeshaji, msaada wa logistics na ugavi ulioratibiwa kwa matukio.">Operational planning, logistics support and coordinated supply for events.</p>
-              <ul><li data-en="Event logistics" data-sw="Logistics za matukio">Event logistics</li><li data-en="On-site support" data-sw="Msaada wa eneo la tukio">On-site support</li></ul>
-            </div>
-          </article>
+            <article class="service-node service-node--food">
+              <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-food"/></svg></span>
+              <div>
+                <span class="service-node-number">02</span>
+                <h3 data-en="Food Supply" data-sw="Ugavi wa Chakula">Food Supply</h3>
+                <p data-en="Reliable sourcing and supply support for institutions, projects and events." data-sw="Ununuzi na ugavi unaoaminika kwa taasisi, miradi na matukio.">Reliable sourcing and supply support for institutions, projects and events.</p>
+                <ul><li data-en="Bulk supply" data-sw="Ugavi wa jumla">Bulk supply</li><li data-en="Delivery coordination" data-sw="Uratibu wa uwasilishaji">Delivery coordination</li></ul>
+              </div>
+            </article>
 
-          <article class="service-node service-node--realestate">
-            <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-building"/></svg></span>
-            <div>
-              <span class="service-node-number">04</span>
-              <h3 data-en="Real Estate" data-sw="Mali Isiyohamishika">Real Estate</h3>
-              <p data-en="Property opportunity support and practical assistance for investment requirements." data-sw="Msaada wa fursa za mali na usaidizi wa vitendo kwa mahitaji ya uwekezaji.">Property opportunity support and practical assistance for investment requirements.</p>
-              <ul><li data-en="Property support" data-sw="Msaada wa mali">Property support</li><li data-en="Investment assistance" data-sw="Msaada wa uwekezaji">Investment assistance</li></ul>
-            </div>
-          </article>
+            <article class="service-node service-node--events">
+              <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-event"/></svg></span>
+              <div>
+                <span class="service-node-number">03</span>
+                <h3 data-en="Events Preparation" data-sw="Maandalizi ya Matukio">Events Preparation</h3>
+                <p data-en="Operational planning, logistics support and coordinated supply for events." data-sw="Mipango ya uendeshaji, msaada wa logistics na ugavi ulioratibiwa kwa matukio.">Operational planning, logistics support and coordinated supply for events.</p>
+                <ul><li data-en="Event logistics" data-sw="Logistics za matukio">Event logistics</li><li data-en="On-site support" data-sw="Msaada wa eneo la tukio">On-site support</li></ul>
+              </div>
+            </article>
 
-          <article class="service-node service-node--parts">
-            <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-parts"/></svg></span>
-            <div>
-              <span class="service-node-number">05</span>
-              <h3 data-en="Spare Parts & Lubricants" data-sw="Vipuri na Vilainishi">Spare Parts & Lubricants</h3>
-              <p data-en="Parts and consumable supply supporting dependable transport operations." data-sw="Ugavi wa vipuri na bidhaa za matumizi unaosaidia shughuli za usafirishaji zinazotegemeka.">Parts and consumable supply supporting dependable transport operations.</p>
-              <ul><li data-en="Genuine parts" data-sw="Vipuri halisi">Genuine parts</li><li data-en="Operational consumables" data-sw="Bidhaa za matumizi ya uendeshaji">Operational consumables</li></ul>
-            </div>
-          </article>
+            <article class="service-node service-node--realestate">
+              <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-building"/></svg></span>
+              <div>
+                <span class="service-node-number">04</span>
+                <h3 data-en="Real Estate" data-sw="Mali Isiyohamishika">Real Estate</h3>
+                <p data-en="Property opportunity support and practical assistance for investment requirements." data-sw="Msaada wa fursa za mali na usaidizi wa vitendo kwa mahitaji ya uwekezaji.">Property opportunity support and practical assistance for investment requirements.</p>
+                <ul><li data-en="Property support" data-sw="Msaada wa mali">Property support</li><li data-en="Investment assistance" data-sw="Msaada wa uwekezaji">Investment assistance</li></ul>
+              </div>
+            </article>
 
-          <article class="service-node service-node--procurement">
-            <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-procurement"/></svg></span>
-            <div>
-              <span class="service-node-number">06</span>
-              <h3 data-en="Procurement & Supply" data-sw="Ununuzi na Ugavi">Procurement & Supply</h3>
-              <p data-en="Structured sourcing, purchasing and delivery coordination across industries." data-sw="Ununuzi uliopangwa, manunuzi na uratibu wa uwasilishaji katika sekta mbalimbali.">Structured sourcing, purchasing and delivery coordination across industries.</p>
-              <ul><li data-en="Supplier sourcing" data-sw="Kutafuta wasambazaji">Supplier sourcing</li><li data-en="Order fulfilment" data-sw="Kukamilisha oda">Order fulfilment</li></ul>
-            </div>
-          </article>
+            <article class="service-node service-node--parts">
+              <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-parts"/></svg></span>
+              <div>
+                <span class="service-node-number">05</span>
+                <h3 data-en="Spare Parts & Lubricants" data-sw="Vipuri na Vilainishi">Spare Parts & Lubricants</h3>
+                <p data-en="Parts and consumable supply supporting dependable transport operations." data-sw="Ugavi wa vipuri na bidhaa za matumizi unaosaidia shughuli za usafirishaji zinazotegemeka.">Parts and consumable supply supporting dependable transport operations.</p>
+                <ul><li data-en="Genuine parts" data-sw="Vipuri halisi">Genuine parts</li><li data-en="Operational consumables" data-sw="Bidhaa za matumizi ya uendeshaji">Operational consumables</li></ul>
+              </div>
+            </article>
+
+            <article class="service-node service-node--procurement">
+              <span class="service-node-icon"><svg aria-hidden="true"><use href="#i-procurement"/></svg></span>
+              <div>
+                <span class="service-node-number">06</span>
+                <h3 data-en="Procurement & Supply" data-sw="Ununuzi na Ugavi">Procurement & Supply</h3>
+                <p data-en="Structured sourcing, purchasing and delivery coordination across industries." data-sw="Ununuzi uliopangwa, manunuzi na uratibu wa uwasilishaji katika sekta mbalimbali.">Structured sourcing, purchasing and delivery coordination across industries.</p>
+                <ul><li data-en="Supplier sourcing" data-sw="Kutafuta wasambazaji">Supplier sourcing</li><li data-en="Order fulfilment" data-sw="Kukamilisha oda">Order fulfilment</li></ul>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="profile-banner" aria-labelledby="profile-title">
-      <div class="profile-banner-media" aria-hidden="true"></div>
       <div class="container profile-banner-inner">
-        <div class="profile-banner-copy reveal">
-          <p class="profile-banner-kicker" data-en="Company Profile" data-sw="Wasifu wa Kampuni">Company Profile</p>
-          <h2 id="profile-title" data-en="Review Our Capabilities, Service Divisions and Regional Operating Focus" data-sw="Pitia Uwezo Wetu, Vitengo vya Huduma na Mwelekeo wa Uendeshaji wa Kikanda">Review Our Capabilities, Service Divisions and Regional Operating Focus</h2>
-          <p data-en="Download the official Kivesi Investment company profile for a structured overview of the business, services and contact information." data-sw="Pakua wasifu rasmi wa Kivesi Investment kwa muhtasari uliopangwa wa biashara, huduma na taarifa za mawasiliano.">Download the official Kivesi Investment company profile for a structured overview of the business, services and contact information.</p>
-          <div class="profile-banner-actions">
-            <a class="profile-download-button" href="./Kivesi-Company-Profile.pdf" download>
-              <svg aria-hidden="true"><use href="#i-download"/></svg>
-              <span data-en="Download Company Profile" data-sw="Pakua Wasifu wa Kampuni">Download Company Profile</span>
-            </a>
-            <a class="profile-contact-link" href="#contact" data-scroll><span data-en="Contact the team" data-sw="Wasiliana na timu">Contact the team</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="profile-banner-grid reveal">
+          <figure class="profile-banner-media">
+            <img src="./container-port.jpg" alt="Aerial view of a shipping container terminal and cargo handling operations" width="3763" height="2509" loading="lazy" decoding="async">
+            <figcaption>Container terminal photograph by CHUTTERSNAP on Unsplash.</figcaption>
+          </figure>
+
+          <div class="profile-banner-copy">
+            <p class="profile-banner-kicker" data-en="Company Profile" data-sw="Wasifu wa Kampuni">Company Profile</p>
+            <h2 id="profile-title" data-en="Review Our Capabilities, Service Divisions and Regional Operating Focus" data-sw="Pitia Uwezo Wetu, Vitengo vya Huduma na Mwelekeo wa Uendeshaji wa Kikanda">Review Our Capabilities, Service Divisions and Regional Operating Focus</h2>
+            <p data-en="Download the official Kivesi Investment company profile for a structured overview of the business, services and contact information." data-sw="Pakua wasifu rasmi wa Kivesi Investment kwa muhtasari uliopangwa wa biashara, huduma na taarifa za mawasiliano.">Download the official Kivesi Investment company profile for a structured overview of the business, services and contact information.</p>
+            <div class="profile-banner-actions">
+              <a class="profile-download-button" href="./Kivesi-Company-Profile.pdf" download>
+                <svg aria-hidden="true"><use href="#i-download"/></svg>
+                <span data-en="Download Company Profile" data-sw="Pakua Wasifu wa Kampuni">Download Company Profile</span>
+              </a>
+              <a class="profile-contact-link" href="#contact" data-scroll><span data-en="Contact the team" data-sw="Wasiliana na timu">Contact the team</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
           </div>
-          <small class="profile-photo-credit">Container terminal photo: CHUTTERSNAP / Unsplash</small>
         </div>
       </div>
     </section>
+
 
     <section class="section section--alt coverage-section" id="coverage" aria-labelledby="coverage-title">
       <div class="container">
@@ -4100,6 +4384,43 @@
 
       selectRoute("tanzania");
       window.addEventListener("resize", function () { map.invalidateSize(); });
+    }());
+  </script>
+
+  <script>
+    (function () {
+      var viewport = document.getElementById('service-network-viewport');
+      if (!viewport) return;
+
+      var controls = document.querySelectorAll('[data-network-scroll]');
+      controls.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var direction = Number(button.getAttribute('data-network-scroll')) || 1;
+          var distance = Math.max(300, Math.round(viewport.clientWidth * 0.78));
+          viewport.scrollBy({ left: direction * distance, behavior: 'smooth' });
+        });
+      });
+
+      viewport.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        var direction = event.key === 'ArrowLeft' ? -1 : 1;
+        viewport.scrollBy({ left: direction * 320, behavior: 'smooth' });
+      });
+
+      function centreMobileDiagram() {
+        if (window.innerWidth >= 1080 || viewport.dataset.initialised === 'true') return;
+        viewport.dataset.initialised = 'true';
+        window.requestAnimationFrame(function () {
+          viewport.scrollLeft = Math.max(0, (viewport.scrollWidth - viewport.clientWidth) / 2);
+        });
+      }
+
+      if (document.readyState === 'complete') {
+        centreMobileDiagram();
+      } else {
+        window.addEventListener('load', centreMobileDiagram, { once: true });
+      }
     }());
   </script>
 
