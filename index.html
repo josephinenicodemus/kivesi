@@ -2986,6 +2986,309 @@
       .profile-banner-grid { grid-template-columns: minmax(0, 1.15fr) minmax(440px, 0.85fr); }
     }
 
+  
+    /* ================================================================
+       FINAL RESPONSIVE REFINEMENTS
+       - Mobile-first What We Offer layout
+       - Clear satellite coverage map
+       - Slimmer, softer hero/header fade
+       ================================================================ */
+
+    /* A softer top scrim keeps the hero photograph vivid instead of
+       tinting the entire image. */
+    .hero-overlay {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(6, 19, 39, 0.10) 0%,
+          rgba(6, 19, 39, 0.045) 18%,
+          rgba(6, 19, 39, 0) 36%
+        ) !important;
+    }
+
+    /* Slimmer and more refined navigation fade over the hero. */
+    .site-header::before {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(3, 14, 32, 0.82) 0%,
+          rgba(3, 14, 32, 0.68) 64%,
+          rgba(3, 14, 32, 0.18) 88%,
+          rgba(3, 14, 32, 0) 100%
+        ) !important;
+    }
+
+    /* Satellite map presentation */
+    .coverage-real-map {
+      height: clamp(390px, 88vw, 500px);
+      background: #172331;
+    }
+
+    .coverage-map-shell {
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .coverage-real-map .leaflet-tile-pane {
+      filter: saturate(1.06) contrast(1.03);
+    }
+
+    .coverage-real-map .leaflet-control-zoom a {
+      color: var(--navy-900);
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .coverage-real-map .leaflet-control-attribution {
+      max-width: min(82vw, 420px);
+      background: rgba(255, 255, 255, 0.88);
+      color: #344054;
+      font-size: 9px;
+      line-height: 1.3;
+    }
+
+    /* ---------------------------------------------------------------
+       WHAT WE OFFER — phones and tablets
+       No 980px canvas, no hidden cards, no horizontal discovery burden.
+       --------------------------------------------------------------- */
+    @media (max-width: 1079px) {
+      .services-section {
+        overflow: visible !important;
+      }
+
+      .service-network-toolbar {
+        display: none !important;
+      }
+
+      .service-network-viewport {
+        width: 100%;
+        overflow: visible !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        scrollbar-width: none;
+      }
+
+      .service-network-viewport::-webkit-scrollbar {
+        display: none;
+      }
+
+      .service-network {
+        display: grid !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-template-rows: none !important;
+        gap: 14px !important;
+        padding: 0 !important;
+      }
+
+      .service-network-lines {
+        display: none !important;
+      }
+
+      .service-hub,
+      .service-node,
+      .service-node--logistics,
+      .service-node--food,
+      .service-node--events,
+      .service-node--realestate,
+      .service-node--parts,
+      .service-node--procurement {
+        position: relative !important;
+        inset: auto !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        transform: none !important;
+      }
+
+      .service-hub {
+        order: -1 !important;
+        align-self: stretch;
+        padding: 24px 20px !important;
+        border-radius: 18px !important;
+      }
+
+      .service-hub:hover {
+        transform: translateY(-2px) !important;
+      }
+
+      .service-hub img {
+        width: 112px;
+        height: auto;
+        max-height: 72px;
+        object-fit: contain;
+      }
+
+      .service-hub h3 {
+        margin-top: 5px;
+        font-size: clamp(1.65rem, 7vw, 2.1rem) !important;
+        line-height: 1.05;
+      }
+
+      .service-hub p {
+        font-size: 0.88rem;
+        line-height: 1.66;
+      }
+
+      .service-node {
+        display: grid !important;
+        grid-template-columns: 46px minmax(0, 1fr) !important;
+        gap: 13px !important;
+        align-content: start;
+        padding: 18px 16px !important;
+        border-radius: 16px !important;
+      }
+
+      .service-node-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 13px;
+      }
+
+      .service-node h3 {
+        font-size: 1.16rem;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
+      }
+
+      .service-node p {
+        margin-top: 7px;
+        font-size: 0.86rem;
+        line-height: 1.62;
+      }
+
+      .service-node ul {
+        gap: 6px;
+        margin-top: 11px;
+      }
+
+      .service-node li {
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+    }
+
+    /* Two-column tablet layout while keeping the central hub full width. */
+    @media (min-width: 640px) and (max-width: 1079px) {
+      .service-network {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+      }
+
+      .service-hub {
+        grid-column: 1 / -1 !important;
+        display: grid !important;
+        grid-template-columns: 140px minmax(0, 1fr);
+        column-gap: 24px;
+        align-items: center;
+      }
+
+      .service-hub-label,
+      .service-hub img {
+        grid-column: 1;
+      }
+
+      .service-hub h3,
+      .service-hub p,
+      .service-hub-link {
+        grid-column: 2;
+      }
+
+      .service-hub h3 {
+        margin-top: 0;
+      }
+    }
+
+    /* Small-phone tuning */
+    @media (max-width: 479px) {
+      .services-section .section-heading {
+        margin-bottom: 22px;
+      }
+
+      .services-section .section-title {
+        font-size: clamp(1.95rem, 10.4vw, 2.55rem);
+      }
+
+      .services-section .section-copy {
+        font-size: 0.92rem;
+        line-height: 1.68;
+      }
+
+      .service-node {
+        grid-template-columns: 42px minmax(0, 1fr) !important;
+        gap: 11px !important;
+        padding: 16px 14px !important;
+      }
+
+      .service-node-icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .coverage-real-map {
+        height: 390px;
+      }
+
+      .coverage-map-status {
+        gap: 12px;
+        padding: 13px 14px;
+      }
+
+      .coverage-coordinate-pair {
+        width: 100%;
+      }
+
+      .coverage-coordinate-pair > span {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+    }
+
+    /* Reduce the visual height of the hero navigation bar on desktop. */
+    @media (min-width: 1024px) {
+      :root {
+        --header-height: 78px;
+      }
+
+      .site-header.is-scrolled {
+        --header-height: 72px;
+      }
+
+      .header-logo {
+        width: 164px !important;
+        max-height: 68px !important;
+      }
+
+      .desktop-nav a {
+        min-height: 40px;
+        padding-inline: 12px;
+      }
+
+      .header-quote {
+        min-height: 42px;
+      }
+
+      .hero {
+        min-height: 590px;
+      }
+
+      .coverage-real-map {
+        height: 540px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .header-logo {
+        width: 172px !important;
+        max-height: 70px !important;
+      }
+    }
+
   </style>
 
   <script>
@@ -3195,19 +3498,7 @@
           <p class="section-copy" data-en="Each division operates as part of one connected service system, allowing clients to access transport, supply, procurement and investment support through a single accountable partner." data-sw="Kila kitengo kinafanya kazi kama sehemu ya mfumo mmoja wa huduma uliounganishwa, unaowawezesha wateja kupata usafirishaji, ugavi, ununuzi na msaada wa uwekezaji kupitia mshirika mmoja anayewajibika.">Each division operates as part of one connected service system, allowing clients to access transport, supply, procurement and investment support through a single accountable partner.</p>
         </div>
 
-        <div class="service-network-toolbar reveal">
-          <p data-en="On phones and tablets, swipe horizontally or use the arrow controls to explore the complete service diagram without changing its desktop structure." data-sw="Kwenye simu na kompyuta kibao, telezesha kwa mlalo au tumia vitufe vya mishale kuona mchoro kamili wa huduma bila kubadilisha muundo wake wa kompyuta.">On phones and tablets, swipe horizontally or use the arrow controls to explore the complete service diagram without changing its desktop structure.</p>
-          <div class="service-network-controls" aria-label="Service diagram controls" data-en-aria="Service diagram controls" data-sw-aria="Vidhibiti vya mchoro wa huduma">
-            <button class="service-network-control service-network-control--previous" type="button" data-network-scroll="-1" aria-label="Scroll service diagram left" data-en-aria="Scroll service diagram left" data-sw-aria="Telezesha mchoro wa huduma kushoto">
-              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
-            </button>
-            <button class="service-network-control" type="button" data-network-scroll="1" aria-label="Scroll service diagram right" data-en-aria="Scroll service diagram right" data-sw-aria="Telezesha mchoro wa huduma kulia">
-              <svg aria-hidden="true"><use href="#i-arrow"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="service-network-viewport reveal" id="service-network-viewport" tabindex="0" aria-label="Scrollable Kivesi service network diagram" data-en-aria="Scrollable Kivesi service network diagram" data-sw-aria="Mchoro wa mtandao wa huduma za Kivesi unaotelezeka">
+        <div class="service-network-viewport reveal" id="service-network-viewport" tabindex="0" aria-label="Kivesi service network and specialist divisions" data-en-aria="Kivesi service network and specialist divisions" data-sw-aria="Mtandao wa huduma za Kivesi na vitengo maalum">
           <div class="service-network">
             <svg class="service-network-lines" viewBox="0 0 980 720" aria-hidden="true" preserveAspectRatio="none">
               <path d="M490 360 C405 290 350 185 265 112"/>
@@ -4181,11 +4472,26 @@
         preferCanvas: false
       }).setView([-11.8, 30.5], 4);
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        maxZoom: 19,
-        subdomains: "abcd",
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>'
-      }).addTo(map);
+      /* Clear satellite imagery with geographic labels. */
+      var satelliteLayer = L.tileLayer(
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        {
+          maxZoom: 19,
+          crossOrigin: true,
+          attribution: "Tiles &copy; Esri"
+        }
+      ).addTo(map);
+
+      /* Keep country/city labels readable above the satellite imagery. */
+      L.tileLayer(
+        "https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+        {
+          maxZoom: 19,
+          crossOrigin: true,
+          opacity: 0.92,
+          attribution: "Labels &copy; Esri"
+        }
+      ).addTo(map);
 
       var markerLayer = L.layerGroup().addTo(map);
       var routeLayer = L.layerGroup().addTo(map);
@@ -4392,42 +4698,6 @@
     }());
   </script>
 
-  <script>
-    (function () {
-      var viewport = document.getElementById('service-network-viewport');
-      if (!viewport) return;
-
-      var controls = document.querySelectorAll('[data-network-scroll]');
-      controls.forEach(function (button) {
-        button.addEventListener('click', function () {
-          var direction = Number(button.getAttribute('data-network-scroll')) || 1;
-          var distance = Math.max(300, Math.round(viewport.clientWidth * 0.78));
-          viewport.scrollBy({ left: direction * distance, behavior: 'smooth' });
-        });
-      });
-
-      viewport.addEventListener('keydown', function (event) {
-        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-        event.preventDefault();
-        var direction = event.key === 'ArrowLeft' ? -1 : 1;
-        viewport.scrollBy({ left: direction * 320, behavior: 'smooth' });
-      });
-
-      function centreMobileDiagram() {
-        if (window.innerWidth >= 1080 || viewport.dataset.initialised === 'true') return;
-        viewport.dataset.initialised = 'true';
-        window.requestAnimationFrame(function () {
-          viewport.scrollLeft = Math.max(0, (viewport.scrollWidth - viewport.clientWidth) / 2);
-        });
-      }
-
-      if (document.readyState === 'complete') {
-        centreMobileDiagram();
-      } else {
-        window.addEventListener('load', centreMobileDiagram, { once: true });
-      }
-    }());
-  </script>
 
 </body>
 </html>
