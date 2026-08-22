@@ -3461,6 +3461,128 @@
       }
     }
 
+  
+    /* ================================================================
+       FINAL LOGO SCALE REFINEMENT
+       - Smaller hero/header logo on phones
+       - Smaller footer logo on phones and laptops
+       - Desktop hero/header logo remains unchanged
+       ================================================================ */
+
+    /* PHONE */
+    @media (max-width: 479px) {
+      :root {
+        --header-height: 72px !important;
+      }
+
+      .header-inner {
+        height: var(--header-height) !important;
+      }
+
+      .header-brand {
+        width: 96px !important;
+        height: 58px !important;
+        flex: 0 0 96px !important;
+      }
+
+      .header-logo {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 96px !important;
+        max-height: 58px !important;
+        object-fit: contain !important;
+        object-position: left center !important;
+      }
+
+      .menu-button {
+        width: 44px;
+        height: 44px;
+        flex-basis: 44px;
+      }
+
+      .footer-logo-surface {
+        width: 132px !important;
+        max-width: 132px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .footer-logo {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 92px !important;
+        object-fit: contain !important;
+        object-position: left center !important;
+      }
+    }
+
+    /* LARGE PHONES */
+    @media (min-width: 480px) and (max-width: 767px) {
+      :root {
+        --header-height: 76px !important;
+      }
+
+      .header-brand {
+        width: 108px !important;
+        height: 62px !important;
+        flex: 0 0 108px !important;
+      }
+
+      .header-logo {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 108px !important;
+        max-height: 62px !important;
+      }
+
+      .footer-logo-surface {
+        width: 142px !important;
+        max-width: 142px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .footer-logo {
+        height: auto !important;
+        max-height: 98px !important;
+      }
+    }
+
+    /* TABLET */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .header-brand {
+        width: 128px !important;
+        height: 70px !important;
+      }
+
+      .footer-logo-surface {
+        width: 154px !important;
+        max-width: 154px !important;
+      }
+    }
+
+    /* LAPTOP / DESKTOP
+       Keep the hero/header logo proportions already approved, only reduce
+       the oversized footer logo. */
+    @media (min-width: 1024px) {
+      .footer-logo-surface {
+        width: 168px !important;
+        max-width: 168px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .footer-logo {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 116px !important;
+      }
+    }
+
+    @media (min-width: 1440px) {
+      .footer-logo-surface {
+        width: 176px !important;
+        max-width: 176px !important;
+      }
+    }
+
   </style>
 
   <script>
